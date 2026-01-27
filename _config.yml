@@ -1,0 +1,26 @@
+# Site settings
+name: bllaude's website
+email: laude822@proton.me
+author: Brey Laude
+url: http://www.bllaude.github.io
+resume_site: http://www.hifreud.com/Resume.io/
+github: https://github.com/bllaude/
+baseurl: "/blog"
+description: 
+meta_description: 
+motto: 
+banner: 
+
+#permalink: /:categories/:year/:month/:day/:title/
+permalink: /:year/:month/:day/:title/
+paginate: 10
+
+exclude: ['README.md', 'Gemfile.lock', 'Gemfile', 'Rakefile']
+
+github_username: bllaude
+
+# Build settings
+markdown: kramdown
+
+baidu_analysis: 94be4b0f9fc5d94cc0d0415ea6761ae9
+
