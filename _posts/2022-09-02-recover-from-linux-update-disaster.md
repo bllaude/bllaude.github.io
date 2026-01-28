@@ -22,7 +22,7 @@ So I got another computer and made myself a Live USB. Booted my laptop with it. 
 pacman -S pacman zstd -r /mnt --overwrite="*"
 ```
 
-Then arch-chroot again. Nice, now pacman works again. Now I’m ready to reinstall everything, and replace all broken system files.
+Then `arch-chroot` again. Nice, now pacman works again. Now I’m ready to reinstall everything, and replace all broken system files.
 
 ```bash
 pacman -Qqn | pacman -Sy - --overwrite="*"
