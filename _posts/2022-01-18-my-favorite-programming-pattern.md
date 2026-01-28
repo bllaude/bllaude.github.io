@@ -60,7 +60,7 @@ This function works by building the list from the back, prepending one character
 
 `"a,b,c,d"`
 
-Why I like this pattern                                                    {#Why I like this pattern}
+Why I like this pattern                                                    {#Why}
 ====================================
 **It's not slow**
 
