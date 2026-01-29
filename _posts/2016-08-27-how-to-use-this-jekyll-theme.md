@@ -4,7 +4,7 @@ title:  How to use the LessOrMore Jekyll Template
 date:   2016-08-27 01:08:00 +0800
 categories: document
 tag: Tutorial
-topping: true
+topping: false
 ---
 
 * content
