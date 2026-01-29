@@ -13,7 +13,7 @@ Some people (mostly old people) turn on the radio first thing in morning. Others
 
 At least halfway, some people sort of agree with me. They will criticize cable news for its obsession with graphic crimes, its horse-race political slop, and its never-ending flow of PR-flavored trash. They still believe the system can be corrected though.IMO, I don't see anything left worth saving.
 
-Pick today's New York Times. A chart displaying a rise in abortions in 2024. Some blips on diplomatic wriggling. Stocks flowing down. China's economic data. Actors in Hollywood blah blah. None of this shit touches my life. It may be fun to read, but it's a type 3 fun, a pointless waste of time. It has no bearing whatsoever on what I do.
+Pick today's New York Times. A chart displaying a rise in abortions in 2024. Some blips on diplomatic wriggling. Stocks flowing down. China's economic data. Actors in Hollywood blah blah. None of this shit touches my life. It may be fun to read, a type 3 fun, a pointless waste of time. It has no bearing whatsoever on what I do.
 
 At this point, the majority of people will nod and say, *"Okay, fine, but there's still virtue in knowing."* As if being continuously informed about current events somehow makes you a better citizen. They'll preach about newspapers holding power to account - keeping bastards in check.
 
