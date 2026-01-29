@@ -13,7 +13,7 @@ This follows Lars Fröder's [@opa334dev](https://infosec.exchange/@opa334) lates
 
 The issue isn't just *"Apple is locking things down"*, which has been the case for more than 10 years. The problem lies in the fact that Apple is now doing it well and that the opportunity for new public exploitation has completely closed.
 
-Here's why:
+## Here's why:
 - No Public Exploits 
 : It has been years since we last saw a functional exploit for A11+ devices. The ones that are available are either under NDA (held by commercial exploit brokers), private, or costly.
 - Mitigations Everywhere
