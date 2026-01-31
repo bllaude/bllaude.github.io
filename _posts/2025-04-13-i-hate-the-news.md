@@ -9,7 +9,7 @@ topping: true
 
 * content
 {:toc}
-Some people (mostly old people) turn on the radio first thing in morning. Others collapse with the evening news. While some mindlessly scroll through social media, others remain *"informed"* by viewing CNN and other channels. Even some people get breaking news alerts sent directly to their phones as part of some routine. And they all seem to agree that every citizen has a serious obligation to keep current with the news. Everyone — except from me.
+Some people turn on the radio first thing in morning. Others collapse with the evening news. While some mindlessly scroll through social media, others remain *"informed"* by viewing CNN and other channels. Even some people get breaking news alerts sent directly to their phones as part of some routine. And they all seem to agree that every citizen has a serious obligation to keep current with the news. Everyone — except from me.
 
 At least halfway, some people sort of agree with me. They will criticize cable news for its obsession with graphic crimes, its horse-race political slop, and its never-ending flow of PR-flavored trash. They still believe the system can be corrected though.IMO, I don't see anything left worth saving.
 
