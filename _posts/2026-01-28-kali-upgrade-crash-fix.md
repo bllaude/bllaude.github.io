@@ -10,7 +10,7 @@ topping: false
 * content
 {:toc}
 
-There's a particular kind of dread that comes with a Linux upgrade gone wrong. This happened to me after Kali Linux upgrade crashed midway. 
+Kali suddenly crashed while upgrading.
 
 Symptom                                                    {#Symptom}
 ====================================
@@ -32,7 +32,7 @@ Kali is a rolling distribution. During upgrades, a lot happens at once:
 
 When the upgrade crashed, `dpkg` was left mid-transaction.
 
-The result:
+Result:
 - Packages were half-configured
 - The display manager failed to start
 - X/Wayland never launched
@@ -44,16 +44,10 @@ The system was simply unable to launch a GUI. This distinction is important beca
 I tried using a TTY before going into recovery mode or reinstalling anything.
 `CTRL + Alt + F2`
 
-That single detail tells you almost everything:
-- System booted
-- Kernel is fine
-- The problem is userspace (desktop stack)
-
-After logging in, recovery is straightforward
+If it works, it tells you almost everything, means system booted, kernel is fine, and the only problem is userspace (desktop stack). After that, recovery is straightforward.
 
 Fixing the system                                                    {#Fix}
 ====================================
-The goal is simple:
 - Finish what the interrupted upgrade started
 - Restore the display manager
 - Reboot cleanly
