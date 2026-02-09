@@ -30,7 +30,7 @@ In other words, the index does not directly indicate each specific event itself 
 
 That’s not to say that the above metrics in software development don’t represent quality well. Rather, it is a wonderful tool that can be of great use in analyzing quality from various angles.
 
-What I want to say is that all indicators are within target range ≠ good quality .
+**What I want to say is that all indicators within target range ≠ good quality.**
 
 For example, if we consider the number of lint warnings, it indicates the number of places where the writing style that is defined as a problem in the linter is used, but conversely, any writing style that is not defined as a problem is allowed. . Therefore, it is possible to intentionally avoid the warning in a strange way of writing. In that case, it’s usually the worst code with low readability.
 
