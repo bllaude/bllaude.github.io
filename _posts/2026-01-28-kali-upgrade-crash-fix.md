@@ -12,8 +12,6 @@ topping: false
 
 Kali suddenly crashed while upgrading.
 
-Symptom                                                    {#Symptom}
-====================================
 After rebooting:
 - Black screen
 - Blinking cursor
@@ -22,7 +20,7 @@ After rebooting:
 
 The desktop never appeared, even though the kernel booted. You've probably seen this at least once if you've used Kali extensively.
 
-What went wrong (technically)                                                    {#Wrong}
+What went wrong?                                                    {#Wrong}
 ====================================
 Kali is a rolling distribution. During upgrades, a lot happens at once:
 - Kernel updates
