@@ -44,7 +44,7 @@ I tried using a TTY before going into recovery mode or reinstalling anything.
 
 If it works, it tells you almost everything, means system booted, kernel is fine, and the only problem is userspace (desktop stack). After that, recovery is straightforward.
 
-Fixing the system                                                    {#Fix}
+Fix                                                    {#Fix}
 ====================================
 - Finish what the interrupted upgrade started
 - Restore the display manager
