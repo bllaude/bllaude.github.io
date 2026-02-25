@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  LeetCode Quest: LRU Cache
+title:  LeetCode Quest -  LRU Cache
 date:   2026-02-25 18:08:00 +0800
 categories: document
 tag: leetcode
