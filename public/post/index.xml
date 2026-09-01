@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Posts on BreyL&#39;s blog</title>
+		<link>http://localhost:1313/post/</link>
+		<description>Recent content in Posts on BreyL&#39;s blog</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+		
+		
+		
+			<lastBuildDate>Tue, 01 Sep 2026 22:30:41 +0800</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Wiring Codex on Dockerized Omniroute</title>
+				<link>http://localhost:1313/post/wiring-codex-dockerized-omniroute/</link>
+				<pubDate>Mon, 31 Aug 2026 21:14:27 +0800</pubDate>
+				<guid>http://localhost:1313/post/wiring-codex-dockerized-omniroute/</guid>
+				<description>&lt;p&gt;For anyone running Codex against multiple backends&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Deploying Omniroute on Docker</title>
+				<link>http://localhost:1313/post/deploying-omniroute-docker/</link>
+				<pubDate>Sat, 29 Aug 2026 15:38:19 +0800</pubDate>
+				<guid>http://localhost:1313/post/deploying-omniroute-docker/</guid>
+				<description>&lt;p&gt;Running omniroute on Docker is the best default for me simply because I don’t want a global npm install polluting my host node environment, and it composes cleanly whether the box is a home server, a VPS, or my throwaway VM.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>2020&#43; Subaru Head unit Source Codes</title>
+				<link>http://localhost:1313/post/subaru-source-code/</link>
+				<pubDate>Tue, 22 Nov 2022 21:34:12 +0800</pubDate>
+				<guid>http://localhost:1313/post/subaru-source-code/</guid>
+				<description>&lt;p&gt;I found it a year ago, made minor mods and compiled successfully.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Linux Upgrade Recovery</title>
+				<link>http://localhost:1313/post/linux-upgrade-recovery/</link>
+				<pubDate>Thu, 01 Sep 2022 21:51:17 +0800</pubDate>
+				<guid>http://localhost:1313/post/linux-upgrade-recovery/</guid>
+				<description>&lt;p&gt;&lt;em&gt;“Can’t find linux-zen”&lt;/em&gt; and &lt;em&gt;“kernel needs to be loaded”&lt;/em&gt;.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Installing Linux on External HDD</title>
+				<link>http://localhost:1313/post/installing-linux-external-hdd/</link>
+				<pubDate>Wed, 03 Aug 2022 21:38:02 +0800</pubDate>
+				<guid>http://localhost:1313/post/installing-linux-external-hdd/</guid>
+				<description>&lt;p&gt;I wanted to install Linux on a portable SSD&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>First Post</title>
+				<link>http://localhost:1313/post/first-post/</link>
+				<pubDate>Sat, 01 Feb 2020 09:36:25 +0800</pubDate>
+				<guid>http://localhost:1313/post/first-post/</guid>
+				<description>&lt;p&gt;Hello, World!&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

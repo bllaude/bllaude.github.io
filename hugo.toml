@@ -1,0 +1,43 @@
+baseURL = "https://bllaude.github.io/"
+languageCode = "en-us"
+title = "BreyL's blog"
+theme = "github-style"
+pygmentsCodeFences = true
+pygmentsUseClasses = true
+
+[params]
+  author = "BreyL"
+  description = "$sudo rm -rf/"
+  github = "bllaude"
+  twitter = "breylaude"
+  keywords = "brey laude, brey, laude"
+  rss = true
+  lastmod = true
+  favicon = "/images/github-mark.png"
+  avatar = "/images/avatar.jpeg"
+  headerIcon = "/images/github-mark-white.png"
+  location = "Philippines"
+  userStatusEmoji = "🇵🇭"
+  enableGitalk = true
+  enableSearch = true
+
+  [params.gitalk]
+    clientID = "Ov23liyM4IG9sZJ6Ker3" # Your client ID
+    clientSecret = "d670cd33e038bb9e9b50ee49918180c4c609f4a8" # Your client secret
+    repo = "bllaude.github.io"
+    owner = "bllaude" #
+    admin = "bllaude"
+    id = "location.pathname"
+    labels = "gitalk" # Github issue labels. If you used to use Gitment, you can change it
+    perPage = 15 # Pagination size, with maximum 100.
+    pagerDirection = "last" # Comment sorting direction, available values are 'last' and 'first'.
+    createIssueManually = true # 设置为true，如果是管理员登录，会自动创建issue，如果是false，需要管理员手动添加第一个评论(issue)
+    distractionFreeMode = false # Enable hot key (cmd|ctrl + enter) submit comment.
+    proxy = "https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token" # 可以自行添加反向代理
+
+[frontmatter]
+  lastmod = ["lastmod", ":fileModTime", ":default"]
+
+[services]
+  [services.googleAnalytics]
+    ID = "UA-123456-789"
