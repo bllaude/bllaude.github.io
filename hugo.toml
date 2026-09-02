@@ -6,7 +6,7 @@ pygmentsCodeFences = true
 pygmentsUseClasses = true
 
 [params]
-  author = "BreyL"
+  author = "Brey Laude"
   description = "$sudo rm -rf/"
   github = "bllaude"
   twitter = "breylaude"
