@@ -1,6 +1,6 @@
 +++
 date = '2023-04-12 01:08:00 +0800'
-draft = true
+draft = false
 title = 'Normal Form Designators'
 +++
 
