@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Docker on Site web de Brey Laude</title>
+		<link>http://localhost:1313/fr/tags/docker/</link>
+		<description>Recent content in Docker on Site web de Brey Laude</description>
+		<generator>Hugo</generator>
+		<language>fr</language>
+		
+		
+		
+		
+			<lastBuildDate>Mon, 31 Aug 2026 17:01:53 +0800</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/fr/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Codex de câblage sur Omniroute en Docker</title>
+				<link>http://localhost:1313/fr/article/wiring-codex-dockerized-omniroute/</link>
+				<pubDate>Mon, 31 Aug 2026 17:01:53 +0800</pubDate>
+				<guid>http://localhost:1313/fr/article/wiring-codex-dockerized-omniroute/</guid>
+				<description>&lt;p&gt;Pour tous ceux qui utilisent Codex avec plusieurs backends (le point de terminaison officiel d’OpenAI, Kimi ou DeepSeek, selon ce qui s’avère le moins cher ou le plus rapide cette semaine-là), le fait de placer Omniroute en amont permet à Codex de n’avoir à connaître qu’une seule URL de base, tandis qu’Omniroute gère les interruptions de service des fournisseurs, les rate-limit et la rotation des identifiants de l’autre côté.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Déploiement d&#39;OmniRoute sur Docker</title>
+				<link>http://localhost:1313/fr/article/deploying-omniroute-docker/</link>
+				<pubDate>Sat, 29 Aug 2026 16:32:11 +0800</pubDate>
+				<guid>http://localhost:1313/fr/article/deploying-omniroute-docker/</guid>
+				<description>&lt;p&gt;Pour moi, exécuter Omniroute sur Docker est la meilleure solution par défaut, tout simplement parce que je ne veux pas qu&amp;rsquo;une installation globale de npm vienne polluer l&amp;rsquo;environnement de mon nœud hôte, et que cela s&amp;rsquo;intègre parfaitement, que la machine soit un serveur domestique, un VPS ou ma machine virtuelle jetable.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

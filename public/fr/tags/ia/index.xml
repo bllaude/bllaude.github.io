@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>IA on Site web de Brey Laude</title>
+		<link>http://localhost:1313/fr/tags/ia/</link>
+		<description>Recent content in IA on Site web de Brey Laude</description>
+		<generator>Hugo</generator>
+		<language>fr</language>
+		
+		
+		
+		
+			<lastBuildDate>Sat, 29 Aug 2026 16:32:11 +0800</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/fr/tags/ia/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Déploiement d&#39;OmniRoute sur Docker</title>
+				<link>http://localhost:1313/fr/article/deploying-omniroute-docker/</link>
+				<pubDate>Sat, 29 Aug 2026 16:32:11 +0800</pubDate>
+				<guid>http://localhost:1313/fr/article/deploying-omniroute-docker/</guid>
+				<description>&lt;p&gt;Pour moi, exécuter Omniroute sur Docker est la meilleure solution par défaut, tout simplement parce que je ne veux pas qu&amp;rsquo;une installation globale de npm vienne polluer l&amp;rsquo;environnement de mon nœud hôte, et que cela s&amp;rsquo;intègre parfaitement, que la machine soit un serveur domestique, un VPS ou ma machine virtuelle jetable.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

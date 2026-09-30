@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Omniroute on Brey Laude&#39;s Website</title>
+		<link>http://localhost:1313/tags/omniroute/</link>
+		<description>Recent content in Omniroute on Brey Laude&#39;s Website</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Mon, 31 Aug 2026 17:01:53 +0800</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/tags/omniroute/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Wiring Codex on Dockerized Omniroute</title>
+				<link>http://localhost:1313/article/wiring-codex-dockerized-omniroute/</link>
+				<pubDate>Mon, 31 Aug 2026 17:01:53 +0800</pubDate>
+				<guid>http://localhost:1313/article/wiring-codex-dockerized-omniroute/</guid>
+				<description>&lt;p&gt;For anyone running Codex against multiple backends - official OpenAI, Kimi or DeepSeek endpoint, whatever happens to be cheapest or fastest that week - putting omniroute in front of it means Codex only ever needs to know about one base URL, while omniroute absorbs the churn of provider outages, rate limits, and credential rotation on the other side.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

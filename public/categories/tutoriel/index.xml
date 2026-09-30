@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Tutoriel on Site web de Brey Laude</title>
+		<link>http://localhost:1313/categories/tutoriel/</link>
+		<description>Recent content in Tutoriel on Site web de Brey Laude</description>
+		<generator>Hugo</generator>
+		<language>fr</language>
+		
+		
+		
+		
+			<lastBuildDate>Wed, 03 Aug 2022 18:03:48 +0800</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/categories/tutoriel/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Installation de Linux sur un SSD externe</title>
+				<link>http://localhost:1313/article/installing-linux-external-ssd/</link>
+				<pubDate>Wed, 03 Aug 2022 18:03:48 +0800</pubDate>
+				<guid>http://localhost:1313/article/installing-linux-external-ssd/</guid>
+				<description>&lt;p&gt;Je souhaitais installer Linux sur un SSD portable et le rendre amorçable depuis mon ordinateur portable, ce qui nécessitait la prise en charge de l&amp;rsquo;UEFI. J&amp;rsquo;ai mis au point ma propre méthode, car je n&amp;rsquo;ai pas trouvé de meilleure solution en ligne.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

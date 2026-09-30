@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Pages on Site web de Brey Laude</title>
+		<link>http://localhost:1313/fr/page/</link>
+		<description>Recent content in Pages on Site web de Brey Laude</description>
+		<generator>Hugo</generator>
+		<language>fr</language>
+		
+		
+		
+		
+			<lastBuildDate>Mon, 01 Nov 2021 13:18:45 +0100</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/fr/page/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>À propos de Bilberry</title>
+				<link>http://localhost:1313/fr/page/about-bilberry/</link>
+				<pubDate>Mon, 01 Nov 2021 13:18:45 +0100</pubDate>
+				<guid>http://localhost:1313/fr/page/about-bilberry/</guid>
+				<description>&lt;p&gt;Bilberry est un thème haut de gamme pour le &lt;a href=&#34;https://gohugo.io&#34;&gt;générateur de sites web statiques Hugo&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Il regorge de petites fonctionnalités pratiques, telles que :&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;L&amp;rsquo;intégration native du formidable &lt;a href=&#34;https://algolia.com&#34;&gt;moteur de recherche Algolia&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;L&amp;rsquo;intégration native du puissant système de &lt;a href=&#34;https://disqus.com&#34;&gt;commentaires Disqus&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;L’intégration de Gravatar et d’images personnalisées pour l’en-tête&lt;/li&gt;&#xA;&lt;li&gt;Un raccourci clavier pour la recherche (appuyez sur la touche &lt;code&gt;s&lt;/code&gt;, saisissez un texte, puis appuyez sur &lt;code&gt;Entrée&lt;/code&gt; ou &lt;code&gt;Échap&lt;/code&gt;)&lt;/li&gt;&#xA;&lt;li&gt;Un design responsive, optimisé pour les ordinateurs de bureau et les appareils mobiles&lt;/li&gt;&#xA;&lt;li&gt;Une prise en charge complète de l’internationalisation (i18n) (en, de, fr, ru, es disponibles dès l’installation !)&lt;/li&gt;&#xA;&lt;li&gt;Prise en charge multilingue complète&lt;/li&gt;&#xA;&lt;li&gt;Types de publications personnalisés (&lt;code&gt;article&lt;/code&gt;, &lt;code&gt;audio&lt;/code&gt;, &lt;code&gt;code&lt;/code&gt;, &lt;code&gt;gallery&lt;/code&gt;, &lt;code&gt;link&lt;/code&gt;, &lt;code&gt;page&lt;/code&gt;, &lt;code&gt;picture&lt;/code&gt;, &lt;code&gt;quote&lt;/code&gt;, &lt;code&gt;video&lt;/code&gt;)&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Configuration simple pour en ajouter d&amp;rsquo;autres selon vos besoins&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;em&gt;Ce thème « Bilberry » s&amp;rsquo;inspire du thème « Lingonberry » d&amp;rsquo;&lt;a href=&#34;http://www.andersnoren.se/teman/lingonberry-wordpress-theme/&#34;&gt;Anders Norén&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Github</title>
+				<link>http://localhost:1313/fr/page/github/</link>
+				<pubDate>Mon, 01 Nov 2021 13:17:56 +0100</pubDate>
+				<guid>http://localhost:1313/fr/page/github/</guid>
+				<description></description>
+			</item>
+	</channel>
+</rss>

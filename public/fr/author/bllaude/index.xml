@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Bllaude on Site web de Brey Laude</title>
+		<link>http://localhost:1313/fr/author/bllaude/</link>
+		<description>Recent content in Bllaude on Site web de Brey Laude</description>
+		<generator>Hugo</generator>
+		<language>fr</language>
+		
+		
+		
+		
+			<lastBuildDate>Sun, 27 Sep 2026 14:29:10 +0800</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/fr/author/bllaude/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>ESP32 Modbus RTU</title>
+				<link>http://localhost:1313/fr/article/esp32-modbus-rtu/</link>
+				<pubDate>Sun, 27 Sep 2026 14:29:10 +0800</pubDate>
+				<guid>http://localhost:1313/fr/article/esp32-modbus-rtu/</guid>
+				<description>&lt;p&gt;Une implémentation complète du protocole Modbus RTU pour le framework ESP-IDF, prenant en charge à la fois les modes maître et esclave avec un contrôle matériel RS485.&lt;/p&gt;&#xA;&lt;p&gt;Consulter le projet sur &lt;a href=&#34;https://github.com/bllaude/esp32-modbus-rtu&#34;&gt;Github&lt;/a&gt;&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Codex de câblage sur Omniroute en Docker</title>
+				<link>http://localhost:1313/fr/article/wiring-codex-dockerized-omniroute/</link>
+				<pubDate>Mon, 31 Aug 2026 17:01:53 +0800</pubDate>
+				<guid>http://localhost:1313/fr/article/wiring-codex-dockerized-omniroute/</guid>
+				<description>&lt;p&gt;Pour tous ceux qui utilisent Codex avec plusieurs backends (le point de terminaison officiel d’OpenAI, Kimi ou DeepSeek, selon ce qui s’avère le moins cher ou le plus rapide cette semaine-là), le fait de placer Omniroute en amont permet à Codex de n’avoir à connaître qu’une seule URL de base, tandis qu’Omniroute gère les interruptions de service des fournisseurs, les rate-limit et la rotation des identifiants de l’autre côté.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Déploiement d&#39;OmniRoute sur Docker</title>
+				<link>http://localhost:1313/fr/article/deploying-omniroute-docker/</link>
+				<pubDate>Sat, 29 Aug 2026 16:32:11 +0800</pubDate>
+				<guid>http://localhost:1313/fr/article/deploying-omniroute-docker/</guid>
+				<description>&lt;p&gt;Pour moi, exécuter Omniroute sur Docker est la meilleure solution par défaut, tout simplement parce que je ne veux pas qu&amp;rsquo;une installation globale de npm vienne polluer l&amp;rsquo;environnement de mon nœud hôte, et que cela s&amp;rsquo;intègre parfaitement, que la machine soit un serveur domestique, un VPS ou ma machine virtuelle jetable.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Normal Form Designators</title>
+				<link>http://localhost:1313/fr/article/normal-form-designators/</link>
+				<pubDate>Wed, 12 Apr 2023 15:31:47 +0800</pubDate>
+				<guid>http://localhost:1313/fr/article/normal-form-designators/</guid>
+				<description>&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Brian_Cantwell_Smith&#34;&gt;Brian Cantwell Smith&lt;/a&gt; fait partie de ces nombreuses personnes qui sont bien plus intelligentes que moi. C’est grâce à sa thèse au MIT, intitulée &lt;a href=&#34;https://publications.csail.mit.edu/lcs/pubs/pdf/MIT-LCS-TR-272.pdf&#34;&gt;« Procedural Reflection in Programming Languages »&lt;/a&gt; — un sujet à part entière —, que j’ai découvert son travail pour la première fois.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Codes sources des autoradios Subaru à partir de 2020</title>
+				<link>http://localhost:1313/fr/code/subaru-souce-code/</link>
+				<pubDate>Mon, 01 Nov 2021 09:31:27 +0100</pubDate>
+				<guid>http://localhost:1313/fr/code/subaru-souce-code/</guid>
+				<description>&lt;p&gt;Je l&amp;rsquo;ai trouvé il y a un an, j&amp;rsquo;y ai apporté quelques modifications mineures et je l&amp;rsquo;ai compilé avec succès.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

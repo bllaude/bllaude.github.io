@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Statuses on Brey Laude&#39;s Website</title>
+		<link>http://localhost:1313/en/status/</link>
+		<description>Recent content in Statuses on Brey Laude&#39;s Website</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Mon, 29 Apr 2024 10:45:44 +0200</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/en/status/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title></title>
+				<link>http://localhost:1313/en/status/april-can-suck-it/</link>
+				<pubDate>Mon, 29 Apr 2024 10:45:44 +0200</pubDate>
+				<guid>http://localhost:1313/en/status/april-can-suck-it/</guid>
+				<description>&lt;p&gt;A terrible, terrible month for me on many fronts. However, I’m still here, still on board, and still not under indictment (that I know of). May will be better for me or I will set it on fire.&lt;/p&gt;&#xA;&lt;p&gt;The time has come to move hosts. I’m now on a VPS that allows me the ability to do things like, offer SSL by default for free on my site, credits to where credits are due.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

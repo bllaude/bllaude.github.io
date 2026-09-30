@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Statuses on Site web de Brey Laude</title>
+		<link>http://localhost:1313/fr/status/</link>
+		<description>Recent content in Statuses on Site web de Brey Laude</description>
+		<generator>Hugo</generator>
+		<language>fr</language>
+		
+		
+		
+		
+			<lastBuildDate>Mon, 29 Apr 2024 10:45:44 +0200</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/fr/status/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title></title>
+				<link>http://localhost:1313/fr/status/april-can-suck-it/</link>
+				<pubDate>Mon, 29 Apr 2024 10:45:44 +0200</pubDate>
+				<guid>http://localhost:1313/fr/status/april-can-suck-it/</guid>
+				<description>&lt;p&gt;Un mois vraiment, vraiment terrible pour moi à bien des égards. Mais je suis toujours là, toujours dans le coup, et toujours pas mis en examen (à ma connaissance). Le mois de mai devra être meilleur pour moi, sinon je vais tout mettre le feu.&lt;/p&gt;&#xA;&lt;p&gt;Le moment est venu de changer d’hébergeur. Je suis désormais sur un VPS qui me permet, entre autres, d’offrir gratuitement le protocole SSL par défaut sur mon site. Il faut rendre à César ce qui appartient à César.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

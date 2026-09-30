@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+
+
+    
+
+    
+         
+    
+
+    
+
+<html itemscope itemtype="https://schema.org/WebPage" class="no-js" lang="fr">
+
+<head prefix="og: http://ogp.me/ns#"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="siteBaseUrl" content="http://localhost:1313/">
+    <meta name="author" content="bllaude">
+    <meta name="description" content="Bilberry Premium Theme for Hugo.">
+    <meta name="keywords" content="blog,personal,responsive,search,font awesome,pages,posts,multilingual,syntax highlighting,premium,shortcuts">
+    <meta name="generator" content="Hugo 0.165.0">
+    <title>
+        
+           
+               Déploiement d&#39;OmniRoute sur Docker &vert; Site web de Brey Laude
+           
+        
+    </title>
+    <meta itemprop="name" content="Déploiement d&#39;OmniRoute sur Docker">
+    <meta itemprop="description" content="Déploiement d&#39;OmniRoute sur Docker - Bilberry Premium Theme for Hugo.">
+    <meta property="og:site_name" content="Site web de Brey Laude">
+
+    <meta property="og:url" content="http://localhost:1313/fr/article/deploying-omniroute-docker/">
+	<meta property="og:site_name" content="Site web de Brey Laude">
+	<meta property="og:title" content="Déploiement d&#39;OmniRoute sur Docker">
+	<meta property="og:description" content="Pour moi, exécuter Omniroute sur Docker est la meilleure solution par défaut, tout simplement parce que je ne veux pas qu’une installation globale de npm vienne polluer l’environnement de mon nœud hôte, et que cela s’intègre parfaitement, que la machine soit un serveur domestique, un VPS ou ma machine virtuelle jetable.">
+	<meta property="og:locale" content="fr">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="article">
+		<meta property="article:published_time" content="2026-08-29T16:32:11+08:00">
+		<meta property="article:modified_time" content="2026-08-29T16:32:11+08:00">
+		<meta property="article:tag" content="IA">
+		<meta property="article:tag" content="Docker">
+		<meta property="article:tag" content="Compose">
+		<meta property="article:tag" content="Agentic">
+		<meta property="og:image" content="http://localhost:1313/article/deploying-omniroute-docker/featuredImage.png">
+
+
+    
+
+
+    
+
+    
+    <link rel="canonical" href="http://localhost:1313/fr/article/deploying-omniroute-docker/">
+    
+
+    
+        
+
+    <script src="http://localhost:1313/js/check-theme-prefer.js"></script>
+
+
+    
+
+    
+
+
+
+    <link id="theme-css" rel="stylesheet" href="http://localhost:1313/theme.css" media="screen">
+
+
+
+    
+
+
+
+    
+
+    
+</head>
+
+<body class="bilberry-hugo-theme">
+    
+
+    
+    <nav>
+
+    <div class="container">
+        <ul class="topnav">
+            
+                
+                
+                    <li><a href="/fr/page/about-bilberry/">À propos de Bilberry</a></li>
+                
+            
+                
+                
+                    <li><a href="https://github.com/bllaude/bllaude.github.io"
+                           target="_blank">Github</a></li>
+                
+            
+        </ul>
+
+        
+    </div>
+</nav>
+
+
+    
+    <header>
+
+    <a id="back-to-top-button">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <div class="container">
+        <div class="logo">
+            <a href="/fr" class="logo">
+                
+                    
+                    
+                        
+                    
+                    <img src="https://seccdn.libravatar.org/avatar/42dbf737f456c657c7c530f44dff7ee5?d=mm&size=200" alt="">
+                
+
+                <span class="overlay"><i class="fa fa-home"></i></span>
+            </a>
+        </div>
+        <div class="titles">
+            <h3 class="title">
+                <a href="/fr">
+                    Site web de Brey Laude
+                </a>
+            </h3>
+
+            
+                <span class="subtitle">Bonjour tout le monde ! C&#39;est le sous-titre le plus épique de tous les temps.</span>
+            
+        </div>
+        <div class="selectors">
+          
+          <div class="light-dark-mode">
+            <button id="light-dark-toggle" class="fa-solid fa-sun"></button>
+          </div>
+          
+          <div class="languages">
+            
+                
+                
+                  
+                
+
+                
+                    <a href="http://localhost:1313/article/deploying-omniroute-docker/">en</a>
+                
+            
+                
+                
+                  
+                
+
+                
+                    <a href="http://localhost:1313/fr/article/deploying-omniroute-docker/" class="active">fr</a>
+                
+            
+            </div>
+        
+       </div>
+
+        
+            <div class="toggler">
+        
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </div>
+    </div>
+    </div>
+</header>
+
+
+    <div class="main container">
+        
+    <div class="article-wrapper u-cf single">
+        
+            <a class="bubble" href="http://localhost:1313/fr/article/deploying-omniroute-docker/">
+    <i class="fas fa-fw fa-pencil-alt"></i>
+</a>
+
+<article class="default article">
+    
+    <div class="featured-image">
+        <a href="http://localhost:1313/fr/article/deploying-omniroute-docker/">
+            
+                <img src="/article/deploying-omniroute-docker/featuredImage_hu_fa713abec915ada5.png" alt="">
+            
+        </a>
+    </div>
+
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="http://localhost:1313/fr/article/deploying-omniroute-docker/">
+            Déploiement d&#39;OmniRoute sur Docker
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2026-08-29</span>
+            
+        
+
+        
+            
+                <span class="readingTime">3 Min. lecture</span>
+            
+        
+
+        
+
+        
+            <span class="author">
+                
+                
+                    <a href="http://localhost:1313/fr/author/bllaude/">Bllaude</a>
+                
+            </span>
+        
+    </div>
+
+    
+        
+
+        <p>Pour moi, exécuter Omniroute sur Docker est la meilleure solution par défaut, tout simplement parce que je ne veux pas qu&rsquo;une installation globale de npm vienne polluer l&rsquo;environnement de mon nœud hôte, et que cela s&rsquo;intègre parfaitement, que la machine soit un serveur domestique, un VPS ou ma machine virtuelle jetable.</p>
+<h3 id="choisir-la-bonne-image-cible-et-compose-profile">Choisir la bonne image cible et compose profile</h3>
+<p>Le projet fournit un fichier Dockerfile en plusieurs étapes comprenant 3 cibles de compilation. <code>runner-base</code> correspond au runtime autonome Next.js de production, sans CLI de fournisseur intégrée ; c’est le choix approprié si Omniroute doit uniquement servir de proxy pour les requêtes provenant d’une instance Codex exécutée ailleurs.</p>
+<p><code>runner-cli</code> étend ces fonctionnalités avec git, docker.io, docker-compose et les global install de <code>@openai/codex</code>, <code>@anthropic-ai/claude-code</code>, <code>droid</code> et <code>openclaw</code> — ce qui est utile pour les workflows où l’agent lui-même doit résider à l’intérieur du conteneur, mais constitue une solution excessive pour le cas de figure courant où <em>« l’agent s’exécute sur mon ordinateur portable et OmniRoute s’exécute sur un serveur ».</em></p>
+<p>Compose les présente sous forme de profils plutôt que de vous obliger à jongler manuellement avec les cibles du Dockerfile : « base » correspond à l’image « runner-base » minimale, <code>cli</code> intègre les CLI fournies, et « host » est un profil orienté Linux qui monte en lecture seule les binaires CLI de l’hôte et les répertoires de configuration. Un quatrième profil, <code>cliproxyapi</code>, exécute le sidecar CLIProxyAPI sur le port 8317 pour la mise en proxy des CLI en amont et peut être combiné avec n’importe lequel des autres, par exemple : <code>docker compose --profile cli --profile cliproxyapi up -d</code>. Pour une configuration simple, « base » est presque toujours le bon point de départ :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker compose --profile base up -d
+</span></span></code></pre></div><p>Si vous préférez vous passer complètement de Compose, l&rsquo;exécution directe via <code>docker run</code> est tout aussi valable et c&rsquo;est ce que la plupart des déploiements sur un seul serveur finissent par utiliser une fois que le dimensionnement de la mémoire (voir ci-dessous) est bien réglé :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker run -d --name omniroute --restart unless-stopped --stop-timeout <span style="color:#bd93f9">40</span> <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span>  -p 127.0.0.1:20128:20128 -v omniroute-data:/app/data <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span>  diegosouzapw/omniroute:latest
+</span></span></code></pre></div><p>Il est recommandé de configurer par défaut la liaison vers <code>127.0.0.1</code> plutôt que vers <code>0.0.0.0</code>, et de ne l&rsquo;ouvrir qu&rsquo;une fois que vous aurez déterminé comment vous souhaitez réellement exposer le tableau de bord et l&rsquo;API : via Cloudflare Tunnel, Tailscale ou un proxy inverse avec TLS en amont, toutes ces options étant documentées séparément dans la documentation du projet.</p>
+<p>Comme l’image Docker définit toujours explicitement <code>OMNIROUTE_MEMORY_MB</code>, le mécanisme de repli calibré en fonction de la RAM propre au lanceur bare-metal (environ 35 % de la RAM de l’hôte, plafonné entre 512 Mo et 4 Go) ne se déclenche jamais sous Docker - vous êtes censé définir vous-même cette valeur pour les déploiements en conteneur, ce qui diffère du comportement d’<code>omniroute serve</code> en dehors d’un conteneur et mérite d’être pris en compte avant de rechercher un comportement d’autoscaling qui n’existe pas.</p>
+    
+</div>
+
+    
+<div class="footer">
+
+
+    
+        <div class="tags">
+            <i class="fa fa-tags"></i>
+            <div class="links">
+                
+                    
+                    
+                    <a href="http://localhost:1313/fr/tags/ia/">IA</a>
+                    
+                
+                    
+                    
+                    <a href="http://localhost:1313/fr/tags/docker/">Docker</a>
+                    
+                
+                    
+                    
+                    <a href="http://localhost:1313/fr/tags/compose/">Compose</a>
+                    
+                
+                    
+                    
+                    <a href="http://localhost:1313/fr/tags/agentic/">Agentic</a>
+                    
+                
+            </div>
+        </div>
+    
+
+    
+    <div class="languages">
+        <i class="fa fa-language"></i>
+        <div class="links">
+            
+                <a href="http://localhost:1313/article/deploying-omniroute-docker/">en</a>
+            
+        </div>
+    </div>
+    
+</div>
+
+</article>
+
+        
+    </div>
+
+    
+        <div id="comments-container">
+            
+            
+
+            
+
+            
+
+        </div>
+    
+
+    </div>
+
+    
+<footer>
+    <div class="container">
+
+        
+        <div class="recent-posts">
+            <strong>Derniers articles</strong>
+            <ul>
+                
+                
+                    <li>
+                        <a href="http://localhost:1313/fr/article/esp32-modbus-rtu/">ESP32 Modbus RTU</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:1313/fr/article/wiring-codex-dockerized-omniroute/">Codex de câblage sur Omniroute en Docker</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:1313/fr/article/deploying-omniroute-docker/">Déploiement d&#39;OmniRoute sur Docker</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:1313/fr/article/normal-form-designators/">Normal Form Designators</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:1313/fr/article/installing-linux-external-ssd/">Installation de Linux sur un SSD externe</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:1313/fr/code/subaru-souce-code/">Codes sources des autoradios Subaru à partir de 2020</a>
+                    </li>
+                
+            </ul>
+        </div>
+        
+
+        
+        <div class="categories">
+            
+            <a href="http://localhost:1313/fr/categories/"><strong>Catégories</strong></a>
+            
+
+            <ul>
+                
+                <li>
+                
+                    <a href="http://localhost:1313/fr/categories/tutoriel/">Tutoriel (1)</a>
+                
+                </li>
+                
+            </ul>
+        </div>
+        
+
+        <div class="right">
+            
+            <div class="external-profiles">
+                <strong>Des médias sociaux</strong>
+                
+                <a href="https://twitter.com/breylaude" target="_blank" rel="me"><em class="fab fa-twitter"></em></a>
+                
+                <a href="https://github.com/bllaude" target="_blank" rel=""><em class="fab fa-github"></em></a>
+                
+            </div>
+            
+
+            <div class="languages">
+                    <strong>Autres langues</strong>
+                    
+                        
+                        
+                            
+                        
+
+                        
+                            <a href="http://localhost:1313/article/deploying-omniroute-docker/">en</a>
+                        
+                    
+                        
+                        
+                            
+                        
+
+                        
+                            <a href="http://localhost:1313/fr/article/deploying-omniroute-docker/" class="active">fr</a>
+                        
+                    
+                </div>
+            
+
+            
+            <div class="archive">
+                
+                <a href="http://localhost:1313/fr/archive/"><strong>Archives</strong></a>
+                
+            </div>
+            
+        </div>
+    </div>
+</footer>
+
+
+<div class="credits">
+    <div class="container">
+        <div class="copyright">
+            <a href="https://github.com/bllaude" target="_blank">
+                &copy;
+                
+                2026
+                
+                Brey Laude
+            </a>
+            
+        </div>
+        <div class="author">
+            <a href="https://github.com/Lednerb/bilberry-hugo-theme"
+                target="_blank">Bilberry Hugo</a>
+        </div>
+    </div>
+</div>
+
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+
+
+
+    
+    
+
+
+
+
+
+
+
+    <script src="http://localhost:1313/theme.js"></script>
+
+
+
+    
+
+
+
+    
+
+    
+</body>
+
+</html>

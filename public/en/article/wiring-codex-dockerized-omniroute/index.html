@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+
+
+    
+
+    
+         
+    
+
+    
+
+<html itemscope itemtype="https://schema.org/WebPage" class="no-js" lang="en">
+
+<head prefix="og: http://ogp.me/ns#"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="siteBaseUrl" content="http://localhost:1313/">
+    <meta name="author" content="bllaude">
+    <meta name="description" content="Bilberry Premium Theme for Hugo.">
+    <meta name="keywords" content="blog,personal,responsive,search,font awesome,pages,posts,multilingual,syntax highlighting,premium,shortcuts">
+    <meta name="generator" content="Hugo 0.165.0">
+    <title>
+        
+           
+               Wiring Codex on Dockerized Omniroute &vert; Brey Laude&#39;s Website
+           
+        
+    </title>
+    <meta itemprop="name" content="Wiring Codex on Dockerized Omniroute">
+    <meta itemprop="description" content="Wiring Codex on Dockerized Omniroute - Bilberry Premium Theme for Hugo.">
+    <meta property="og:site_name" content="Brey Laude&#39;s Website">
+
+    <meta property="og:url" content="http://localhost:1313/en/article/wiring-codex-dockerized-omniroute/">
+	<meta property="og:site_name" content="Brey Laude&#39;s Website">
+	<meta property="og:title" content="Wiring Codex on Dockerized Omniroute">
+	<meta property="og:description" content="For anyone running Codex against multiple backends - official OpenAI, Kimi or DeepSeek endpoint, whatever happens to be cheapest or fastest that week - putting omniroute in front of it means Codex only ever needs to know about one base URL, while omniroute absorbs the churn of provider outages, rate limits, and credential rotation on the other side.">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="article">
+		<meta property="article:published_time" content="2026-08-31T17:01:53+08:00">
+		<meta property="article:modified_time" content="2026-08-31T17:01:53+08:00">
+		<meta property="article:tag" content="Codex">
+		<meta property="article:tag" content="Docker">
+		<meta property="article:tag" content="Omniroute">
+		<meta property="og:image" content="http://localhost:1313/article/wiring-codex-dockerized-omniroute/featuredImage.gif">
+
+
+    
+
+
+    
+
+    
+    <link rel="canonical" href="http://localhost:1313/en/article/wiring-codex-dockerized-omniroute/">
+    
+
+    
+        
+
+    <script src="http://localhost:1313/js/check-theme-prefer.js"></script>
+
+
+    
+
+    
+
+
+
+    <link id="theme-css" rel="stylesheet" href="http://localhost:1313/theme.css" media="screen">
+
+
+
+    
+
+
+
+    
+
+    
+</head>
+
+<body class="bilberry-hugo-theme">
+    
+
+    
+    <nav>
+
+    <div class="container">
+        <ul class="topnav">
+            
+                
+                
+                    <li><a href="/en/page/about-bilberry/">About Bilberry</a></li>
+                
+            
+                
+                
+                    <li><a href="https://github.com/bllaude/bllaude.github.io"
+                           target="_blank">Github</a></li>
+                
+            
+        </ul>
+
+        
+    </div>
+</nav>
+
+
+    
+    <header>
+
+    <a id="back-to-top-button">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <div class="container">
+        <div class="logo">
+            <a href="/en" class="logo">
+                
+                    
+                    
+                        
+                    
+                    <img src="https://seccdn.libravatar.org/avatar/42dbf737f456c657c7c530f44dff7ee5?d=mm&size=200" alt="">
+                
+
+                <span class="overlay"><i class="fa fa-home"></i></span>
+            </a>
+        </div>
+        <div class="titles">
+            <h3 class="title">
+                <a href="/en">
+                    Brey Laude&#39;s Website
+                </a>
+            </h3>
+
+            
+                <span class="subtitle">Hello World! This is the most epic subtitle ever.</span>
+            
+        </div>
+        <div class="selectors">
+          
+          <div class="light-dark-mode">
+            <button id="light-dark-toggle" class="fa-solid fa-sun"></button>
+          </div>
+          
+          <div class="languages">
+            
+                
+                
+                  
+                
+
+                
+                    <a href="http://localhost:1313/en/article/wiring-codex-dockerized-omniroute/" class="active">en</a>
+                
+            
+                
+                
+                  
+                
+
+                
+                    <a href="http://localhost:1313/article/wiring-codex-dockerized-omniroute/">fr</a>
+                
+            
+            </div>
+        
+       </div>
+
+        
+            <div class="toggler">
+        
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </div>
+    </div>
+    </div>
+</header>
+
+
+    <div class="main container">
+        
+    <div class="article-wrapper u-cf single">
+        
+            <a class="bubble" href="http://localhost:1313/en/article/wiring-codex-dockerized-omniroute/">
+    <i class="fas fa-fw fa-pencil-alt"></i>
+</a>
+
+<article class="default article">
+    
+    <div class="featured-image">
+        <a href="http://localhost:1313/en/article/wiring-codex-dockerized-omniroute/">
+            
+                <img src="/article/wiring-codex-dockerized-omniroute/featuredImage_hu_f82704c0039cb34d.gif" alt="">
+            
+        </a>
+    </div>
+
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="http://localhost:1313/en/article/wiring-codex-dockerized-omniroute/">
+            Wiring Codex on Dockerized Omniroute
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2026-08-31</span>
+            
+        
+
+        
+            
+                <span class="readingTime">6 min read</span>
+            
+        
+
+        
+
+        
+            <span class="author">
+                
+                
+                    <a href="http://localhost:1313/en/author/bllaude/">Bllaude</a>
+                
+            </span>
+        
+    </div>
+
+    
+        
+
+        <p>For anyone running Codex against multiple backends - official OpenAI, Kimi or DeepSeek endpoint, whatever happens to be cheapest or fastest that week - putting omniroute in front of it means Codex only ever needs to know about one base URL, while omniroute absorbs the churn of provider outages, rate limits, and credential rotation on the other side.</p>
+<h2 id="memory-sizing">Memory sizing</h2>
+<p>This caught me the first time I pointed codex at a self-hosted omniroute container. The image ships with <code>OMNIROUTE_MEMORY_MB=1024</code>, which derives a 1 GiB V8 old-space ceiling via <code>NODE_OPTIONS=--max-old-space-size</code>. That’s fine for the dashboard and light chat traffic, and it’s a hard floor, not a production size. Codex’s <code>POST /v1/responses</code> calls carry long message histories and tool definitions, and omniroute’s <code>RTK+Caveman</code> compression pipeline retains multiple in-memory graphs while processing them.</p>
+<p>A single coding-agent session routinely needs <code>OMNIROUTE_MEMORY_MB=8192</code> with the container’s cgroup memory limit set comfortably above that — <code>--memory=10g</code> or higher - because native buffers, SQLite, and compression intermediates all sit outside the V8 heap and aren’t covered by the heap ceiling itself. Two overlapping long-context requests have been observed aborting a 12 GiB heap outright with <code>FATAL ERROR: Reached heap limit</code>, so if you’re running codex alongside anything else concurrently, size up further or keep concurrency to one heavy in-flight request per process rather than raising <code>OMNIROUTE_CHAT_MAX_HEAVY_IN_FLIGHT</code> and hoping the RAM keeps up.</p>
+<p>The corrected command looks like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker run -d --name omniroute --restart unless-stopped --stop-timeout <span style="color:#bd93f9">40</span> <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span>-e <span style="color:#8be9fd;font-style:italic">OMNIROUTE_MEMORY_MB</span><span style="color:#ff79c6">=</span><span style="color:#bd93f9">8192</span> --memory<span style="color:#ff79c6">=</span>10g <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span>-p 127.0.0.1:20128:20128 -v omniroute-data:/app/data <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span>diegosouzapw/omniroute:latest
+</span></span></code></pre></div><p>This is the part that trips me up conceptually, omniroute’s <code>setup-codex</code> command writes real files into ~<code>/.codex</code> on whatever machine runs it, and if that machine is the container itself, the write lands in the container’s ephemeral home directory (<code>/home/node</code>, since the image runs as the unprivileged node user) and vanishes the moment the container is recreated. Omniroute actually detects this and refuses rather than silently reporting <code>success: the CLI exits with status 2</code>, and the API layer returns a 422 with <code>containerEphemeralTarget: true</code>.</p>
+<p>The documented and recommended pattern keeps the 2 concerns separate: the container serves the OpenAI-compatible API, and the CLI - installed on your actual laptop or workstation, wherever codex itself runs - handles writing the config that codex reads:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker compose --profile base up -d
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>npm install -g omniroute
+</span></span><span style="display:flex;"><span>omniroute connect http://localhost:20128
+</span></span><span style="display:flex;"><span>omniroute setup-codex
+</span></span></code></pre></div><p>Omniroute connect points the locally installed CLI at the container’s exposed port, and omniroute setup-codex then writes the actual <code>~/.codex/*.config.toml</code> on the host, pointing codex at omniroute’s base URL and injecting whatever API key the dashboard generated under <code>Dashboard → Endpoints</code>. This is the right shape for the overwhelmingly common setup where codex runs locally and omniroute runs on a server or in a local container.</p>
+<p>If you specifically want the container to be able to write host configs directly - say, orchestrating setup from inside a script that already runs in-container - the host <code>Compose</code> profile bind-mounts the relevant directories and sets <code>CLI_CONFIG_HOME</code> to the mount root:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#ff79c6">environment</span>:
+</span></span><span style="display:flex;"><span>  - CLI_CONFIG_HOME=/host-home
+</span></span><span style="display:flex;"><span>  - CLI_ALLOW_CONFIG_WRITES=true
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">volumes</span>:
+</span></span><span style="display:flex;"><span>  - ~/.codex:/host-home/.codex:rw
+</span></span><span style="display:flex;"><span>  - ~/.claude:/host-home/.claude:rw
+</span></span></code></pre></div><p>Omniroute treats the presence of a genuine bind mount, verified by reading <code>/proc/self/mountinfo</code>, as the signal that a path is trustworthy enough to write into; it refuses writes to anything that isn’t actually mounted through from the host, which is what stops the ephemeral-write footgun from being possible even if you try.</p>
+<p>There’s also a deliberate escape hatch for the case where codex is meant to live inside the container itself (the cli profile) - passing <code>--allow-container-write</code> to <code>setup-codex</code>, or setting <code>OMNIROUTE_ALLOW_CONTAINER_CONFIG_WRITE=true</code> on the server, lets the write proceed with an explicit warning that it won’t survive a container recreation.</p>
+<h2 id="redis-persistence-and-the-things-that-bite-on-restart">Redis, persistence, and the things that bite on restart</h2>
+<p>Redis backs omniroute’s distributed rate limiter and shared cache, and the redis service in <code>docker-compose.yml</code> has no profile gate - it starts alongside whichever profile you choose. It’s published only to <code>127.0.0.1</code> by default because it runs without requirepass; if you need it reachable from elsewhere on the network, set <code>REDIS_BIND_HOST=0.0.0.0</code> and add <code>--requirepass</code> to the service command in the same change, not as a follow-up.</p>
+<p>Disabling Redis is possible but not recommended, since the rate limiter degrades to an in-memory fallback that doesn’t survive restarts or scale across processes.</p>
+<p>Two operational details are easy to overlook and both matter specifically for a codex workflow that’s mid-session when something goes wrong. First, omniroute uses SQLite in WAL mode by default, and it needs docker stop to actually finish - not get killed - so it can checkpoint into <code>storage.sqlite;</code> the bundled Compose files set a 40-second stop grace period for this reason, and if you’re running the bare docker run form, keep <code>--stop-timeout 40</code> rather than trusting the Docker default.</p>
+<p>Second, the stock deployment is one Node process backed by one SQLite writer, full stop - there is no supported way to run multiple replicas against the same SQLite file, and doing so corrupts the database. A recreate, restart, or failed healthcheck means a full outage of any in-flight codex session: SSE streams drop, and requests that land during the gap get a bare <code>502 Bad Gateway</code> from whatever’s in front rather than a JSON error omniroute itself would produce, which can look confusingly like a provider-side failure rather than an infrastructure one. If you genuinely need more than one or two concurrent long-context codex sessions, the documented path is <code>N</code> independent processes with separate <code>DATA_DIR</code> volumes and <code>QUOTA_STORE_DRIVER=redis</code> for shared quota counting - not <code>replicas &gt; 1</code> against shared storage.</p>
+<p>Always mount <code>/app/data</code> to a named volume regardless of which profile you pick; it’s where the db, encrypted provider credentials, and configuration live, and skipping it means every container recreation starts from zero.</p>
+<h2 id="a-reasonable-baseline">A reasonable baseline</h2>
+<p>Putting the pieces together, a single-box deployment intended to front codex reliably looks like this in Compose:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#ff79c6">services</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">omniroute</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">image</span>: diegosouzapw/omniroute:latest
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">container_name</span>: omniroute
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">restart</span>: unless-stopped
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">stop_grace_period</span>: 40s
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">environment</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">OMNIROUTE_MEMORY_MB</span>: <span style="color:#f1fa8c">&#34;8192&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">OMNIROUTE_WS_BRIDGE_SECRET</span>: <span style="color:#f1fa8c">&#34;&lt;generate a strong random value&gt;&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">volumes</span>:
+</span></span><span style="display:flex;"><span>      - omniroute-data:/app/data
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">ports</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#f1fa8c">&#34;127.0.0.1:20128:20128&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">deploy</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">resources</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">limits</span>:
+</span></span><span style="display:flex;"><span>          <span style="color:#ff79c6">memory</span>: 10g
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">volumes</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">omniroute-data</span>:
+</span></span></code></pre></div><p>Bring it up with <code>docker compose --profile base up -d</code>, then run <code>npm install -g omniroute</code>, <code>omniroute connect http://localhost:20128</code>, and <code>omniroute setup-codex</code> from the machine where codex actually runs.</p>
+<p>Pin the image tag to a specific <code>X.Y.Z</code> release rather than tracking <code>:latest</code> if this is anything other than a personal box you don’t mind recreating on a whim — <code>:latest</code> only moves when a stable <code>SemVer version</code> is published and promoted, so it’s not a currency guarantee for whatever landed on main yesterday, and pinning is what makes the deployment reproducible when you inevitably need to roll back after a bad provider or memory-sizing surprise.</p>
+    
+</div>
+
+    
+<div class="footer">
+
+
+    
+        <div class="tags">
+            <i class="fa fa-tags"></i>
+            <div class="links">
+                
+                    
+                    
+                    <a href="http://localhost:1313/en/tags/codex/">Codex</a>
+                    
+                
+                    
+                    
+                    <a href="http://localhost:1313/en/tags/docker/">Docker</a>
+                    
+                
+                    
+                    
+                    <a href="http://localhost:1313/en/tags/omniroute/">Omniroute</a>
+                    
+                
+            </div>
+        </div>
+    
+
+    
+    <div class="languages">
+        <i class="fa fa-language"></i>
+        <div class="links">
+            
+                <a href="http://localhost:1313/article/wiring-codex-dockerized-omniroute/">fr</a>
+            
+        </div>
+    </div>
+    
+</div>
+
+</article>
+
+        
+    </div>
+
+    
+        <div id="comments-container">
+            
+            
+
+            
+
+            
+
+        </div>
+    
+
+    </div>
+
+    
+<footer>
+    <div class="container">
+
+        
+        <div class="recent-posts">
+            <strong>Latest posts</strong>
+            <ul>
+                
+                
+                    <li>
+                        <a href="http://localhost:1313/en/article/esp32-modbus-rtu/">ESP32 Modbus RTU</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:1313/en/article/wiring-codex-dockerized-omniroute/">Wiring Codex on Dockerized Omniroute</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:1313/en/article/deploying-omniroute-docker/">Deploying Omniroute on Docker</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:1313/en/article/normal-form-designators/">Normal Form Designators</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:1313/en/article/installing-linux-external-ssd/">Installing Linux on External SSD</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:1313/en/article/support-and-discussions/">Support and Discussions</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:1313/en/code/subaru-souce-code/">2020&#43; Subaru Head unit Source Codes</a>
+                    </li>
+                
+            </ul>
+        </div>
+        
+
+        
+        <div class="categories">
+            
+            <a href="http://localhost:1313/en/categories/"><strong>Categories</strong></a>
+            
+
+            <ul>
+                
+                <li>
+                
+                    <a href="http://localhost:1313/en/categories/tutorial/">Tutorial (1)</a>
+                
+                </li>
+                
+            </ul>
+        </div>
+        
+
+        <div class="right">
+            
+            <div class="external-profiles">
+                <strong>Social media</strong>
+                
+                <a href="https://twitter.com/breylaude" target="_blank" rel="me"><em class="fab fa-twitter"></em></a>
+                
+                <a href="https://github.com/bllaude" target="_blank" rel=""><em class="fab fa-github"></em></a>
+                
+            </div>
+            
+
+            <div class="languages">
+                    <strong>Other languages</strong>
+                    
+                        
+                        
+                            
+                        
+
+                        
+                            <a href="http://localhost:1313/en/article/wiring-codex-dockerized-omniroute/" class="active">en</a>
+                        
+                    
+                        
+                        
+                            
+                        
+
+                        
+                            <a href="http://localhost:1313/article/wiring-codex-dockerized-omniroute/">fr</a>
+                        
+                    
+                </div>
+            
+
+            
+            <div class="archive">
+                
+                <a href="http://localhost:1313/en/archive/"><strong>Archive</strong></a>
+                
+            </div>
+            
+        </div>
+    </div>
+</footer>
+
+
+<div class="credits">
+    <div class="container">
+        <div class="copyright">
+            <a href="https://github.com/bllaude" target="_blank">
+                &copy;
+                
+                2026
+                
+                Brey Laude
+            </a>
+            
+        </div>
+        <div class="author">
+            <a href="https://github.com/Lednerb/bilberry-hugo-theme"
+                target="_blank">Bilberry Hugo</a>
+        </div>
+    </div>
+</div>
+
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+
+
+
+    
+    
+
+
+
+
+
+
+
+    <script src="http://localhost:1313/theme.js"></script>
+
+
+
+    
+
+
+
+    
+
+    
+</body>
+
+</html>

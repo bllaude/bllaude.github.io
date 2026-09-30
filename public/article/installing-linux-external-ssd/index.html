@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+
+
+  
+<html itemscope itemtype="https://schema.org/WebPage" class="no-js" lang="en">
+
+<head prefix="og: http://ogp.me/ns#"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="siteBaseUrl" content="http://localhost:1313/">
+    <meta name="author" content="bllaude">
+    <meta name="description" content="Bilberry Premium Theme for Hugo.">
+    <meta name="keywords" content="blog,personal,responsive,search,font awesome,pages,posts,multilingual,syntax highlighting,premium,shortcuts">
+    <meta name="generator" content="Hugo 0.165.0">
+    <title>
+        
+           
+               Installing Linux on External SSD &vert; Brey Laude&#39;s Website
+           
+        
+    </title>
+    <meta itemprop="name" content="Installing Linux on External SSD">
+    <meta itemprop="description" content="Installing Linux on External SSD - Bilberry Premium Theme for Hugo.">
+    <meta property="og:site_name" content="Brey Laude&#39;s Website">
+
+    <meta property="og:url" content="http://localhost:1313/article/installing-linux-external-ssd/">
+	<meta property="og:site_name" content="Brey Laude&#39;s Website">
+	<meta property="og:title" content="Installing Linux on External SSD">
+	<meta property="og:description" content="I wanted to install Linux on a portable SSD and make it bootable from my laptop, it required UEFI support. I came up with my own method since I couldn’t find a better way to do it online.">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="article">
+		<meta property="article:published_time" content="2022-08-03T18:03:48+08:00">
+		<meta property="article:modified_time" content="2022-08-03T18:03:48+08:00">
+		<meta property="article:tag" content="Linux">
+		<meta property="article:tag" content="Tutorial">
+
+
+    
+
+
+    
+
+    
+    <link rel="canonical" href="http://localhost:1313/article/installing-linux-external-ssd/">
+    
+
+    
+        
+
+    <script src="http://localhost:1313/js/check-theme-prefer.js"></script>
+
+
+    
+
+    
+
+
+
+    <link id="theme-css" rel="stylesheet" href="http://localhost:1313/theme.css" media="screen">
+
+
+
+    
+
+
+
+    
+
+    
+</head>
+
+<body class="bilberry-hugo-theme">
+    
+
+    
+    <nav>
+
+    <div class="container">
+        <ul class="topnav">
+            
+                
+                
+                    <li><a href="/page/about-bilberry/">About Bilberry</a></li>
+                
+            
+                
+                
+                    <li><a href="https://github.com/bllaude/bllaude.github.io"
+                           target="_blank">Github</a></li>
+                
+            
+        </ul>
+
+        
+    </div>
+</nav>
+
+
+    
+    <header>
+
+    <a id="back-to-top-button">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <div class="container">
+        <div class="logo">
+            <a href="/" class="logo">
+                
+                    
+                    
+                        
+                    
+                    <img src="https://seccdn.libravatar.org/avatar/42dbf737f456c657c7c530f44dff7ee5?d=mm&size=200" alt="">
+                
+
+                <span class="overlay"><i class="fa fa-home"></i></span>
+            </a>
+        </div>
+        <div class="titles">
+            <h3 class="title">
+                <a href="/">
+                    Brey Laude&#39;s Website
+                </a>
+            </h3>
+
+            
+                <span class="subtitle">Hello World! This is the most epic subtitle ever.</span>
+            
+        </div>
+        <div class="selectors">
+          
+          <div class="light-dark-mode">
+            <button id="light-dark-toggle" class="fa-solid fa-sun"></button>
+          </div>
+          
+          <div class="languages">
+            
+                
+                
+                  
+                
+
+                
+                    <a href="http://localhost:1313/article/installing-linux-external-ssd/" class="active">en</a>
+                
+            
+                
+                
+                  
+                
+
+                
+                    <a href="http://localhost:1313/fr/article/installing-linux-external-ssd/">fr</a>
+                
+            
+            </div>
+        
+       </div>
+
+        
+            <div class="toggler">
+        
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </div>
+    </div>
+    </div>
+</header>
+
+
+    <div class="main container">
+        
+    <div class="article-wrapper u-cf single">
+        
+            <a class="bubble" href="http://localhost:1313/article/installing-linux-external-ssd/">
+    <i class="fas fa-fw fa-pencil-alt"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="http://localhost:1313/article/installing-linux-external-ssd/">
+            Installing Linux on External SSD
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2022-08-03</span>
+            
+        
+
+        
+            
+                <span class="readingTime">3 min read</span>
+            
+        
+
+        
+            <span class="categories">
+                
+                    
+                    
+                        <a href="http://localhost:1313/categories/tutorial/">Tutorial</a>
+                    
+                
+            </span>
+        
+
+        
+    </div>
+
+    
+        
+
+        <p>I wanted to install Linux on a portable SSD and make it bootable from my laptop, it required UEFI support. I came up with my own method since I couldn’t find a better way to do it online.</p>
+<p>First I&rsquo;ll touch base on the difference between BIOS, EFI and UEFI. These are all methods of booting an operating system. BIOS is the legacy boot mode found on older computers. Newer computers, such as Macbook, uses UEFI (which is the successor to EFI) which requires some more steps than BIOS when installing the OS.</p>
+<p>To make a UEFI Linux install bootable, the drive must have a EFI boot partition, which is a FAT32 formatted partition that is at least 200MB big. To do a UEFI install, the install disk must also be in UEFI mode (if its not, it will not install a UEFI version of Linux).</p>
+<h2 id="approach">Approach</h2>
+<p>Most methods I found involved booting the system via the Live CD and installing the operating system unto the connected external HDD. However, what I found is it will overwrite the bootloader on the computer’s internal drive, after the install the drive must be repaired to make the machine bootable again.</p>
+<p>My solution is to create a virtual machine (using VirtualBox) to boot the Linux Live CD from and install the OS and install the operating system onto the external HDD within the VM. This approach won’t affect the internal drive in any way (as the VM is completely sandboxed) and should work with most Linux operating systems.</p>
+<h2 id="steps">Steps</h2>
+<ol>
+<li>Install <a href="https://www.virtualbox.org/wiki/Downloads">Virtualbox</a></li>
+<li>Install <em>Oracle VM VirtualBox Extension Pack</em>. This is needed to connect <code>USB2.0</code> and <code>USB3.0</code> drives to the virtual machine.</li>
+<li>If your host operating system is Linux, make sure your user is in the <code>vboxusers</code> group using <code>sudo usermod -aG vboxusers $USER</code>, make sure to reboot to refresh the groups.</li>
+<li>Download your Linux distro of choice. Make sure its 64-bit for UEFI support</li>
+<li>Create a new virtual machine in VirtualBox</li>
+<li>Do not add a virtual hard disk, as we will be mounting the external HDD into the VM to act as the disk</li>
+<li>Go into the VM settings and enable EFI support (<code>Under System &gt; Enable EFI</code>).</li>
+<li>Under USB, select the USB controller, try <code>USB3.0</code> first and if it doesn’t work try <code>USB2.0</code></li>
+<li>Boot up the virtual machine, when asked supply the ISO image to use,</li>
+<li>Mount the USB hard drive by clicking the USB icon at the bottom of the virtualbox window and selecting the USB drive (if you don’t see the drive, try changing your USB controller in the options, see step 8).</li>
+<li>Start the installer as normal</li>
+<li>During disk partitioning, ensure you have at least 3 partitions: <code>EFI Boot Partition</code> (<code>FAT32</code>, at least 200MB), / (<code>Root mountpoint</code>, <code>EXT4</code>), Swap (Should be around the size of your computer’s RAM capacity).</li>
+<li>Install as normal</li>
+<li>Shutdown the VM and the computer, try to boot the external HDD on the computer.</li>
+</ol>
+<h2 id="result">Result</h2>
+<ul>
+<li>Bootable system with UEFI support, that works on different computers</li>
+<li>Makes no changes to the computers internal HDD during installation</li>
+<li>Tested with Ubuntu</li>
+</ul>
+    
+</div>
+
+    
+<div class="footer">
+
+
+    
+        <div class="tags">
+            <i class="fa fa-tags"></i>
+            <div class="links">
+                
+                    
+                    
+                    <a href="http://localhost:1313/tags/linux/">Linux</a>
+                    
+                
+                    
+                    
+                    <a href="http://localhost:1313/tags/tutorial/">Tutorial</a>
+                    
+                
+            </div>
+        </div>
+    
+
+    
+    <div class="languages">
+        <i class="fa fa-language"></i>
+        <div class="links">
+            
+                <a href="http://localhost:1313/fr/article/installing-linux-external-ssd/">fr</a>
+            
+        </div>
+    </div>
+    
+</div>
+
+</article>
+
+        
+    </div>
+
+    
+        <div id="comments-container">
+            
+            
+
+            
+
+            
+
+        </div>
+    
+
+    </div>
+
+    
+<footer>
+    <div class="container">
+
+        
+        <div class="recent-posts">
+            <strong>Latest posts</strong>
+            <ul>
+                
+                
+                    <li>
+                        <a href="http://localhost:1313/audio/spotify/">Spotify</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:1313/article/esp32-modbus-rtu/">ESP32 Modbus RTU</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:1313/article/wiring-codex-dockerized-omniroute/">Wiring Codex on Dockerized Omniroute</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:1313/article/deploying-omniroute-docker/">Deploying Omniroute on Docker</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:1313/code/leetcode/">https://leetcode.com/brey-laude/</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:1313/article/normal-form-designators/">Normal Form Designators</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:1313/article/installing-linux-external-ssd/">Installing Linux on External SSD</a>
+                    </li>
+                
+            </ul>
+        </div>
+        
+
+        
+        <div class="categories">
+            
+            <a href="http://localhost:1313/categories/"><strong>Categories</strong></a>
+            
+
+            <ul>
+                
+                <li>
+                
+                    <a href="http://localhost:1313/categories/accounts/">Accounts (1)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="http://localhost:1313/categories/code/">Code (1)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="http://localhost:1313/categories/privacy/">Privacy (1)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="http://localhost:1313/categories/society/">Society (1)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="http://localhost:1313/categories/tutorial/">Tutorial (1)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="http://localhost:1313/categories/tutorials/">Tutorials (1)</a>
+                
+                </li>
+                
+            </ul>
+        </div>
+        
+
+        <div class="right">
+            
+            <div class="external-profiles">
+                <strong>Social media</strong>
+                
+                <a href="https://twitter.com/breylaude" target="_blank" rel="me"><em class="fab fa-twitter"></em></a>
+                
+                <a href="https://github.com/bllaude" target="_blank" rel=""><em class="fab fa-github"></em></a>
+                
+            </div>
+            
+
+            <div class="languages">
+                    <strong>Other languages</strong>
+                    
+                        
+                        
+                            
+                        
+
+                        
+                            <a href="http://localhost:1313/article/installing-linux-external-ssd/" class="active">en</a>
+                        
+                    
+                        
+                        
+                            
+                        
+
+                        
+                            <a href="http://localhost:1313/fr/article/installing-linux-external-ssd/">fr</a>
+                        
+                    
+                </div>
+            
+
+            
+            <div class="archive">
+                
+                <a href="http://localhost:1313/archive/"><strong>Archive</strong></a>
+                
+            </div>
+            
+        </div>
+    </div>
+</footer>
+
+
+<div class="credits">
+    <div class="container">
+        <div class="copyright">
+            <a href="https://github.com/bllaude" target="_blank">
+                &copy;
+                
+                2026
+                
+                Brey Laude
+            </a>
+            
+        </div>
+        <div class="author">
+            <a href="https://github.com/Lednerb/bilberry-hugo-theme"
+                target="_blank">Bilberry Hugo</a>
+        </div>
+    </div>
+</div>
+
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+
+
+
+    
+    
+
+
+
+
+
+
+
+    <script src="http://localhost:1313/theme.js"></script>
+
+
+
+    
+
+
+
+    
+
+    
+</body>
+
+</html>

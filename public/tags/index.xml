@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Tags on Brey Laude&#39;s Website</title>
+		<link>http://localhost:1313/tags/</link>
+		<description>Recent content in Tags on Brey Laude&#39;s Website</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Mon, 31 Aug 2026 17:01:53 +0800</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Codex</title>
+				<link>http://localhost:1313/tags/codex/</link>
+				<pubDate>Mon, 31 Aug 2026 17:01:53 +0800</pubDate>
+				<guid>http://localhost:1313/tags/codex/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Docker</title>
+				<link>http://localhost:1313/tags/docker/</link>
+				<pubDate>Mon, 31 Aug 2026 17:01:53 +0800</pubDate>
+				<guid>http://localhost:1313/tags/docker/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Omniroute</title>
+				<link>http://localhost:1313/tags/omniroute/</link>
+				<pubDate>Mon, 31 Aug 2026 17:01:53 +0800</pubDate>
+				<guid>http://localhost:1313/tags/omniroute/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Agentic</title>
+				<link>http://localhost:1313/tags/agentic/</link>
+				<pubDate>Sat, 29 Aug 2026 16:32:11 +0800</pubDate>
+				<guid>http://localhost:1313/tags/agentic/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>AI</title>
+				<link>http://localhost:1313/tags/ai/</link>
+				<pubDate>Sat, 29 Aug 2026 16:32:11 +0800</pubDate>
+				<guid>http://localhost:1313/tags/ai/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Compose</title>
+				<link>http://localhost:1313/tags/compose/</link>
+				<pubDate>Sat, 29 Aug 2026 16:32:11 +0800</pubDate>
+				<guid>http://localhost:1313/tags/compose/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Programming</title>
+				<link>http://localhost:1313/tags/programming/</link>
+				<pubDate>Wed, 12 Apr 2023 15:31:47 +0800</pubDate>
+				<guid>http://localhost:1313/tags/programming/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Software</title>
+				<link>http://localhost:1313/tags/software/</link>
+				<pubDate>Wed, 12 Apr 2023 15:31:47 +0800</pubDate>
+				<guid>http://localhost:1313/tags/software/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Linux</title>
+				<link>http://localhost:1313/tags/linux/</link>
+				<pubDate>Wed, 03 Aug 2022 18:03:48 +0800</pubDate>
+				<guid>http://localhost:1313/tags/linux/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Tutorial</title>
+				<link>http://localhost:1313/tags/tutorial/</link>
+				<pubDate>Wed, 03 Aug 2022 18:03:48 +0800</pubDate>
+				<guid>http://localhost:1313/tags/tutorial/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Discussions</title>
+				<link>http://localhost:1313/tags/discussions/</link>
+				<pubDate>Mon, 01 Nov 2021 18:10:14 +0100</pubDate>
+				<guid>http://localhost:1313/tags/discussions/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Ideas</title>
+				<link>http://localhost:1313/tags/ideas/</link>
+				<pubDate>Mon, 01 Nov 2021 18:10:14 +0100</pubDate>
+				<guid>http://localhost:1313/tags/ideas/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Q&amp;A</title>
+				<link>http://localhost:1313/tags/qa/</link>
+				<pubDate>Mon, 01 Nov 2021 18:10:14 +0100</pubDate>
+				<guid>http://localhost:1313/tags/qa/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Show and Tell</title>
+				<link>http://localhost:1313/tags/show-and-tell/</link>
+				<pubDate>Mon, 01 Nov 2021 18:10:14 +0100</pubDate>
+				<guid>http://localhost:1313/tags/show-and-tell/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Support</title>
+				<link>http://localhost:1313/tags/support/</link>
+				<pubDate>Mon, 01 Nov 2021 18:10:14 +0100</pubDate>
+				<guid>http://localhost:1313/tags/support/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Free Speech</title>
+				<link>http://localhost:1313/tags/free-speech/</link>
+				<pubDate>Mon, 01 Nov 2021 13:01:14 +0100</pubDate>
+				<guid>http://localhost:1313/tags/free-speech/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Bilberry Theme</title>
+				<link>http://localhost:1313/tags/bilberry-theme/</link>
+				<pubDate>Mon, 01 Nov 2021 09:31:27 +0100</pubDate>
+				<guid>http://localhost:1313/tags/bilberry-theme/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Hugo</title>
+				<link>http://localhost:1313/tags/hugo/</link>
+				<pubDate>Mon, 01 Nov 2021 09:31:27 +0100</pubDate>
+				<guid>http://localhost:1313/tags/hugo/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Souce Code</title>
+				<link>http://localhost:1313/tags/souce-code/</link>
+				<pubDate>Mon, 01 Nov 2021 09:31:27 +0100</pubDate>
+				<guid>http://localhost:1313/tags/souce-code/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Diskussion</title>
+				<link>http://localhost:1313/tags/diskussion/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/tags/diskussion/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Show &amp; Tell</title>
+				<link>http://localhost:1313/tags/show--tell/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/tags/show--tell/</guid>
+				<description></description>
+			</item>
+	</channel>
+</rss>

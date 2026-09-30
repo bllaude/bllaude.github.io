@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Brey Laude on Site web de Brey Laude</title>
+		<link>http://localhost:1313/fr/author/brey-laude/</link>
+		<description>Recent content in Brey Laude on Site web de Brey Laude</description>
+		<generator>Hugo</generator>
+		<language>fr</language>
+		
+		
+		
+		
+			<lastBuildDate>Sun, 27 Sep 2026 14:29:10 +0800</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/fr/author/brey-laude/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>ESP32 Modbus RTU</title>
+				<link>http://localhost:1313/fr/article/esp32-modbus-rtu/</link>
+				<pubDate>Sun, 27 Sep 2026 14:29:10 +0800</pubDate>
+				<guid>http://localhost:1313/fr/article/esp32-modbus-rtu/</guid>
+				<description>&lt;p&gt;Une implémentation complète du protocole RTU Modbus pour le cadre ESP-IDF, prenant en charge les modes maître et esclave avec le contrôle matériel RS485.&lt;/p&gt;&#xA;&lt;p&gt;Voir le projet sur &lt;a href=&#34;https://github.com/bllaude/esp32-modbus-rtu&#34;&gt;Github&lt;/a&gt;&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

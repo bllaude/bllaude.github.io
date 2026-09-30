@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Logiciel on Site web de Brey Laude</title>
+		<link>http://localhost:1313/tags/logiciel/</link>
+		<description>Recent content in Logiciel on Site web de Brey Laude</description>
+		<generator>Hugo</generator>
+		<language>fr</language>
+		
+		
+		
+		
+			<lastBuildDate>Wed, 12 Apr 2023 15:31:47 +0800</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/tags/logiciel/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Normal Form Designators</title>
+				<link>http://localhost:1313/article/normal-form-designators/</link>
+				<pubDate>Wed, 12 Apr 2023 15:31:47 +0800</pubDate>
+				<guid>http://localhost:1313/article/normal-form-designators/</guid>
+				<description>&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Brian_Cantwell_Smith&#34;&gt;Brian Cantwell Smith&lt;/a&gt; fait partie de ces nombreuses personnes qui sont bien plus intelligentes que moi. C’est grâce à sa thèse au MIT, intitulée &lt;a href=&#34;https://publications.csail.mit.edu/lcs/pubs/pdf/MIT-LCS-TR-272.pdf&#34;&gt;« Procedural Reflection in Programming Languages »&lt;/a&gt; — un sujet à part entière —, que j’ai découvert son travail pour la première fois.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>
