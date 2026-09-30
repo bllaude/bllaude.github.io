@@ -10,9 +10,44 @@
 		
 		
 		
-			<lastBuildDate>Mon, 31 Aug 2026 17:01:53 +0800</lastBuildDate>
+			<lastBuildDate>Thu, 01 Oct 2026 00:25:56 +0800</lastBuildDate>
 		
 			<atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Account-Recovery</title>
+				<link>http://localhost:1313/tags/account-recovery/</link>
+				<pubDate>Thu, 01 Oct 2026 00:25:56 +0800</pubDate>
+				<guid>http://localhost:1313/tags/account-recovery/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Cybersecurity</title>
+				<link>http://localhost:1313/tags/cybersecurity/</link>
+				<pubDate>Thu, 01 Oct 2026 00:25:56 +0800</pubDate>
+				<guid>http://localhost:1313/tags/cybersecurity/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Disclaimer</title>
+				<link>http://localhost:1313/tags/disclaimer/</link>
+				<pubDate>Thu, 01 Oct 2026 00:25:56 +0800</pubDate>
+				<guid>http://localhost:1313/tags/disclaimer/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Notice</title>
+				<link>http://localhost:1313/tags/notice/</link>
+				<pubDate>Thu, 01 Oct 2026 00:25:56 +0800</pubDate>
+				<guid>http://localhost:1313/tags/notice/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Scam-Warning</title>
+				<link>http://localhost:1313/tags/scam-warning/</link>
+				<pubDate>Thu, 01 Oct 2026 00:25:56 +0800</pubDate>
+				<guid>http://localhost:1313/tags/scam-warning/</guid>
+				<description></description>
+			</item>
 			<item>
 				<title>Codex</title>
 				<link>http://localhost:1313/tags/codex/</link>
