@@ -30,9 +30,8 @@ disqusShortname = ""
   # Description and metadata for the search engines
   authorName = "bllaude"
   authorEmail = ""
-  description = "Bilberry Premium Theme for Hugo."
-  keywords = "blog,personal,responsive,search,font awesome,pages,posts,multilingual,syntax highlighting,premium,shortcuts"
-
+  description = "Brey Laude's Website"
+  keywords = "brey laude, brey, laude"
   # How many articles should be displayed at once?
   paginate = 7
 
@@ -81,7 +80,7 @@ disqusShortname = ""
 
   # Header configuration
     # your subtitle if you want to use any
-    subtitle = "Hello World! This is the most epic subtitle ever."
+    subtitle = "Full-Stack Developer, Cybersecurity"
 
     # if you want to use libravatar or gravatar for the header image
     avatarEmail = "laude822@gmail.com"

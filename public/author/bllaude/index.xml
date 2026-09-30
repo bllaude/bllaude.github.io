@@ -10,9 +10,16 @@
 		
 		
 		
-			<lastBuildDate>Sun, 27 Sep 2026 14:29:10 +0800</lastBuildDate>
+			<lastBuildDate>Thu, 01 Oct 2026 00:25:56 +0800</lastBuildDate>
 		
 			<atom:link href="http://localhost:1313/author/bllaude/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title></title>
+				<link>http://localhost:1313/status/hacking/</link>
+				<pubDate>Thu, 01 Oct 2026 00:25:56 +0800</pubDate>
+				<guid>http://localhost:1313/status/hacking/</guid>
+				<description>&lt;blockquote&gt;&#xA;&lt;p&gt;Notice: I do not offer hacking services&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;I don&amp;rsquo;t hack Facebook, Instagram, email, or any other accounts, and I never will. Breaking into someone else&amp;rsquo;s account is illegal and unethical, and it isn&amp;rsquo;t something I do for money, favors, or &lt;em&gt;&amp;ldquo;just this once.&amp;rdquo;&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;If anyone tells you I can or will hack an account for you, they are lying, and &lt;strong&gt;you should not trust them&lt;/strong&gt;. Anyone claiming to act on my behalf for this kind of work is scamming you. &lt;strong&gt;Never send money, personal details, or account info to someone using my name.&lt;/strong&gt;&lt;/p&gt;</description>
+			</item>
 			<item>
 				<title>ESP32 Modbus RTU</title>
 				<link>http://localhost:1313/article/esp32-modbus-rtu/</link>

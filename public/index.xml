@@ -5,10 +5,21 @@
     <description>Recent content on Brey Laude&#39;s Website</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 27 Sep 2026 14:29:10 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 01 Oct 2026 00:25:56 +0800</lastBuildDate>
     
         <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/status/hacking/</link>
+      <pubDate>Thu, 01 Oct 2026 00:25:56 +0800</pubDate>
+      
+      <guid>http://localhost:1313/status/hacking/</guid>
+      <description>&lt;h2 id=&#34;i-dont-do-hacking-services&#34;&gt;I don&amp;rsquo;t do hacking services&lt;/h2&gt;
+&lt;p&gt;I&amp;rsquo;m tired of repeating this. I will not hack your Facebook, your Instagram, your ex&amp;rsquo;s account, your girlfriend&amp;rsquo;s account, your &amp;ldquo;friend&amp;rsquo;s&amp;rdquo; account, or anyone else&amp;rsquo;s. Not for money, not as a favor, not &lt;em&gt;&amp;ldquo;just this once,&amp;rdquo;&lt;/em&gt; and not if you have a really sad story.&lt;/p&gt;
+&lt;p&gt;If anyone tells you I can do it, they lied to you, and &lt;strong&gt;you should not trust them&lt;/strong&gt;. Whoever is spreading that is either trying to scam you or using my name to do it. Don&amp;rsquo;t trust them, and don&amp;rsquo;t send them money. I&amp;rsquo;m not involved in any of it.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>ESP32 Modbus RTU</title>
