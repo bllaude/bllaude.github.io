@@ -28,79 +28,6 @@
                 href="http://localhost:1313/fr/page/github/"
                 />
   </url><url>
-    <loc>http://localhost:1313/status/hacking/</loc>
-    <lastmod>2026-10-01T00:25:56+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/account-recovery/</loc>
-    <lastmod>2026-10-01T00:25:56+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/announcements/</loc>
-    <lastmod>2026-10-01T00:25:56+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/</loc>
-    <lastmod>2026-10-01T00:25:56+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://localhost:1313/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="http://localhost:1313/fr/"
-                />
-  </url><url>
-    <loc>http://localhost:1313/categories/</loc>
-    <lastmod>2026-10-01T00:25:56+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://localhost:1313/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="http://localhost:1313/fr/categories/"
-                />
-  </url><url>
-    <loc>http://localhost:1313/tags/cybersecurity/</loc>
-    <lastmod>2026-10-01T00:25:56+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/disclaimer/</loc>
-    <lastmod>2026-10-01T00:25:56+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/notice/</loc>
-    <lastmod>2026-10-01T00:25:56+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/scam-warning/</loc>
-    <lastmod>2026-10-01T00:25:56+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/status/</loc>
-    <lastmod>2026-10-01T00:25:56+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://localhost:1313/status/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="http://localhost:1313/fr/status/"
-                />
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2026-10-01T00:25:56+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://localhost:1313/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="http://localhost:1313/fr/tags/"
-                />
-  </url><url>
     <loc>http://localhost:1313/article/</loc>
     <lastmod>2026-09-27T14:29:10+08:00</lastmod>
     <xhtml:link
@@ -138,6 +65,19 @@
                 rel="alternate"
                 hreflang="fr"
                 href="http://localhost:1313/fr/author/bllaude/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2026-09-27T14:29:10+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="http://localhost:1313/fr/"
                 />
   </url><url>
     <loc>http://localhost:1313/article/esp32-modbus-rtu/</loc>
@@ -190,6 +130,19 @@
                 rel="alternate"
                 hreflang="fr"
                 href="http://localhost:1313/fr/tags/omniroute/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2026-08-31T17:01:53+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="http://localhost:1313/fr/tags/"
                 />
   </url><url>
     <loc>http://localhost:1313/article/wiring-codex-dockerized-omniroute/</loc>
@@ -250,6 +203,19 @@
     <loc>http://localhost:1313/categories/accounts/</loc>
     <lastmod>2025-11-01T13:05:27+01:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/categories/</loc>
+    <lastmod>2025-11-01T13:05:27+01:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="http://localhost:1313/fr/categories/"
+                />
+  </url><url>
     <loc>http://localhost:1313/link/github/</loc>
     <lastmod>2025-11-01T13:05:27+01:00</lastmod>
   </url><url>
@@ -271,19 +237,6 @@
   </url><url>
     <loc>http://localhost:1313/code/leetcode/</loc>
     <lastmod>2024-08-06T09:31:27+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/status/april-can-suck-it/</loc>
-    <lastmod>2024-04-29T10:45:44+02:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://localhost:1313/status/april-can-suck-it/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="http://localhost:1313/fr/status/april-can-suck-it/"
-                />
   </url><url>
     <loc>http://localhost:1313/article/normal-form-designators/</loc>
     <lastmod>2023-04-12T15:31:47+08:00</lastmod>

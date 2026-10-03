@@ -200,32 +200,6 @@
     <loc>http://localhost:1313/fr/tags/ia/</loc>
     <lastmod>2026-08-29T16:32:11+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/fr/status/april-can-suck-it/</loc>
-    <lastmod>2024-04-29T10:45:44+02:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://localhost:1313/status/april-can-suck-it/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="http://localhost:1313/fr/status/april-can-suck-it/"
-                />
-  </url><url>
-    <loc>http://localhost:1313/fr/status/</loc>
-    <lastmod>2024-04-29T10:45:44+02:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://localhost:1313/status/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="http://localhost:1313/fr/status/"
-                />
-  </url><url>
     <loc>http://localhost:1313/fr/tags/logiciel/</loc>
     <lastmod>2023-04-12T15:31:47+08:00</lastmod>
   </url><url>
