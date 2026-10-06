@@ -35,6 +35,13 @@
 				<description>&lt;p&gt;Running omniroute on Docker is the best default for me simply because I don’t want a global npm install polluting my host node environment, and it composes cleanly whether the box is a home server, a VPS, or my throwaway VM.&lt;/p&gt;</description>
 			</item>
 			<item>
+				<title>Running Kali Linux Containers on a Linux Server with Docker</title>
+				<link>http://localhost:1313/article/kali-linux-docker-containers/</link>
+				<pubDate>Sun, 08 Jun 2025 18:46:01 +0800</pubDate>
+				<guid>http://localhost:1313/article/kali-linux-docker-containers/</guid>
+				<description>&lt;p&gt;Kali Linux ships official OCI images under &lt;code&gt;kalilinux/kali-rolling&lt;/code&gt;, &lt;code&gt;kalilinux/kali-last-release&lt;/code&gt;, and &lt;code&gt;kalilinux/kali-bleeding-edge&lt;/code&gt;. They are deliberately minimal, containing little beyond the base userland, so tooling is layered on top through Kali&amp;rsquo;s metapackages. That makes them well suited to disposable, reproducible assessment environments on a remote server: you get a clean toolchain per engagement, isolated from the host and from each other, without maintaining a full Kali VM. Use them only against systems you are authorized to test.&lt;/p&gt;</description>
+			</item>
+			<item>
 				<title>Normal Form Designators</title>
 				<link>http://localhost:1313/article/normal-form-designators/</link>
 				<pubDate>Wed, 12 Apr 2023 15:31:47 +0800</pubDate>

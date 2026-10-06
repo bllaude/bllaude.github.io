@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
-		<title>Linux on Brey Laude&#39;s website</title>
-		<link>http://localhost:1313/tags/linux/</link>
-		<description>Recent content in Linux on Brey Laude&#39;s website</description>
+		<title>Linux Server on Brey Laude&#39;s website</title>
+		<link>http://localhost:1313/tags/linux-server/</link>
+		<description>Recent content in Linux Server on Brey Laude&#39;s website</description>
 		<generator>Hugo</generator>
 		<language>en</language>
 		
@@ -12,20 +12,13 @@
 		
 			<lastBuildDate>Sun, 08 Jun 2025 18:46:01 +0800</lastBuildDate>
 		
-			<atom:link href="http://localhost:1313/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+			<atom:link href="http://localhost:1313/tags/linux-server/index.xml" rel="self" type="application/rss+xml" />
 			<item>
 				<title>Running Kali Linux Containers on a Linux Server with Docker</title>
 				<link>http://localhost:1313/article/kali-linux-docker-containers/</link>
 				<pubDate>Sun, 08 Jun 2025 18:46:01 +0800</pubDate>
 				<guid>http://localhost:1313/article/kali-linux-docker-containers/</guid>
 				<description>&lt;p&gt;Kali Linux ships official OCI images under &lt;code&gt;kalilinux/kali-rolling&lt;/code&gt;, &lt;code&gt;kalilinux/kali-last-release&lt;/code&gt;, and &lt;code&gt;kalilinux/kali-bleeding-edge&lt;/code&gt;. They are deliberately minimal, containing little beyond the base userland, so tooling is layered on top through Kali&amp;rsquo;s metapackages. That makes them well suited to disposable, reproducible assessment environments on a remote server: you get a clean toolchain per engagement, isolated from the host and from each other, without maintaining a full Kali VM. Use them only against systems you are authorized to test.&lt;/p&gt;</description>
-			</item>
-			<item>
-				<title>Installing Linux on External SSD</title>
-				<link>http://localhost:1313/article/installing-linux-external-ssd/</link>
-				<pubDate>Wed, 03 Aug 2022 18:03:48 +0800</pubDate>
-				<guid>http://localhost:1313/article/installing-linux-external-ssd/</guid>
-				<description>&lt;p&gt;I wanted to install Linux on a portable SSD and make it bootable from my laptop, it required UEFI support. I came up with my own method since I couldn’t find a better way to do it online.&lt;/p&gt;</description>
 			</item>
 	</channel>
 </rss>

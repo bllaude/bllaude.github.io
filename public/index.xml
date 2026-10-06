@@ -48,6 +48,15 @@
     </item>
     
     <item>
+      <title>Running Kali Linux Containers on a Linux Server with Docker</title>
+      <link>http://localhost:1313/article/kali-linux-docker-containers/</link>
+      <pubDate>Sun, 08 Jun 2025 18:46:01 +0800</pubDate>
+      
+      <guid>http://localhost:1313/article/kali-linux-docker-containers/</guid>
+      <description>&lt;p&gt;Kali Linux ships official OCI images under &lt;code&gt;kalilinux/kali-rolling&lt;/code&gt;, &lt;code&gt;kalilinux/kali-last-release&lt;/code&gt;, and &lt;code&gt;kalilinux/kali-bleeding-edge&lt;/code&gt;. They are deliberately minimal, containing little beyond the base userland, so tooling is layered on top through Kali&amp;rsquo;s metapackages. That makes them well suited to disposable, reproducible assessment environments on a remote server: you get a clean toolchain per engagement, isolated from the host and from each other, without maintaining a full Kali VM. Use them only against systems you are authorized to test.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>https://leetcode.com/brey-laude/</title>
       <link>http://localhost:1313/code/leetcode/</link>
       <pubDate>Tue, 06 Aug 2024 09:31:27 +0100</pubDate>
