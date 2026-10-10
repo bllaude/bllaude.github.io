@@ -8,9 +8,11 @@ tags: []
 toc: false
 author: ""
 ---
-This is aimed at being *'a chroot alone isn’t isolation'*, building qc, a small C runtime that uses `pivot_root` plus mount, PID, UTS, IPC, network, user and cgroup namespaces to run unprivileged. I confirmed the embedded qc.c compiles cleanly with `-Wall -Wextra`
+This is aimed at being *'chroot alone isn’t isolation'*, building qc, a small C runtime that uses `pivot_root` plus mount, PID, UTS, IPC, network, user and cgroup namespaces to run unprivileged. Compiles cleanly with `-Wall -Wextra`
 
 Follow project on [Github](https://github.com/bllaude/quick-containers)
+
+<!--more-->
 
 I'm also going to list what’s missing compared with a real runtime: networking, cgroup limits, seccomp and capabilities, overlayfs and a minimal init.
 

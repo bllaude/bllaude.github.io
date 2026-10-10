@@ -26,10 +26,8 @@
     <meta property="og:url" content="http://localhost:1313/article/quick-containers/">
 	<meta property="og:site_name" content="Brey Laude&#39;s website">
 	<meta property="og:title" content="Quick containers">
-	<meta property="og:description" content="This is aimed at being ‘a chroot alone isn’t isolation’, building qc, a small C runtime that uses pivot_root plus mount, PID, UTS, IPC, network, user and cgroup namespaces to run unprivileged. I confirmed the embedded qc.c compiles cleanly with -Wall -Wextra
-Follow project on Github
-I’m also going to list what’s missing compared with a real runtime: networking, cgroup limits, seccomp and capabilities, overlayfs and a minimal init.
-Sources: none; this is written from kernel man-page knowledge (namespaces(7), user_namespaces(7), pivot_root(2), clone(2)).">
+	<meta property="og:description" content="This is aimed at being ‘chroot alone isn’t isolation’, building qc, a small C runtime that uses pivot_root plus mount, PID, UTS, IPC, network, user and cgroup namespaces to run unprivileged. Compiles cleanly with -Wall -Wextra
+Follow project on Github">
 	<meta property="og:locale" content="en">
 	<meta property="og:type" content="article">
 		<meta property="article:section" content="article">
@@ -211,7 +209,7 @@ Sources: none; this is written from kernel man-page knowledge (namespaces(7), us
     
         
 
-        <p>This is aimed at being <em>&lsquo;a chroot alone isn’t isolation&rsquo;</em>, building qc, a small C runtime that uses <code>pivot_root</code> plus mount, PID, UTS, IPC, network, user and cgroup namespaces to run unprivileged. I confirmed the embedded qc.c compiles cleanly with <code>-Wall -Wextra</code></p>
+        <p>This is aimed at being <em>&lsquo;chroot alone isn’t isolation&rsquo;</em>, building qc, a small C runtime that uses <code>pivot_root</code> plus mount, PID, UTS, IPC, network, user and cgroup namespaces to run unprivileged. Compiles cleanly with <code>-Wall -Wextra</code></p>
 <p>Follow project on <a href="https://github.com/bllaude/quick-containers">Github</a></p>
 <p>I&rsquo;m also going to list what’s missing compared with a real runtime: networking, cgroup limits, seccomp and capabilities, overlayfs and a minimal init.</p>
 <p>Sources: none; this is written from kernel man-page knowledge (<code>namespaces(7)</code>, <code>user_namespaces(7)</code>, <code>pivot_root(2)</code>, <code>clone(2)</code>).</p>

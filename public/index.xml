@@ -44,10 +44,8 @@
       <pubDate>Fri, 08 May 2026 22:05:54 +0800</pubDate>
       
       <guid>http://localhost:1313/article/quick-containers/</guid>
-      <description>&lt;p&gt;This is aimed at being &lt;em&gt;&amp;lsquo;a chroot alone isn’t isolation&amp;rsquo;&lt;/em&gt;, building qc, a small C runtime that uses &lt;code&gt;pivot_root&lt;/code&gt; plus mount, PID, UTS, IPC, network, user and cgroup namespaces to run unprivileged. I confirmed the embedded qc.c compiles cleanly with &lt;code&gt;-Wall -Wextra&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Follow project on &lt;a href=&#34;https://github.com/bllaude/quick-containers&#34;&gt;Github&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;I&amp;rsquo;m also going to list what’s missing compared with a real runtime: networking, cgroup limits, seccomp and capabilities, overlayfs and a minimal init.&lt;/p&gt;
-&lt;p&gt;Sources: none; this is written from kernel man-page knowledge (&lt;code&gt;namespaces(7)&lt;/code&gt;, &lt;code&gt;user_namespaces(7)&lt;/code&gt;, &lt;code&gt;pivot_root(2)&lt;/code&gt;, &lt;code&gt;clone(2)&lt;/code&gt;).&lt;/p&gt;</description>
+      <description>&lt;p&gt;This is aimed at being &lt;em&gt;&amp;lsquo;chroot alone isn’t isolation&amp;rsquo;&lt;/em&gt;, building qc, a small C runtime that uses &lt;code&gt;pivot_root&lt;/code&gt; plus mount, PID, UTS, IPC, network, user and cgroup namespaces to run unprivileged. Compiles cleanly with &lt;code&gt;-Wall -Wextra&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Follow project on &lt;a href=&#34;https://github.com/bllaude/quick-containers&#34;&gt;Github&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
