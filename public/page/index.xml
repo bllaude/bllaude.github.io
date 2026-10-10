@@ -10,9 +10,16 @@
 		
 		
 		
-			<lastBuildDate>Mon, 01 Nov 2021 13:17:56 +0100</lastBuildDate>
+			<lastBuildDate>Sat, 10 Oct 2026 21:56:18 +0800</lastBuildDate>
 		
 			<atom:link href="http://localhost:1313/page/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>github ↗</title>
+				<link>http://localhost:1313/page/github/</link>
+				<pubDate>Mon, 01 Nov 2021 13:17:56 +0100</pubDate>
+				<guid>http://localhost:1313/page/github/</guid>
+				<description></description>
+			</item>
 			<item>
 				<title>breylaude ↗</title>
 				<link>http://localhost:1313/page/x/</link>
@@ -21,11 +28,11 @@
 				<description></description>
 			</item>
 			<item>
-				<title>github ↗</title>
-				<link>http://localhost:1313/page/github/</link>
-				<pubDate>Mon, 01 Nov 2021 13:17:56 +0100</pubDate>
-				<guid>http://localhost:1313/page/github/</guid>
-				<description></description>
+				<title>About Author</title>
+				<link>http://localhost:1313/page/about/</link>
+				<pubDate>Sat, 10 Oct 2026 21:56:18 +0800</pubDate>
+				<guid>http://localhost:1313/page/about/</guid>
+				<description>&lt;p&gt;I&amp;rsquo;m a &lt;a href=&#34;https://www.martinfowler.com/articles/newMethodologyOriginal.html#PlugCompatibleProgrammingUnits&#34;&gt;non-linear, first-order component&lt;/a&gt; in the programming industry.&lt;/p&gt;</description>
 			</item>
 	</channel>
 </rss>

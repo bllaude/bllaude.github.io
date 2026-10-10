@@ -2,6 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/page/github/</loc>
+    <lastmod>2021-11-01T13:17:56+01:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/page/github/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="http://localhost:1313/fr/page/github/"
+                />
+  </url><url>
     <loc>http://localhost:1313/page/x/</loc>
     <lastmod>2021-11-01T13:17:56+01:00</lastmod>
     <xhtml:link
@@ -15,17 +28,33 @@
                 href="http://localhost:1313/fr/page/x/"
                 />
   </url><url>
-    <loc>http://localhost:1313/page/github/</loc>
-    <lastmod>2021-11-01T13:17:56+01:00</lastmod>
+    <loc>http://localhost:1313/page/about/</loc>
+    <lastmod>2026-10-10T21:56:18+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2026-10-10T21:56:18+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/page/github/"
+                href="http://localhost:1313/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="http://localhost:1313/fr/page/github/"
+                href="http://localhost:1313/fr/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/page/</loc>
+    <lastmod>2026-10-10T21:56:18+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/page/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="http://localhost:1313/fr/page/"
                 />
   </url><url>
     <loc>http://localhost:1313/article/</loc>
@@ -65,19 +94,6 @@
                 rel="alternate"
                 hreflang="fr"
                 href="http://localhost:1313/fr/author/bllaude/"
-                />
-  </url><url>
-    <loc>http://localhost:1313/</loc>
-    <lastmod>2026-09-27T14:29:10+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://localhost:1313/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="http://localhost:1313/fr/"
                 />
   </url><url>
     <loc>http://localhost:1313/article/esp32-modbus-rtu/</loc>
@@ -200,11 +216,8 @@
                 href="http://localhost:1313/fr/article/deploying-omniroute-docker/"
                 />
   </url><url>
-    <loc>http://localhost:1313/categories/accounts/</loc>
-    <lastmod>2025-11-01T13:05:27+01:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/categories/</loc>
-    <lastmod>2025-11-01T13:05:27+01:00</lastmod>
+    <lastmod>2025-06-08T18:46:01+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -215,12 +228,6 @@
                 hreflang="fr"
                 href="http://localhost:1313/fr/categories/"
                 />
-  </url><url>
-    <loc>http://localhost:1313/link/github/</loc>
-    <lastmod>2025-11-01T13:05:27+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/link/</loc>
-    <lastmod>2025-11-01T13:05:27+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/linux/</loc>
     <lastmod>2025-06-08T18:46:01+08:00</lastmod>
@@ -317,19 +324,6 @@
   </url><url>
     <loc>http://localhost:1313/article/support-and-discussions/</loc>
     <lastmod>2021-11-01T18:10:14+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/page/</loc>
-    <lastmod>2021-11-01T13:17:56+01:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://localhost:1313/page/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="http://localhost:1313/fr/page/"
-                />
   </url><url>
     <loc>http://localhost:1313/quote/edward-snowden-privacy/</loc>
     <lastmod>2021-11-01T13:01:14+01:00</lastmod>

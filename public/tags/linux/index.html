@@ -79,14 +79,19 @@
             
                 
                 
+                    <li><a href="https://github.com/bllaude/bllaude.github.io"
+                           target="_blank">github ↗</a></li>
+                
+            
+                
+                
                     <li><a href="https://x.com/breylaude"
                            target="_blank">breylaude ↗</a></li>
                 
             
                 
                 
-                    <li><a href="https://github.com/bllaude/bllaude.github.io"
-                           target="_blank">github ↗</a></li>
+                    <li><a href="/page/about/">About Author</a></li>
                 
             
         </ul>
@@ -310,7 +315,7 @@
 
         
             
-                <span class="readingTime">14 min read</span>
+                <span class="readingTime">13 min read</span>
             
         
 
@@ -320,7 +325,8 @@
     </div>
 
     
-        <p>The expensive part of a kernel test loop is rarely the compile. Its the plumbing between a finished <code>bzImage</code> and a userspace that can exercise it: re-packing an initramfs, loopback-mounting a disk image to drop modules into it, or standing up an NFS server so the guest has somewhere to mount as root. virtiofs collapses all of that into a directory. The guest&rsquo;s root filesystem is a plain directory tree on the host, exported by <code>virtiofsd</code> over a vhost-user socket and mounted by the guest kernel with <code>root=&lt;tag&gt; rootfstype=virtiofs</code>. There&rsquo;s no image format, no partition table and no block layer, so the rootfs can be built with ordinary package-manager tooling, modified with ordinary host tools while the VM is running, and snapshotted with <code>cp --reflink</code>. This post builds a Debian 13 (trixie) rootfs with <code>mmdebstrap</code>, exports it with <code>virtiofsd</code>, boots it under QEMU with a locally built kernel, and arranges for modules, selftests and the kernel tree itself to appear in the guest without any image rebuild step. Debian is a good fit because its minimal bootstrap is small, its package set covers nearly every kernel-adjacent tool (<code>linux-perf</code>, <code>bpftool</code>, <code>trace-cmd</code>, <code>stress-ng</code>), and it is the userspace most existing kernel CI tooling, syzkaller included, already assumes.</p>
+        <p>This post builds a Debian 13 (trixie) rootfs with <code>mmdebstrap</code>, exports it with <code>virtiofsd</code>, boots it under QEMU with a locally built kernel, and arranges for modules, selftests and the kernel tree itself to appear in the guest without any image rebuild step.</p>
+<p>Debian is a good fit. Why? because its minimal bootstrap is small, its package set covers nearly every kernel-adjacent tool (<code>linux-perf</code>, <code>bpftool</code>, <code>trace-cmd</code>, <code>stress-ng</code>), and it is the userspace most existing kernel CI tooling, syzkaller included, already assumes.</p>
 
         
             <a href="http://localhost:1313/article/virtiofsd-debian-rootfs-kernel-testing/" class="more">Continue reading</a>
@@ -536,12 +542,6 @@
                 <li>
                 
                     <a href="http://localhost:1313/categories/tutorial/">Tutorial (2)</a>
-                
-                </li>
-                
-                <li>
-                
-                    <a href="http://localhost:1313/categories/accounts/">Accounts (1)</a>
                 
                 </li>
                 
