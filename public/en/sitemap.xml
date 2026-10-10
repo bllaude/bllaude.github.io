@@ -2,6 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/page/x/</loc>
+    <lastmod>2021-11-01T13:17:56+01:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/page/x/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="http://localhost:1313/fr/page/x/"
+                />
+  </url><url>
     <loc>http://localhost:1313/page/github/</loc>
     <lastmod>2021-11-01T13:17:56+01:00</lastmod>
     <xhtml:link
@@ -231,21 +244,23 @@
     <loc>http://localhost:1313/categories/tutorial/</loc>
     <lastmod>2025-06-08T18:46:01+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/code/</loc>
-    <lastmod>2024-08-06T09:31:27+01:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://localhost:1313/code/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="http://localhost:1313/fr/code/"
-                />
+    <loc>http://localhost:1313/tags/debian/</loc>
+    <lastmod>2025-01-10T21:27:26+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/code/leetcode/</loc>
-    <lastmod>2024-08-06T09:31:27+01:00</lastmod>
+    <loc>http://localhost:1313/tags/kernel/</loc>
+    <lastmod>2025-01-10T21:27:26+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/qemu/</loc>
+    <lastmod>2025-01-10T21:27:26+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/article/virtiofsd-debian-rootfs-kernel-testing/</loc>
+    <lastmod>2025-01-10T21:27:26+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/testing/</loc>
+    <lastmod>2025-01-10T21:27:26+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/virtiofs/</loc>
+    <lastmod>2025-01-10T21:27:26+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/article/normal-form-designators/</loc>
     <lastmod>2023-04-12T15:31:47+08:00</lastmod>
@@ -349,6 +364,19 @@
   </url><url>
     <loc>http://localhost:1313/categories/code/</loc>
     <lastmod>2021-11-01T09:31:27+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/code/</loc>
+    <lastmod>2021-11-01T09:31:27+01:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/code/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="http://localhost:1313/fr/code/"
+                />
   </url><url>
     <loc>http://localhost:1313/tags/hugo/</loc>
     <lastmod>2021-11-01T09:31:27+01:00</lastmod>

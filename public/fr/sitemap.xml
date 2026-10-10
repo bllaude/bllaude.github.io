@@ -2,6 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/fr/page/x/</loc>
+    <lastmod>2021-11-01T13:17:56+01:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/page/x/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="http://localhost:1313/fr/page/x/"
+                />
+  </url><url>
     <loc>http://localhost:1313/fr/page/github/</loc>
     <lastmod>2021-11-01T13:17:56+01:00</lastmod>
     <xhtml:link

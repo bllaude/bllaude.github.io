@@ -14,7 +14,14 @@
 		
 			<atom:link href="http://localhost:1313/page/index.xml" rel="self" type="application/rss+xml" />
 			<item>
-				<title>Github</title>
+				<title>breylaude ↗</title>
+				<link>http://localhost:1313/page/x/</link>
+				<pubDate>Mon, 01 Nov 2021 13:17:56 +0100</pubDate>
+				<guid>http://localhost:1313/page/x/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>github ↗</title>
 				<link>http://localhost:1313/page/github/</link>
 				<pubDate>Mon, 01 Nov 2021 13:17:56 +0100</pubDate>
 				<guid>http://localhost:1313/page/github/</guid>

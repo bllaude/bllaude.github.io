@@ -70,6 +70,41 @@
 				<description></description>
 			</item>
 			<item>
+				<title>Debian</title>
+				<link>http://localhost:1313/tags/debian/</link>
+				<pubDate>Fri, 10 Jan 2025 21:27:26 +0800</pubDate>
+				<guid>http://localhost:1313/tags/debian/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Kernel</title>
+				<link>http://localhost:1313/tags/kernel/</link>
+				<pubDate>Fri, 10 Jan 2025 21:27:26 +0800</pubDate>
+				<guid>http://localhost:1313/tags/kernel/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Qemu</title>
+				<link>http://localhost:1313/tags/qemu/</link>
+				<pubDate>Fri, 10 Jan 2025 21:27:26 +0800</pubDate>
+				<guid>http://localhost:1313/tags/qemu/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Testing</title>
+				<link>http://localhost:1313/tags/testing/</link>
+				<pubDate>Fri, 10 Jan 2025 21:27:26 +0800</pubDate>
+				<guid>http://localhost:1313/tags/testing/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Virtiofs</title>
+				<link>http://localhost:1313/tags/virtiofs/</link>
+				<pubDate>Fri, 10 Jan 2025 21:27:26 +0800</pubDate>
+				<guid>http://localhost:1313/tags/virtiofs/</guid>
+				<description></description>
+			</item>
+			<item>
 				<title>Programming</title>
 				<link>http://localhost:1313/tags/programming/</link>
 				<pubDate>Wed, 12 Apr 2023 15:31:47 +0800</pubDate>

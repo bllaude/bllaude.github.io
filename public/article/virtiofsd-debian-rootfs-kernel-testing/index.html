@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+
+
+  
+<html itemscope itemtype="https://schema.org/WebPage" class="no-js" lang="en">
+
+<head prefix="og: http://ogp.me/ns#"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="siteBaseUrl" content="http://localhost:1313/">
+    <meta name="author" content="bllaude">
+    <meta name="description" content="Brey Laude&#39;s website">
+    <meta name="keywords" content="brey laude, brey, laude,">
+    <meta name="generator" content="Hugo 0.165.0">
+    <title>
+        
+           
+               Set up rootfs of a Debian VM with virtiofsd for Linux Kernel Testing &vert; Brey Laude&#39;s website
+           
+        
+    </title>
+    <meta itemprop="name" content="Set up rootfs of a Debian VM with virtiofsd for Linux Kernel Testing">
+    <meta itemprop="description" content="Set up rootfs of a Debian VM with virtiofsd for Linux Kernel Testing - Brey Laude&#39;s website">
+    <meta property="og:site_name" content="Brey Laude&#39;s website">
+
+    <meta property="og:url" content="http://localhost:1313/article/virtiofsd-debian-rootfs-kernel-testing/">
+	<meta property="og:site_name" content="Brey Laude&#39;s website">
+	<meta property="og:title" content="Set up rootfs of a Debian VM with virtiofsd for Linux Kernel Testing">
+	<meta property="og:description" content="This post builds a Debian 13 (trixie) rootfs with mmdebstrap, exports it with virtiofsd, boots it under QEMU with a locally built kernel, and arranges for modules, selftests and the kernel tree itself to appear in the guest without any image rebuild step.
+Debian is a good fit. Why? because its minimal bootstrap is small, its package set covers nearly every kernel-adjacent tool (linux-perf, bpftool, trace-cmd, stress-ng), and it is the userspace most existing kernel CI tooling, syzkaller included, already assumes.">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="article">
+		<meta property="article:published_time" content="2025-01-10T21:27:26+08:00">
+		<meta property="article:modified_time" content="2025-01-10T21:27:26+08:00">
+		<meta property="article:tag" content="Linux">
+		<meta property="article:tag" content="Kernel">
+		<meta property="article:tag" content="Qemu">
+		<meta property="article:tag" content="Virtiofs">
+		<meta property="article:tag" content="Debian">
+		<meta property="article:tag" content="Testing">
+
+
+    
+
+
+    
+
+    
+    <link rel="canonical" href="http://localhost:1313/article/virtiofsd-debian-rootfs-kernel-testing/">
+    
+
+    
+        
+
+    <script src="http://localhost:1313/js/check-theme-prefer.js"></script>
+
+
+    
+
+    
+
+
+
+    <link id="theme-css" rel="stylesheet" href="http://localhost:1313/theme.css" media="screen">
+
+
+
+    
+
+
+
+    
+
+    
+</head>
+
+<body class="bilberry-hugo-theme">
+    
+
+    
+    <nav>
+
+    <div class="container">
+        <ul class="topnav">
+            
+                
+                
+                    <li><a href="https://github.com/bllaude/bllaude.github.io"
+                           target="_blank">github ↗</a></li>
+                
+            
+                
+                
+                    <li><a href="https://x.com/breylaude"
+                           target="_blank">breylaude ↗</a></li>
+                
+            
+        </ul>
+
+        
+    </div>
+</nav>
+
+
+    
+    <header>
+
+    <a id="back-to-top-button">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <div class="container">
+        <div class="logo">
+            <a href="/" class="logo">
+                
+                    
+                    
+                        
+                    
+                    <img src="https://seccdn.libravatar.org/avatar/42dbf737f456c657c7c530f44dff7ee5?d=mm&size=200" alt="">
+                
+
+                <span class="overlay"><i class="fa fa-home"></i></span>
+            </a>
+        </div>
+        <div class="titles">
+            <h3 class="title">
+                <a href="/">
+                    Brey Laude&#39;s website
+                </a>
+            </h3>
+
+            
+        </div>
+        <div class="selectors">
+          
+          <div class="light-dark-mode">
+            <button id="light-dark-toggle" class="fa-solid fa-sun"></button>
+          </div>
+          
+          <div class="languages">
+            
+                
+                
+                  
+                
+
+                
+                    <a href="http://localhost:1313/article/virtiofsd-debian-rootfs-kernel-testing/" class="active">en</a>
+                
+            
+                
+                
+
+                
+                    <a href="http://localhost:1313/fr/">fr</a>
+                
+            
+            </div>
+        
+       </div>
+
+        
+            <div class="toggler">
+        
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </div>
+    </div>
+    </div>
+</header>
+
+
+    <div class="main container">
+        
+    <div class="article-wrapper u-cf single">
+        
+            <a class="bubble" href="http://localhost:1313/article/virtiofsd-debian-rootfs-kernel-testing/">
+    <i class="fas fa-fw fa-pencil-alt"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="http://localhost:1313/article/virtiofsd-debian-rootfs-kernel-testing/">
+            Set up rootfs of a Debian VM with virtiofsd for Linux Kernel Testing
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2025-01-10</span>
+            
+        
+
+        
+            
+                <span class="readingTime">13 min read</span>
+            
+        
+
+        
+
+        
+    </div>
+
+    
+        
+
+        <p>This post builds a Debian 13 (trixie) rootfs with <code>mmdebstrap</code>, exports it with <code>virtiofsd</code>, boots it under QEMU with a locally built kernel, and arranges for modules, selftests and the kernel tree itself to appear in the guest without any image rebuild step.</p>
+<p>Debian is a good fit. Why? because its minimal bootstrap is small, its package set covers nearly every kernel-adjacent tool (<code>linux-perf</code>, <code>bpftool</code>, <code>trace-cmd</code>, <code>stress-ng</code>), and it is the userspace most existing kernel CI tooling, syzkaller included, already assumes.</p>
+<h2 id="how-the-pieces-fit">How the pieces fit</h2>
+<p>virtiofs is a FUSE dialect carried over virtio. In the guest, <code>fs/fuse/virtio_fs.c</code> registers a virtio driver that sends FUSE requests over virtqueues instead of <code>/dev/fuse</code>. On the host, <code>virtiofsd</code> is a vhost-user device backend: QEMU connects to its UNIX socket, passes it the guest memory mappings, and from then on the daemon reads requests out of the virtqueues and performs the filesystem operations itself, bypassing the QEMU main loop. This has two configuration consequences that account for most first-boot failures. Guest RAM has to be a shareable mapping (<code>memory-backend-memfd</code> or <code>memory-backend-file</code> with <code>share=on</code>), because the daemon must be able to map the buffers the guest posts. And the daemon&rsquo;s lifetime is bound to the QEMU connection, since the Rust implementation exits when its peer disconnects, so each VM launch needs a fresh daemon and a wrapper script is the natural unit of automation.</p>
+<p>Using it as the root filesystem works because <code>init/do_mounts.c</code> accepts a non-block <code>root=</code> value when <code>rootfstype=</code> names a filesystem that does not need a block device; the same mechanism serves 9p and tmpfs roots. The value of <code>root=</code> is the virtiofs tag chosen on the QEMU command line, and <code>rootfstype=virtiofs</code> makes the kernel try that driver directly instead of probing for disks. Because mounting happens before any module can be loaded from the root filesystem, <code>CONFIG_VIRTIO_FS</code> and <code>CONFIG_FUSE_FS</code> must be built in rather than modular, a constraint that comes up again in the kernel configuration section.</p>
+<h2 id="host-prerequisites">Host prerequisites</h2>
+<p>On a Debian 13 host the required packages are <code>qemu-system-x86</code>, <code>virtiofsd</code>, <code>mmdebstrap</code> and <code>qemu-utils</code>; <code>debootstrap</code> works equally well and its command line is given as an alternative below. Debian ships the Rust <code>virtiofsd</code>, and unlike the C daemon that used to live inside the QEMU tree its installed outside <code>$PATH</code>, under <code>/usr/libexec/</code>. Confirm the location on your system with <code>dpkg -L virtiofsd</code>, since the path has moved between releases and derivatives (Ubuntu in particular has shipped it under <code>/usr/lib/qemu/</code> or <code>/usr/libexec/</code> depending on release). Hardware virtualization via <code>/dev/kvm</code> is assumed; under TCG both kernel testing and virtiofs throughput are poor enough that the setup is not worth using.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sudo apt install qemu-system-x86 qemu-utils virtiofsd mmdebstrap
+</span></span><span style="display:flex;"><span>dpkg -L virtiofsd | grep -E <span style="color:#f1fa8c">&#39;libexec|bin&#39;</span>
+</span></span><span style="display:flex;"><span>ls -l /dev/kvm
+</span></span></code></pre></div><h2 id="building-the-rootfs-directory">Building the rootfs directory</h2>
+<p><code>mmdebstrap</code> builds a Debian tree into a directory and, unlike <code>debootstrap</code>, resolves and fetches packages in a single pass, which makes repeated rebuilds quick, and it can reuse a local apt cache through <code>--aptopt</code> or an apt-cacher in front of the mirror. Running it as real root preserves ownership and special files correctly, which matters because <code>virtiofsd</code> will later export those exact uids and modes to the guest; the unprivileged <code>--mode=unshare</code> variant produces a tree owned by a subuid range and is not appropriate here. The kernel and bootloader packages are intentionally excluded: the kernel under test is loaded directly by QEMU from the build tree, so a <code>linux-image</code> package in the guest would only add an unused <code>/lib/modules</code> directory that conflicts with the one produced by <code>modules_install</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">export</span> <span style="color:#8be9fd;font-style:italic">ROOTFS</span><span style="color:#ff79c6">=</span>/srv/vm/debian-rootfs
+</span></span><span style="display:flex;"><span>sudo mkdir -p <span style="color:#f1fa8c">&#34;</span><span style="color:#8be9fd;font-style:italic">$ROOTFS</span><span style="color:#f1fa8c">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo mmdebstrap --variant<span style="color:#ff79c6">=</span>minbase --format<span style="color:#ff79c6">=</span>directory <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span>    --include<span style="color:#ff79c6">=</span>systemd-sysv,udev,dbus,kmod,iproute2,iputils-ping,openssh-server,<span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span>procps,less,vim-tiny,ca-certificates,gdb,strace,linux-perf,bpftool,trace-cmd,<span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span>build-essential,git,stress-ng <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span>    trixie <span style="color:#f1fa8c">&#34;</span><span style="color:#8be9fd;font-style:italic">$ROOTFS</span><span style="color:#f1fa8c">&#34;</span> http://deb.debian.org/debian
+</span></span></code></pre></div><p>The equivalent with <code>debootstrap</code> is <code>sudo debootstrap --variant=minbase --include=&lt;same list&gt; trixie &quot;$ROOTFS&quot; http://deb.debian.org/debian</code>, which is slower because it unpacks and configures sequentially but is available on every Debian-derived host. The <code>minbase</code> variant keeps the tree to a few hundred megabytes; the extra packages are a pragmatic debugging baseline: <code>kmod</code> provides <code>modprobe</code>, <code>insmod</code> and <code>depmod</code> for the modules installed from the build tree, <code>linux-perf</code> and <code>bpftool</code> allow tracing the kernel from the inside, <code>trace-cmd</code> drives ftrace, <code>gdb</code> and <code>strace</code> help reproduce failures in userspace, and <code>stress-ng</code> is a convenient load generator for shaking out races. <code>build-essential</code> lets out-of-tree modules and selftests be compiled in the guest against the exported kernel tree when cross-building on the host is inconvenient. A networking developer would add <code>tcpdump</code> and <code>iperf3</code>, a filesystem developer <code>xfsprogs</code>, <code>btrfs-progs</code> and <code>fio</code>.</p>
+<h2 id="making-the-tree-bootable">Making the tree bootable</h2>
+<p>A bootstrapped tree is not yet something systemd will bring up unattended on a serial console. The adjustments are small and can be made directly on the host through the directory, with <code>chroot</code> only for the steps that need a running <code>systemctl</code>. The root account needs an empty password and an autologin getty on <code>ttyS0</code>. Debian&rsquo;s serial getty comes from <code>serial-getty@.service</code>, which the getty generator instantiates automatically when the kernel command line carries <code>console=ttyS0</code>, so only a drop-in overriding <code>ExecStart</code> is required. Debian&rsquo;s <code>agetty</code> lives at <code>/sbin/agetty</code> (the <code>/sbin</code> to <code>/usr/sbin</code> merge makes this path valid either way).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sudo chroot <span style="color:#f1fa8c">&#34;</span><span style="color:#8be9fd;font-style:italic">$ROOTFS</span><span style="color:#f1fa8c">&#34;</span> /bin/bash -eu <span style="color:#f1fa8c">&lt;&lt;&#39;EOF&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">passwd -d root
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">echo kvm-test &gt; /etc/hostname
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">printf &#39;127.0.0.1 localhost kvm-test\n&#39; &gt; /etc/hosts
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">: &gt; /etc/fstab
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">mkdir -p /etc/systemd/system/serial-getty@ttyS0.service.d
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">cat &gt; /etc/systemd/system/serial-getty@ttyS0.service.d/autologin.conf &lt;&lt;&#39;UNIT&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">[Service]
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">ExecStart=
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">ExecStart=-/sbin/agetty -o &#39;-p -- \\u&#39; --noclear --autologin root %I $TERM
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">UNIT
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">mkdir -p /etc/systemd/network
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">cat &gt; /etc/systemd/network/20-wired.network &lt;&lt;&#39;NET&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">[Match]
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">Name=en* eth*
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">[Network]
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">DHCP=yes
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">NET
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">systemctl enable systemd-networkd.service ssh.service
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">mkdir -p /etc/systemd/journald.conf.d
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">printf &#39;[Journal]\nStorage=volatile\n&#39; &gt; /etc/systemd/journald.conf.d/volatile.conf
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">mkdir -p /etc/ssh/sshd_config.d
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">printf &#39;PermitRootLogin yes\nPermitEmptyPasswords yes\n&#39; &gt; /etc/ssh/sshd_config.d/10-test.conf
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">EOF</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># QEMU&#39;s user-mode network always offers its resolver at 10.0.2.3</span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">echo</span> <span style="color:#f1fa8c">&#39;nameserver 10.0.2.3&#39;</span> | sudo tee <span style="color:#f1fa8c">&#34;</span><span style="color:#8be9fd;font-style:italic">$ROOTFS</span><span style="color:#f1fa8c">/etc/resolv.conf&#34;</span> &gt;/dev/null
+</span></span></code></pre></div><p>Emptying <code>/etc/fstab</code> stops systemd from waiting on mount entries that cannot exist in this topology, since the root filesystem is supplied by the host and there is nothing to <code>fsck</code> or remount. Keeping the journal volatile avoids journald writing continuously to a filesystem that is simultaneously being modified from the host, which amplifies small writes and occasionally produces confusing short-read behaviour while tests run. Writing a static <code>resolv.conf</code> sidesteps <code>systemd-resolved</code>, which Debian 13 has split into a separate package that <code>minbase</code> does not pull in; if you prefer the stub resolver, add <code>systemd-resolved</code> to the package list and symlink <code>/etc/resolv.conf</code> to its stub file instead. The sshd drop-in with empty passwords is acceptable only because the guest is reachable solely through the user-mode network forward bound to <code>127.0.0.1</code> shown later; for any broader exposure, install a public key in <code>/root/.ssh/authorized_keys</code> and remove the drop-in.</p>
+<h2 id="configuring-the-kernel">Configuring the kernel</h2>
+<p>The options below are the ones specific to this arrangement; start from <code>make defconfig &amp;&amp; make kvm_guest.config</code> for the virtio base. Everything required to reach the root filesystem is built in, and anything under test that can be a module should be one, because modules are the cheapest iteration path: after <code>make modules_install</code> the new <code>.ko</code> files are present in the guest&rsquo;s <code>/lib/modules/$(uname -r)</code> the moment the host copy completes.</p>
+<pre tabindex="0"><code>CONFIG_VIRTIO=y
+CONFIG_VIRTIO_PCI=y
+CONFIG_FUSE_FS=y
+CONFIG_VIRTIO_FS=y
+CONFIG_DAX=y
+CONFIG_FUSE_DAX=y              # optional; only used if QEMU is given cache-size=
+CONFIG_VIRTIO_NET=y
+CONFIG_SERIAL_8250=y
+CONFIG_SERIAL_8250_CONSOLE=y
+CONFIG_DEVTMPFS=y
+CONFIG_DEVTMPFS_MOUNT=y
+CONFIG_TMPFS=y
+CONFIG_TMPFS_POSIX_ACL=y
+CONFIG_TMPFS_XATTR=y
+CONFIG_CGROUPS=y               # systemd on trixie expects the unified cgroup v2 hierarchy
+CONFIG_CGROUP_BPF=y
+CONFIG_AUTOFS_FS=y
+CONFIG_DEBUG_INFO_DWARF5=y
+CONFIG_GDB_SCRIPTS=y
+CONFIG_RANDOMIZE_BASE=n        # or pass nokaslr on the command line
+</code></pre><p>The cgroup and autofs lines are worth calling out because Debian&rsquo;s current systemd is considerably less forgiving of a stripped-down kernel than the systemd in older releases: it requires cgroup v2 and will refuse or degrade noisily without it, and a missing <code>CONFIG_AUTOFS_FS</code> produces mount-unit failures that look unrelated to the kernel configuration. If boot reaches systemd and then stops at <code>Failed to mount</code> messages, <code>systemd-analyze</code> is not yet available, but the missing option is usually named in the first dozen lines of console output.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>make -j<span style="color:#f1fa8c">&#34;</span><span style="color:#ff79c6">$(</span>nproc<span style="color:#ff79c6">)</span><span style="color:#f1fa8c">&#34;</span> bzImage modules
+</span></span><span style="display:flex;"><span>sudo make <span style="color:#8be9fd;font-style:italic">INSTALL_MOD_PATH</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;</span><span style="color:#8be9fd;font-style:italic">$ROOTFS</span><span style="color:#f1fa8c">&#34;</span> modules_install
+</span></span></code></pre></div><p><code>INSTALL_MOD_STRIP=1</code> reduces module size at the cost of debug info; keep the unstripped <code>vmlinux</code> and module objects on the host for debugging regardless. <code>modules_install</code> runs <code>depmod</code> against the target prefix, so <code>modprobe</code> works in the guest immediately. It also leaves <code>build</code> and <code>source</code> symlinks that point at the host&rsquo;s absolute kernel tree path, which dangle in the guest unless the tree is exported and mounted at the same path, as described later.</p>
+<h2 id="launching-virtiofsd">Launching virtiofsd</h2>
+<p>The daemon has to be listening before QEMU starts, since QEMU connects to the socket while realizing the device. When exporting a rootfs it should run as root so that ownership, setuid bits, file capabilities and device nodes round-trip faithfully; the unprivileged user-namespace mode remaps ids and breaks anything that depends on real <code>chown</code> or <code>mknod</code> semantics.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sudo /usr/libexec/virtiofsd <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span>    --socket-path<span style="color:#ff79c6">=</span>/run/vm/vfsd-root.sock <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span>    --socket-group<span style="color:#ff79c6">=</span>kvm <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span>    --shared-dir<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;</span><span style="color:#8be9fd;font-style:italic">$ROOTFS</span><span style="color:#f1fa8c">&#34;</span> <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span>    --tag<span style="color:#ff79c6">=</span>myroot <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span>    --sandbox<span style="color:#ff79c6">=</span>namespace <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span>    --cache<span style="color:#ff79c6">=</span>auto <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span>    --xattr <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span>    --posix-acl <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span>    --announce-submounts
+</span></span></code></pre></div><p>Each option has a reason. <code>--xattr</code> enables extended attribute passthrough, which Debian&rsquo;s boot path needs for file capabilities (<code>security.capability</code>, used by <code>ping</code> on systems that do not ship it setuid) and for tmpfiles and journal handling; without it those operations fail with <code>ENOTSUP</code> and produce errors that are misleading. <code>--posix-acl</code> covers the ACLs that <code>systemd-tmpfiles</code> and journald apply. <code>--cache</code> sets the coherency policy: <code>auto</code> revalidates attributes and data on a short timeout, which suits a workflow where the host modifies the tree while the guest runs, as <code>modules_install</code> against a live VM does; <code>never</code> gives strict coherency and is the right choice when chasing a suspected stale-cache bug; <code>always</code> is fastest but assumes only the guest writes. <code>--sandbox=namespace</code> puts the daemon in its own mount, pid and network namespaces with the shared directory as its root, so a malicious or buggy guest cannot traverse out of the export, while <code>chroot</code> is the weaker fallback where namespaces are unavailable. <code>--announce-submounts</code> makes mount points beneath the shared directory appear as distinct superblocks in the guest, avoiding inode number collisions. <code>--socket-group=kvm</code> lets a QEMU running as an ordinary member of the <code>kvm</code> group connect to a socket created by the root-owned daemon, so only the daemon needs elevated privileges, not the emulator.</p>
+<h2 id="launching-qemu">Launching QEMU</h2>
+<p>The command line must express shared guest memory, the vhost-user-fs device bound to the daemon&rsquo;s socket, direct kernel boot parameters and a serial console. The size of the memory backend has to equal <code>-m</code>; a mismatch makes QEMU abort with a vhost-user error at device realization.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>qemu-system-x86_64 <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span>    -enable-kvm -cpu host -smp <span style="color:#bd93f9">4</span> -m 4G <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span>    -object memory-backend-memfd,id<span style="color:#ff79c6">=</span>mem,size<span style="color:#ff79c6">=</span>4G,share<span style="color:#ff79c6">=</span>on <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span>    -numa node,memdev<span style="color:#ff79c6">=</span>mem <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span>    -chardev socket,id<span style="color:#ff79c6">=</span>char0,path<span style="color:#ff79c6">=</span>/run/vm/vfsd-root.sock <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span>    -device vhost-user-fs-pci,chardev<span style="color:#ff79c6">=</span>char0,tag<span style="color:#ff79c6">=</span>myroot <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span>    -kernel arch/x86/boot/bzImage <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span>    -append <span style="color:#f1fa8c">&#39;root=myroot rootfstype=virtiofs rw console=ttyS0 nokaslr init=/lib/systemd/systemd&#39;</span> <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span>    -netdev user,id<span style="color:#ff79c6">=</span>n0,hostfwd<span style="color:#ff79c6">=</span>tcp:127.0.0.1:2222-:22 <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span>    -device virtio-net-pci,netdev<span style="color:#ff79c6">=</span>n0 <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span>    -nographic -no-reboot <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span>    -s
+</span></span></code></pre></div><p><code>root=myroot</code> must equal <code>tag=</code> exactly, and <code>rw</code> is required because a non-block root defaults to read-only and systemd will not boot usefully in that state. The explicit <code>init=/lib/systemd/systemd</code> documents the intended init and keeps the guest from falling back to <code>/sbin/init</code> in a tree that happens to lack the <code>systemd-sysv</code> symlink. <code>-s</code> opens the gdbstub on TCP 1234; with <code>nokaslr</code> set, <code>gdb vmlinux</code> followed by <code>target remote :1234</code> lines up symbols with the running kernel, and sourcing <code>vmlinux-gdb.py</code> adds the kernel&rsquo;s helpers such as <code>lx-dmesg</code> and <code>lx-ps</code>. <code>-no-reboot</code> turns a panic into a QEMU exit rather than an endless reboot loop, which is what scripted bisection wants.</p>
+<h2 id="a-launch-wrapper">A launch wrapper</h2>
+<p>Since the daemon dies when the guest disconnects, the two processes should start and stop together. This wrapper makes the edit, build, boot cycle a single command and cleans up the socket on every exit path.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#ff79c6">#!/usr/bin/env bash
+</span></span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">set</span> -euo pipefail
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">ROOTFS</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">${</span><span style="color:#8be9fd;font-style:italic">ROOTFS</span><span style="color:#ff79c6">:-</span>/srv/vm/debian-rootfs<span style="color:#f1fa8c">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">RUN</span><span style="color:#ff79c6">=</span>/run/vm
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">SOCK</span><span style="color:#ff79c6">=</span><span style="color:#8be9fd;font-style:italic">$RUN</span>/vfsd-root.sock
+</span></span><span style="display:flex;"><span>sudo install -d -m <span style="color:#bd93f9">0775</span> -g kvm <span style="color:#f1fa8c">&#34;</span><span style="color:#8be9fd;font-style:italic">$RUN</span><span style="color:#f1fa8c">&#34;</span>
+</span></span><span style="display:flex;"><span>sudo rm -f <span style="color:#f1fa8c">&#34;</span><span style="color:#8be9fd;font-style:italic">$SOCK</span><span style="color:#f1fa8c">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo /usr/libexec/virtiofsd --socket-path<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;</span><span style="color:#8be9fd;font-style:italic">$SOCK</span><span style="color:#f1fa8c">&#34;</span> --socket-group<span style="color:#ff79c6">=</span>kvm <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span>    --shared-dir<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;</span><span style="color:#8be9fd;font-style:italic">$ROOTFS</span><span style="color:#f1fa8c">&#34;</span> --tag<span style="color:#ff79c6">=</span>myroot --sandbox<span style="color:#ff79c6">=</span>namespace <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span>    --cache<span style="color:#ff79c6">=</span>auto --xattr --posix-acl --announce-submounts &amp;
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">VFSD</span><span style="color:#ff79c6">=</span><span style="color:#8be9fd;font-style:italic">$!</span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">trap</span> <span style="color:#f1fa8c">&#39;sudo kill $VFSD 2&gt;/dev/null || true; sudo rm -f &#34;$SOCK&#34;&#39;</span> EXIT
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">while</span> <span style="color:#ff79c6">[[</span> ! -S <span style="color:#8be9fd;font-style:italic">$SOCK</span> <span style="color:#ff79c6">]]</span>; <span style="color:#ff79c6">do</span> sleep 0.1; <span style="color:#ff79c6">done</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>qemu-system-x86_64 <span style="color:#f1fa8c">&#34;</span><span style="color:#8be9fd;font-style:italic">$@</span><span style="color:#f1fa8c">&#34;</span> <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span>    -enable-kvm -cpu host -smp <span style="color:#bd93f9">4</span> -m 4G <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span>    -object memory-backend-memfd,id<span style="color:#ff79c6">=</span>mem,size<span style="color:#ff79c6">=</span>4G,share<span style="color:#ff79c6">=</span>on -numa node,memdev<span style="color:#ff79c6">=</span>mem <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span>    -chardev socket,id<span style="color:#ff79c6">=</span>char0,path<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;</span><span style="color:#8be9fd;font-style:italic">$SOCK</span><span style="color:#f1fa8c">&#34;</span> -device vhost-user-fs-pci,chardev<span style="color:#ff79c6">=</span>char0,tag<span style="color:#ff79c6">=</span>myroot <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span>    -kernel arch/x86/boot/bzImage <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span>    -append <span style="color:#f1fa8c">&#39;root=myroot rootfstype=virtiofs rw console=ttyS0 nokaslr init=/lib/systemd/systemd&#39;</span> <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span>    -netdev user,id<span style="color:#ff79c6">=</span>n0,hostfwd<span style="color:#ff79c6">=</span>tcp:127.0.0.1:2222-:22 -device virtio-net-pci,netdev<span style="color:#ff79c6">=</span>n0 <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span>    -nographic -no-reboot
+</span></span></code></pre></div><h2 id="exporting-the-kernel-tree-and-selftests">Exporting the kernel tree and selftests</h2>
+<p>A second <code>virtiofsd</code> instance with its own socket and tag can export the kernel source and build directory. Adding a second <code>-chardev</code> and <code>-device vhost-user-fs-pci,tag=ksrc</code> pair to QEMU and mounting it in the guest at the same absolute path as on the host repairs the dangling <code>build</code> and <code>source</code> symlinks, which in turn makes out-of-tree module builds and <code>perf</code> with kernel debuginfo work in the guest. The mount is declared with a systemd unit whose file name is the escaped form of the mount point, which <code>systemd-escape -p --suffix=mount /home/user/linux</code> computes.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#6272a4"># $ROOTFS/etc/systemd/system/home-user-linux.mount</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">[Unit]</span>
+</span></span><span style="display:flex;"><span><span style="color:#50fa7b">Description</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">Kernel tree from host</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">[Mount]</span>
+</span></span><span style="display:flex;"><span><span style="color:#50fa7b">What</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">ksrc</span>
+</span></span><span style="display:flex;"><span><span style="color:#50fa7b">Where</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">/home/user/linux</span>
+</span></span><span style="display:flex;"><span><span style="color:#50fa7b">Type</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">virtiofs</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">[Install]</span>
+</span></span><span style="display:flex;"><span><span style="color:#50fa7b">WantedBy</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">multi-user.target</span>
+</span></span></code></pre></div><p>Selftests are better built on the host and installed into the rootfs, which keeps the guest free of build state and makes runs reproducible. Because they run against the same Debian userspace every time, a failure that appears only in the guest is attributable to the kernel under test rather than to drift in the test environment.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>make -C tools/testing/selftests <span style="color:#8be9fd;font-style:italic">TARGETS</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;net bpf mm&#34;</span> <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span>     <span style="color:#8be9fd;font-style:italic">INSTALL_PATH</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;</span><span style="color:#8be9fd;font-style:italic">$ROOTFS</span><span style="color:#f1fa8c">/opt/kselftest&#34;</span> install
+</span></span></code></pre></div><p>Inside the guest, <code>/opt/kselftest/run_kselftest.sh -c net</code> executes the collection against the kernel that was just booted. Logs written beneath the shared directory are readable on the host while the VM is still running, and KUnit suites built as modules follow the same pattern: <code>modprobe</code> the module and read the TAP stream from <code>dmesg</code>.</p>
+<h2 id="debian-specific-details-worth-knowing">Debian-specific details worth knowing</h2>
+<p>Packages can be installed into the live guest with <code>apt</code>, using the user-mode network, and the resulting changes to <code>/var/lib/dpkg</code> and <code>/var/cache/apt</code> land directly in the host&rsquo;s rootfs directory, so a package added once in a throwaway session persists for every later boot; for a clean baseline, take a reflink copy (<code>cp -a --reflink=always</code>) of the pristine tree on btrfs or XFS and point the daemon at the copy for experiments. Because apt and dpkg write heavily, <code>--cache=auto</code> with a volatile journal is the least surprising combination, and <code>/var/cache/apt/archives</code> can be bind-mounted from the host to avoid refetching packages. Debian&rsquo;s <code>unattended-upgrades</code> and <code>apt-daily</code> timers are not present in a <code>minbase</code> tree, but if you add them, mask them: a background <code>apt</code> run during a timing-sensitive test is a classic source of unexplained variance. Finally, <code>dpkg</code> triggers such as <code>ldconfig</code> and <code>update-initramfs</code> run inside the guest when packages are installed there; <code>update-initramfs</code> has nothing to do without a <code>linux-image</code> package and will not be invoked, which is the intended outcome of leaving kernel packages out.</p>
+<h2 id="failure-modes-worth-recognizing">Failure modes worth recognizing</h2>
+<p>A boot that stops at <code>VFS: Unable to mount root fs on unknown-block(0,0)</code> means either <code>CONFIG_VIRTIO_FS=y</code> and <code>CONFIG_FUSE_FS=y</code> are not built in or <code>root=</code> does not match the QEMU <code>tag</code>; look for <code>virtio_fs</code> lines in the kernel log before assuming the first cause. A vhost-user error from QEMU at startup is almost always a missing <code>share=on</code> on the memory backend, a size mismatch between <code>-m</code> and the backend, or a socket that did not yet exist because the daemon was still initializing, which is what the wait loop in the wrapper exists to prevent. <code>Permission denied</code> when QEMU opens the socket points at <code>--socket-group</code> not matching a group the invoking user belongs to. A boot that reaches systemd and then drops to emergency mode with capability or permission errors usually means the daemon ran without <code>--xattr</code> or without root privileges. Stale file contents in the guest after a <code>modules_install</code> on a running VM indicate <code>--cache=always</code> and should be <code>auto</code> or <code>never</code>. When the cause is unclear, start the daemon with <code>--log-level debug</code>, which prints every FUSE opcode and shows quickly whether a guest-visible failure originates in the kernel&rsquo;s virtiofs client or in the daemon&rsquo;s sandboxed view of the filesystem.</p>
+<p>The loop reduces to <code>make</code>, <code>make modules_install</code> when modules changed, and a relaunch of the wrapper, with boot to a root prompt in a few seconds because there is no initramfs to unpack and no block device to probe. The userspace is regenerated from a single <code>mmdebstrap</code> command and a short set of files, inspected and repaired from the host without attaching a disk, and snapshotted with a reflink copy. The approach is a poor fit only where the root filesystem is itself the subject of the test (virtiofs, FUSE, or anything depending on block-level semantics of the root device), in which case keep a conventional disk image for root and use virtiofs for the source tree and selftest exports.</p>
+
+    
+</div>
+
+    
+<div class="footer">
+
+
+    
+        <div class="tags">
+            <i class="fa fa-tags"></i>
+            <div class="links">
+                
+                    
+                    
+                    <a href="http://localhost:1313/tags/linux/">Linux</a>
+                    
+                
+                    
+                    
+                    <a href="http://localhost:1313/tags/kernel/">Kernel</a>
+                    
+                
+                    
+                    
+                    <a href="http://localhost:1313/tags/qemu/">Qemu</a>
+                    
+                
+                    
+                    
+                    <a href="http://localhost:1313/tags/virtiofs/">Virtiofs</a>
+                    
+                
+                    
+                    
+                    <a href="http://localhost:1313/tags/debian/">Debian</a>
+                    
+                
+                    
+                    
+                    <a href="http://localhost:1313/tags/testing/">Testing</a>
+                    
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+</article>
+
+        
+    </div>
+
+    
+        <div id="comments-container">
+            
+            
+
+            
+
+            
+
+        </div>
+    
+
+    </div>
+
+    
+<footer>
+    <div class="container">
+
+        
+        <div class="recent-posts">
+            <strong>Latest posts</strong>
+            <ul>
+                
+                
+                    <li>
+                        <a href="http://localhost:1313/article/esp32-modbus-rtu/">ESP32 Modbus RTU</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:1313/article/wiring-codex-dockerized-omniroute/">Wiring Codex on Dockerized Omniroute</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:1313/article/deploying-omniroute-docker/">Deploying Omniroute on Docker</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:1313/article/kali-linux-docker-containers/">Running Kali Linux Containers on a Linux Server with Docker</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:1313/article/virtiofsd-debian-rootfs-kernel-testing/">Set up rootfs of a Debian VM with virtiofsd for Linux Kernel Testing</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:1313/article/normal-form-designators/">Normal Form Designators</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:1313/article/installing-linux-external-ssd/">Installing Linux on External SSD</a>
+                    </li>
+                
+            </ul>
+        </div>
+        
+
+        
+        <div class="categories">
+            
+
+            <ul>
+                
+                <li>
+                
+                    <a href="http://localhost:1313/categories/tutorial/">Tutorial (2)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="http://localhost:1313/categories/code/">Code (1)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="http://localhost:1313/categories/privacy/">Privacy (1)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="http://localhost:1313/categories/society/">Society (1)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="http://localhost:1313/categories/tutorials/">Tutorials (1)</a>
+                
+                </li>
+                
+            </ul>
+        </div>
+        
+
+        <div class="right">
+            
+            <div class="external-profiles">
+                <strong>Social media</strong>
+                
+                <a href="https://twitter.com/breylaude" target="_blank" rel="me"><em class="fab fa-twitter"></em></a>
+                
+                <a href="https://github.com/bllaude" target="_blank" rel=""><em class="fab fa-github"></em></a>
+                
+            </div>
+            
+
+            <div class="languages">
+                    <strong>Other languages</strong>
+                    
+                        
+                        
+                            
+                        
+
+                        
+                            <a href="http://localhost:1313/article/virtiofsd-debian-rootfs-kernel-testing/" class="active">en</a>
+                        
+                    
+                        
+                        
+
+                        
+                            <a href="http://localhost:1313/fr/">fr</a>
+                        
+                    
+                </div>
+            
+
+            
+            <div class="archive">
+                
+                <a href="http://localhost:1313/archive/"><strong>Archive</strong></a>
+                
+            </div>
+            
+        </div>
+    </div>
+</footer>
+
+
+<div class="credits">
+    <div class="container">
+        <div class="copyright">
+            <a href="https://github.com/bllaude" target="_blank">
+                &copy;
+                
+                2026
+                
+                Brey Laude
+            </a>
+            
+        </div>
+        <div class="author">
+            <a href="https://github.com/Lednerb/bilberry-hugo-theme"
+                target="_blank">Bilberry Hugo</a>
+        </div>
+    </div>
+</div>
+
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+
+
+
+    
+    
+
+
+
+
+
+
+
+    <script src="http://localhost:1313/theme.js"></script>
+
+
+
+    
+
+
+
+    
+
+    
+</body>
+
+</html>

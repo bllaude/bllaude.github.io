@@ -80,7 +80,13 @@
                 
                 
                     <li><a href="https://github.com/bllaude/bllaude.github.io"
-                           target="_blank">Github</a></li>
+                           target="_blank">github ↗</a></li>
+                
+            
+                
+                
+                    <li><a href="https://x.com/breylaude"
+                           target="_blank">breylaude ↗</a></li>
                 
             
         </ul>
@@ -188,14 +194,6 @@
 
 <article class="default article">
     
-    <div class="featured-image">
-        <a href="http://localhost:1313/article/esp32-modbus-rtu/">
-            
-                <img src="/article/esp32-modbus-rtu/featuredImage_hu_af4ec3814d401a9f.png" alt="">
-            
-        </a>
-    </div>
-
 
     <div class="content">
     <h1 class="article-title">
@@ -369,14 +367,6 @@
 
 <article class="default article">
     
-    <div class="featured-image">
-        <a href="http://localhost:1313/article/deploying-omniroute-docker/">
-            
-                <img src="/article/deploying-omniroute-docker/featuredImage_hu_fa713abec915ada5.png" alt="">
-            
-        </a>
-    </div>
-
 
     <div class="content">
     <h1 class="article-title">
@@ -457,27 +447,6 @@
     
 </div>
 
-</article>
-
-        
-    </div>
-
-
-    
-        
-    <div class="article-wrapper u-cf">
-        
-            <a class="bubble" href="https://github.com/bllaude" target="_blank">
-    <i class="fas fa-fw fa-link"></i>
-</a>
-
-<article class="link">
-    
-    <a href="https://github.com/bllaude" target="_blank">
-        <h4>Github.com</h4>
-        <p>Github Profile</p>
-
-    </a>
 </article>
 
         
@@ -579,64 +548,89 @@
         
     <div class="article-wrapper u-cf">
         
-            <a class="bubble" href="http://localhost:1313/code/leetcode/">
-    <i class="fas fa-fw fa-code"></i>
+            <a class="bubble" href="http://localhost:1313/article/virtiofsd-debian-rootfs-kernel-testing/">
+    <i class="fas fa-fw fa-pencil-alt"></i>
 </a>
 
 <article class="default article">
     
-    <div class="featured-image">
-        <a href="http://localhost:1313/code/leetcode/">
-            
-                <img src="/code/leetcode/featuredImage_hu_9612a334d869064b.jpeg" alt="">
-            
-        </a>
-    </div>
-
 
     <div class="content">
     <h1 class="article-title">
-        <a href="http://localhost:1313/code/leetcode/">
-            https://leetcode.com/brey-laude/
+        <a href="http://localhost:1313/article/virtiofsd-debian-rootfs-kernel-testing/">
+            Set up rootfs of a Debian VM with virtiofsd for Linux Kernel Testing
         </a>
     </h1>
 
     <div class="meta">
         
             
-                <span class="date moment">2024-08-06</span>
+                <span class="date moment">2025-01-10</span>
             
         
 
         
             
-                <span class="readingTime">1 min read</span>
+                <span class="readingTime">13 min read</span>
             
         
 
         
 
-        
-            <span class="author">
-                
-                
-                    <a href="http://localhost:1313/author/bllaude/">Bllaude</a>
-                
-            </span>
         
     </div>
 
     
-        <p>My Leetcode profile</p>
+        <p>This post builds a Debian 13 (trixie) rootfs with <code>mmdebstrap</code>, exports it with <code>virtiofsd</code>, boots it under QEMU with a locally built kernel, and arranges for modules, selftests and the kernel tree itself to appear in the guest without any image rebuild step.</p>
+<p>Debian is a good fit. Why? because its minimal bootstrap is small, its package set covers nearly every kernel-adjacent tool (<code>linux-perf</code>, <code>bpftool</code>, <code>trace-cmd</code>, <code>stress-ng</code>), and it is the userspace most existing kernel CI tooling, syzkaller included, already assumes.</p>
 
+        
+            <a href="http://localhost:1313/article/virtiofsd-debian-rootfs-kernel-testing/" class="more">Continue reading</a>
         
     
 </div>
 
     
-<div class="footer no-tags">
+<div class="footer">
 
 
+    
+        <div class="tags">
+            <i class="fa fa-tags"></i>
+            <div class="links">
+                
+                    
+                    
+                    <a href="http://localhost:1313/tags/linux/">Linux</a>
+                    
+                
+                    
+                    
+                    <a href="http://localhost:1313/tags/kernel/">Kernel</a>
+                    
+                
+                    
+                    
+                    <a href="http://localhost:1313/tags/qemu/">Qemu</a>
+                    
+                
+                    
+                    
+                    <a href="http://localhost:1313/tags/virtiofs/">Virtiofs</a>
+                    
+                
+                    
+                    
+                    <a href="http://localhost:1313/tags/debian/">Debian</a>
+                    
+                
+                    
+                    
+                    <a href="http://localhost:1313/tags/testing/">Testing</a>
+                    
+                
+            </div>
+        </div>
     
 
     
@@ -742,6 +736,101 @@
 
 
     
+        
+    <div class="article-wrapper u-cf">
+        
+            <a class="bubble" href="http://localhost:1313/article/installing-linux-external-ssd/">
+    <i class="fas fa-fw fa-pencil-alt"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="http://localhost:1313/article/installing-linux-external-ssd/">
+            Installing Linux on External SSD
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2022-08-03</span>
+            
+        
+
+        
+            
+                <span class="readingTime">3 min read</span>
+            
+        
+
+        
+            <span class="categories">
+                
+                    
+                    
+                        <a href="http://localhost:1313/categories/tutorial/">Tutorial</a>
+                    
+                
+            </span>
+        
+
+        
+    </div>
+
+    
+        <p>I wanted to install Linux on a portable SSD and make it bootable from my laptop, it required UEFI support. I came up with my own method since I couldn’t find a better way to do it online.</p>
+
+        
+            <a href="http://localhost:1313/article/installing-linux-external-ssd/" class="more">Continue reading</a>
+        
+    
+</div>
+
+    
+<div class="footer">
+
+
+    
+        <div class="tags">
+            <i class="fa fa-tags"></i>
+            <div class="links">
+                
+                    
+                    
+                    <a href="http://localhost:1313/tags/linux/">Linux</a>
+                    
+                
+                    
+                    
+                    <a href="http://localhost:1313/tags/tutorial/">Tutorial</a>
+                    
+                
+            </div>
+        </div>
+    
+
+    
+    <div class="languages">
+        <i class="fa fa-language"></i>
+        <div class="links">
+            
+                <a href="http://localhost:1313/fr/article/installing-linux-external-ssd/">fr</a>
+            
+        </div>
+    </div>
+    
+</div>
+
+</article>
+
+        
+    </div>
+
+
+    
 
     
     <div class="paginator">
@@ -783,7 +872,7 @@
                     </li>
                 
                     <li>
-                        <a href="http://localhost:1313/code/leetcode/">https://leetcode.com/brey-laude/</a>
+                        <a href="http://localhost:1313/article/virtiofsd-debian-rootfs-kernel-testing/">Set up rootfs of a Debian VM with virtiofsd for Linux Kernel Testing</a>
                     </li>
                 
                     <li>
@@ -801,20 +890,12 @@
         
         <div class="categories">
             
-            <a href="http://localhost:1313/categories/"><strong>Categories</strong></a>
-            
 
             <ul>
                 
                 <li>
                 
                     <a href="http://localhost:1313/categories/tutorial/">Tutorial (2)</a>
-                
-                </li>
-                
-                <li>
-                
-                    <a href="http://localhost:1313/categories/accounts/">Accounts (1)</a>
                 
                 </li>
                 

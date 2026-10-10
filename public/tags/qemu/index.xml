@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Qemu on Brey Laude&#39;s website</title>
+		<link>http://localhost:1313/tags/qemu/</link>
+		<description>Recent content in Qemu on Brey Laude&#39;s website</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Fri, 10 Jan 2025 21:27:26 +0800</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/tags/qemu/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Set up rootfs of a Debian VM with virtiofsd for Linux Kernel Testing</title>
+				<link>http://localhost:1313/article/virtiofsd-debian-rootfs-kernel-testing/</link>
+				<pubDate>Fri, 10 Jan 2025 21:27:26 +0800</pubDate>
+				<guid>http://localhost:1313/article/virtiofsd-debian-rootfs-kernel-testing/</guid>
+				<description>&lt;p&gt;The expensive part of a kernel test loop is rarely the compile. Its the plumbing between a finished &lt;code&gt;bzImage&lt;/code&gt; and a userspace that can exercise it: re-packing an initramfs, loopback-mounting a disk image to drop modules into it, or standing up an NFS server so the guest has somewhere to mount as root. virtiofs collapses all of that into a directory. The guest&amp;rsquo;s root filesystem is a plain directory tree on the host, exported by &lt;code&gt;virtiofsd&lt;/code&gt; over a vhost-user socket and mounted by the guest kernel with &lt;code&gt;root=&amp;lt;tag&amp;gt; rootfstype=virtiofs&lt;/code&gt;. There&amp;rsquo;s no image format, no partition table and no block layer, so the rootfs can be built with ordinary package-manager tooling, modified with ordinary host tools while the VM is running, and snapshotted with &lt;code&gt;cp --reflink&lt;/code&gt;. This post builds a Debian 13 (trixie) rootfs with &lt;code&gt;mmdebstrap&lt;/code&gt;, exports it with &lt;code&gt;virtiofsd&lt;/code&gt;, boots it under QEMU with a locally built kernel, and arranges for modules, selftests and the kernel tree itself to appear in the guest without any image rebuild step. Debian is a good fit because its minimal bootstrap is small, its package set covers nearly every kernel-adjacent tool (&lt;code&gt;linux-perf&lt;/code&gt;, &lt;code&gt;bpftool&lt;/code&gt;, &lt;code&gt;trace-cmd&lt;/code&gt;, &lt;code&gt;stress-ng&lt;/code&gt;), and it is the userspace most existing kernel CI tooling, syzkaller included, already assumes.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>
