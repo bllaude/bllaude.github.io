@@ -8,7 +8,7 @@ tags: ['Software', 'Programming']
 toc: false
 author: "bllaude"
 ---
-[Brian Cantwell Smith](https://en.wikipedia.org/wiki/Brian_Cantwell_Smith) is one of the many people who are far smarter than I am. His [MIT thesis Procedural Reflection in Programming Languages](https://publications.csail.mit.edu/lcs/pubs/pdf/MIT-LCS-TR-272.pdf) — which is something else — is how I first became aware of him.
+[Brian Cantwell Smith](https://en.wikipedia.org/wiki/Brian_Cantwell_Smith) is one of the smartest people I know. His [MIT thesis](https://publications.csail.mit.edu/lcs/pubs/pdf/MIT-LCS-TR-272.pdf) — *which is something else* — is how I first became aware of him.
 <!--more-->
 
 I learned the concepts presented in this post from the aforementioned paper. As such, I'm not sure if I should give credit to Brian for these concepts, but I will since I'm not sure whom to give credit to otherwise.
@@ -38,7 +38,7 @@ As such, the following scheme statements all relate to the same Normal Form Desi
 69
 ```
 
-Note that the following is included in the same **NFD** set as the following, so there's no need to include every step of a single evaluation:
+Note that the following is included in the same NFD set as the following, so there's no need to include every step of a single evaluation:
 
 `(- 70 1)`
 
@@ -56,9 +56,8 @@ And instead of coming up with effective, context-focused methods to accomplish t
 We continue to assert that *"operating system improvement"* consists of repeatedly creating an additional abstraction layer on top of the same meaningless signifiers of what users should expect from an operating system, or reinventing them.
 
 Or, rather than building something different, we just keep building.
-
-### Fin                              
-I'm simply sick of seeing the newest technology to be some incredibly bloated piece of shit that needs a corporation in the middle and ever-more-powerful computers to implement features that have been around for ages.
+                              
+I'm sick of seeing the newest technology to be some incredibly bloated piece of shit that needs a corporation in the middle and ever-more-powerful computers to implement features that have been around for ages.
 
 I'm sick of seeing people trained in what the same tool industry decided is *"this month's fad"* and never trying anything truly unique.
 
