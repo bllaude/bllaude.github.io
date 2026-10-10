@@ -39,7 +39,7 @@
     </item>
     
     <item>
-      <title>Quick containers</title>
+      <title>chroot with namespace isolation</title>
       <link>http://localhost:1313/article/quick-containers/</link>
       <pubDate>Fri, 08 May 2026 22:05:54 +0800</pubDate>
       

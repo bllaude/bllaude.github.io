@@ -1,5 +1,5 @@
 ---
-title: "Quick containers"
+title: "chroot with namespace isolation"
 date: 2026-05-08T22:05:54+08:00
 draft: false
 
