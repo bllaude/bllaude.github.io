@@ -15,27 +15,23 @@
     <title>
         
            
-               Deploying Omniroute on Docker &vert; Brey Laude&#39;s website
+               Deploying omniroute on Docker &vert; Brey Laude&#39;s website
            
         
     </title>
-    <meta itemprop="name" content="Deploying Omniroute on Docker">
-    <meta itemprop="description" content="Deploying Omniroute on Docker - Brey Laude&#39;s website">
+    <meta itemprop="name" content="Deploying omniroute on Docker">
+    <meta itemprop="description" content="Deploying omniroute on Docker - Brey Laude&#39;s website">
     <meta property="og:site_name" content="Brey Laude&#39;s website">
 
     <meta property="og:url" content="http://localhost:1313/article/deploying-omniroute-docker/">
 	<meta property="og:site_name" content="Brey Laude&#39;s website">
-	<meta property="og:title" content="Deploying Omniroute on Docker">
-	<meta property="og:description" content="Running omniroute on Docker is the best default for me simply because I don’t want a global npm install polluting my host node environment, and it composes cleanly whether the box is a home server, a VPS, or my throwaway VM.">
+	<meta property="og:title" content="Deploying omniroute on Docker">
+	<meta property="og:description" content="This seems to be the best default if you don’t want a global npm install polluting your already bloated host node environment, and it composes cleanly whether the box is a home server, cheap VPS, and even a throwaway VM.">
 	<meta property="og:locale" content="en">
 	<meta property="og:type" content="article">
 		<meta property="article:section" content="article">
 		<meta property="article:published_time" content="2026-08-29T16:32:11+08:00">
 		<meta property="article:modified_time" content="2026-08-29T16:32:11+08:00">
-		<meta property="article:tag" content="AI">
-		<meta property="article:tag" content="Docker">
-		<meta property="article:tag" content="Compose">
-		<meta property="article:tag" content="Agentic">
 
 
     
@@ -189,7 +185,7 @@
     <div class="content">
     <h1 class="article-title">
         <a href="http://localhost:1313/article/deploying-omniroute-docker/">
-            Deploying Omniroute on Docker
+            Deploying omniroute on Docker
         </a>
     </h1>
 
@@ -214,8 +210,8 @@
     
         
 
-        <p>Running omniroute on Docker is the best default for me simply because I don’t want a global npm install polluting my host node environment, and it composes cleanly whether the box is a home server, a VPS, or my throwaway VM.</p>
-<h3 id="picking-the-right-image-target-and-compose-profile">Picking the right image target and compose profile</h3>
+        <p>This seems to be the best default if you don’t want a <em>global npm install</em> polluting your <em>already bloated</em> host node environment, and it composes cleanly whether the box is a home server, cheap VPS, and even a throwaway VM.</p>
+<h3 id="luckily-for-us"><em>Luckily for us&hellip;</em></h3>
 <p>The project ships a multi-stage Dockerfile with 3 build targets. <code>runner-base</code> is the production Next.js standalone runtime with no provider CLIs baked in, and it’s the correct choice if omniroute is only going to proxy requests from a Codex instance running elsewhere.</p>
 <p><code>runner-cli</code> extends that with git, docker.io, docker-compose, and global installs of <code>@openai/codex</code>, <code>@anthropic-ai/claude-code</code>, <code>droid</code>, and <code>openclaw</code> - useful for workflows where the agent itself needs to live inside the container, but overkill for the common case of <em>&ldquo;Agent runs on my laptop, OmniRoute runs on a server.&rdquo;</em></p>
 <p>Compose exposes these as profiles rather than making you juggle Dockerfile targets by hand: base maps to the minimal runner-base image, <code>cli</code> pulls in the bundled CLIs, and host is a Linux-oriented profile that bind-mounts host CLI binaries and config directories read-only. A 4th profile, <code>cliproxyapi</code>, runs the CLIProxyAPI sidecar on port 8317 for upstream CLI proxying and can be combined with any of the others, e.g. <code>docker compose --profile cli --profile cliproxyapi up -d</code>. For a straightforward setup, base is almost always the right starting point:</p>
@@ -230,36 +226,9 @@
 </div>
 
     
-<div class="footer">
+<div class="footer no-tags">
 
 
-    
-        <div class="tags">
-            <i class="fa fa-tags"></i>
-            <div class="links">
-                
-                    
-                    
-                    <a href="http://localhost:1313/tags/ai/">AI</a>
-                    
-                
-                    
-                    
-                    <a href="http://localhost:1313/tags/docker/">Docker</a>
-                    
-                
-                    
-                    
-                    <a href="http://localhost:1313/tags/compose/">Compose</a>
-                    
-                
-                    
-                    
-                    <a href="http://localhost:1313/tags/agentic/">Agentic</a>
-                    
-                
-            </div>
-        </div>
     
 
     
@@ -312,7 +281,7 @@
                     </li>
                 
                     <li>
-                        <a href="http://localhost:1313/article/deploying-omniroute-docker/">Deploying Omniroute on Docker</a>
+                        <a href="http://localhost:1313/article/deploying-omniroute-docker/">Deploying omniroute on Docker</a>
                     </li>
                 
                     <li>

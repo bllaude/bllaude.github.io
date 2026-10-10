@@ -26,7 +26,7 @@
     <meta property="og:url" content="http://localhost:1313/article/wiring-codex-dockerized-omniroute/">
 	<meta property="og:site_name" content="Brey Laude&#39;s website">
 	<meta property="og:title" content="Wiring Codex on Dockerized Omniroute">
-	<meta property="og:description" content="For anyone running Codex against multiple backends - official OpenAI, Kimi or DeepSeek endpoint, whatever happens to be cheapest or fastest that week - putting omniroute in front of it means Codex only ever needs to know about one base URL, while omniroute absorbs the churn of provider outages, rate limits, and credential rotation on the other side.">
+	<meta property="og:description" content="For anyone running Codex against multiple backends - official OpenAI, Kimi or DeepSeek endpoint, whatever happens to be cheapest or fastest of the week - putting omniroute in front of it means Codex only ever needs to know about one base URL, while omniroute absorbs the churn of provider outages, rate limits, and credential rotation on the other side.">
 	<meta property="og:locale" content="en">
 	<meta property="og:type" content="article">
 		<meta property="article:section" content="article">
@@ -220,7 +220,7 @@
     
         
 
-        <p>For anyone running Codex against multiple backends - official OpenAI, Kimi or DeepSeek endpoint, whatever happens to be cheapest or fastest that week - putting omniroute in front of it means Codex only ever needs to know about one base URL, while omniroute absorbs the churn of provider outages, rate limits, and credential rotation on the other side.</p>
+        <p>For anyone running Codex against multiple backends - official OpenAI, Kimi or DeepSeek endpoint, whatever happens to be cheapest or fastest of the week - putting omniroute in front of it means Codex only ever needs to know about one base URL, while omniroute absorbs the churn of provider outages, rate limits, and credential rotation on the other side.</p>
 <h2 id="memory-sizing">Memory sizing</h2>
 <p>This caught me the first time I pointed codex at a self-hosted omniroute container. The image ships with <code>OMNIROUTE_MEMORY_MB=1024</code>, which derives a 1 GiB V8 old-space ceiling via <code>NODE_OPTIONS=--max-old-space-size</code>. That’s fine for the dashboard and light chat traffic, and it’s a hard floor, not a production size. Codex’s <code>POST /v1/responses</code> calls carry long message histories and tool definitions, and omniroute’s <code>RTK+Caveman</code> compression pipeline retains multiple in-memory graphs while processing them.</p>
 <p>A single coding-agent session routinely needs <code>OMNIROUTE_MEMORY_MB=8192</code> with the container’s cgroup memory limit set comfortably above that — <code>--memory=10g</code> or higher - because native buffers, SQLite, and compression intermediates all sit outside the V8 heap and aren’t covered by the heap ceiling itself. Two overlapping long-context requests have been observed aborting a 12 GiB heap outright with <code>FATAL ERROR: Reached heap limit</code>, so if you’re running codex alongside anything else concurrently, size up further or keep concurrency to one heavy in-flight request per process rather than raising <code>OMNIROUTE_CHAT_MAX_HEAVY_IN_FLIGHT</code> and hoping the RAM keeps up.</p>
@@ -357,7 +357,7 @@
                     </li>
                 
                     <li>
-                        <a href="http://localhost:1313/article/deploying-omniroute-docker/">Deploying Omniroute on Docker</a>
+                        <a href="http://localhost:1313/article/deploying-omniroute-docker/">Deploying omniroute on Docker</a>
                     </li>
                 
                     <li>

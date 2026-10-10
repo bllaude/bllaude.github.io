@@ -203,7 +203,7 @@
     <div class="content">
     <h1 class="article-title">
         <a href="http://localhost:1313/article/installing-linux-external-ssd/">
-            Installing Linux on External SSD
+            Install Linux on External SSD
         </a>
     </h1>
 
@@ -216,7 +216,7 @@
 
         
             
-                <span class="readingTime">3 min read</span>
+                <span class="readingTime">2 min read</span>
             
         
 
@@ -235,10 +235,29 @@
     </div>
 
     
-        <p>I wanted to install Linux on a portable SSD and make it bootable from my laptop, it required UEFI support. I came up with my own method since I couldn’t find a better way to do it online.</p>
+        <ol>
+<li>Install <a href="https://www.virtualbox.org/wiki/Downloads">Virtualbox</a></li>
+<li>Install <em>Oracle VM VirtualBox Extension Pack</em>. This is needed to connect <code>USB2.0</code> and <code>USB3.0</code> drives to the virtual machine.</li>
+<li>If host os = linux, make sure your user is in the <code>vboxusers</code> group using <code>sudo usermod -aG vboxusers $USER</code>,then reboot to refresh the groups.</li>
+<li>Download linux distro of choice. Make sure its 64-bit for UEFI support.</li>
+<li>Create a new virtual machine in VirtualBox.</li>
+<li>Don&rsquo;t add a virtual hard disk, as we will be mounting the external SSD into the VM to act as the disk.</li>
+<li>Go into the VM settings and enable EFI support (<code>Under System &gt; Enable EFI</code>).</li>
+<li>Under USB, select the USB controller, try <code>USB3.0</code> first and if it doesn’t work, try <code>USB2.0</code>.</li>
+<li>Boot up the virtual machine, when asked, supply the ISO image to use.</li>
+<li>Mount the USB hard drive by clicking the USB icon at the bottom of the virtualbox window and selecting the USB drive (if you don’t see the drive, try changing your USB controller in the options, see step 8).</li>
+<li>Start the installer as normal.</li>
+<li>During disk partitioning, ensure you have at least 3 partitions: <code>EFI Boot Partition</code> (<code>FAT32</code>, at least 200MB), / (<code>Root mountpoint</code>, <code>EXT4</code>), Swap (Should be around the size of computer’s RAM capacity).</li>
+<li>Install as normal.</li>
+<li>Shutdown the VM and the computer, try to boot the external SSD on the computer.</li>
+</ol>
+<h2 id="result">Result</h2>
+<ul>
+<li>Bootable system with UEFI support that works on different computers.</li>
+<li>Makes no changes to the computers internal drive during installation.</li>
+<li>Tested with Ubuntu and Kali.</li>
+</ul>
 
-        
-            <a href="http://localhost:1313/article/installing-linux-external-ssd/" class="more">Continue reading</a>
         
     
 </div>
@@ -505,7 +524,7 @@ on the official <!-- raw HTML omitted --> <a href="https://github.com/Lednerb/bi
                     </li>
                 
                     <li>
-                        <a href="http://localhost:1313/article/deploying-omniroute-docker/">Deploying Omniroute on Docker</a>
+                        <a href="http://localhost:1313/article/deploying-omniroute-docker/">Deploying omniroute on Docker</a>
                     </li>
                 
                     <li>

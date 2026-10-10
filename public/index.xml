@@ -26,16 +26,16 @@
       <pubDate>Mon, 31 Aug 2026 17:01:53 +0800</pubDate>
       
       <guid>http://localhost:1313/article/wiring-codex-dockerized-omniroute/</guid>
-      <description>&lt;p&gt;For anyone running Codex against multiple backends - official OpenAI, Kimi or DeepSeek endpoint, whatever happens to be cheapest or fastest that week - putting omniroute in front of it means Codex only ever needs to know about one base URL, while omniroute absorbs the churn of provider outages, rate limits, and credential rotation on the other side.&lt;/p&gt;</description>
+      <description>&lt;p&gt;For anyone running Codex against multiple backends - official OpenAI, Kimi or DeepSeek endpoint, whatever happens to be cheapest or fastest of the week - putting omniroute in front of it means Codex only ever needs to know about one base URL, while omniroute absorbs the churn of provider outages, rate limits, and credential rotation on the other side.&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Deploying Omniroute on Docker</title>
+      <title>Deploying omniroute on Docker</title>
       <link>http://localhost:1313/article/deploying-omniroute-docker/</link>
       <pubDate>Sat, 29 Aug 2026 16:32:11 +0800</pubDate>
       
       <guid>http://localhost:1313/article/deploying-omniroute-docker/</guid>
-      <description>&lt;p&gt;Running omniroute on Docker is the best default for me simply because I don’t want a global npm install polluting my host node environment, and it composes cleanly whether the box is a home server, a VPS, or my throwaway VM.&lt;/p&gt;</description>
+      <description>&lt;p&gt;This seems to be the best default if you don’t want a &lt;em&gt;global npm install&lt;/em&gt; polluting your &lt;em&gt;already bloated&lt;/em&gt; host node environment, and it composes cleanly whether the box is a home server, cheap VPS, and even a throwaway VM.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -77,12 +77,33 @@
     </item>
     
     <item>
-      <title>Installing Linux on External SSD</title>
+      <title>Install Linux on External SSD</title>
       <link>http://localhost:1313/article/installing-linux-external-ssd/</link>
       <pubDate>Wed, 03 Aug 2022 18:03:48 +0800</pubDate>
       
       <guid>http://localhost:1313/article/installing-linux-external-ssd/</guid>
-      <description>&lt;p&gt;I wanted to install Linux on a portable SSD and make it bootable from my laptop, it required UEFI support. I came up with my own method since I couldn’t find a better way to do it online.&lt;/p&gt;</description>
+      <description>&lt;ol&gt;
+&lt;li&gt;Install &lt;a href=&#34;https://www.virtualbox.org/wiki/Downloads&#34;&gt;Virtualbox&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Install &lt;em&gt;Oracle VM VirtualBox Extension Pack&lt;/em&gt;. This is needed to connect &lt;code&gt;USB2.0&lt;/code&gt; and &lt;code&gt;USB3.0&lt;/code&gt; drives to the virtual machine.&lt;/li&gt;
+&lt;li&gt;If host os = linux, make sure your user is in the &lt;code&gt;vboxusers&lt;/code&gt; group using &lt;code&gt;sudo usermod -aG vboxusers $USER&lt;/code&gt;,then reboot to refresh the groups.&lt;/li&gt;
+&lt;li&gt;Download linux distro of choice. Make sure its 64-bit for UEFI support.&lt;/li&gt;
+&lt;li&gt;Create a new virtual machine in VirtualBox.&lt;/li&gt;
+&lt;li&gt;Don&amp;rsquo;t add a virtual hard disk, as we will be mounting the external SSD into the VM to act as the disk.&lt;/li&gt;
+&lt;li&gt;Go into the VM settings and enable EFI support (&lt;code&gt;Under System &amp;gt; Enable EFI&lt;/code&gt;).&lt;/li&gt;
+&lt;li&gt;Under USB, select the USB controller, try &lt;code&gt;USB3.0&lt;/code&gt; first and if it doesn’t work, try &lt;code&gt;USB2.0&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Boot up the virtual machine, when asked, supply the ISO image to use.&lt;/li&gt;
+&lt;li&gt;Mount the USB hard drive by clicking the USB icon at the bottom of the virtualbox window and selecting the USB drive (if you don’t see the drive, try changing your USB controller in the options, see step 8).&lt;/li&gt;
+&lt;li&gt;Start the installer as normal.&lt;/li&gt;
+&lt;li&gt;During disk partitioning, ensure you have at least 3 partitions: &lt;code&gt;EFI Boot Partition&lt;/code&gt; (&lt;code&gt;FAT32&lt;/code&gt;, at least 200MB), / (&lt;code&gt;Root mountpoint&lt;/code&gt;, &lt;code&gt;EXT4&lt;/code&gt;), Swap (Should be around the size of computer’s RAM capacity).&lt;/li&gt;
+&lt;li&gt;Install as normal.&lt;/li&gt;
+&lt;li&gt;Shutdown the VM and the computer, try to boot the external SSD on the computer.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;result&#34;&gt;Result&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Bootable system with UEFI support that works on different computers.&lt;/li&gt;
+&lt;li&gt;Makes no changes to the computers internal drive during installation.&lt;/li&gt;
+&lt;li&gt;Tested with Ubuntu and Kali.&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     
     <item>

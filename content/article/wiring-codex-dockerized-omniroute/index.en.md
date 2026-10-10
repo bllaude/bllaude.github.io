@@ -8,7 +8,7 @@ tags: ['Codex', 'Docker', 'Omniroute']
 toc: false
 author: "bllaude"
 ---
-For anyone running Codex against multiple backends - official OpenAI, Kimi or DeepSeek endpoint, whatever happens to be cheapest or fastest that week - putting omniroute in front of it means Codex only ever needs to know about one base URL, while omniroute absorbs the churn of provider outages, rate limits, and credential rotation on the other side.
+For anyone running Codex against multiple backends - official OpenAI, Kimi or DeepSeek endpoint, whatever happens to be cheapest or fastest of the week - putting omniroute in front of it means Codex only ever needs to know about one base URL, while omniroute absorbs the churn of provider outages, rate limits, and credential rotation on the other side.
 
 <!--more-->
 

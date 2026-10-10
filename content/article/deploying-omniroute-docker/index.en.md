@@ -1,18 +1,18 @@
 ---
-title: "Deploying Omniroute on Docker"
+title: "Deploying omniroute on Docker"
 date: 2026-08-29T16:32:11+08:00
 draft: false
 
 categories: []
-tags: ['AI', 'Docker', 'Compose', 'Agentic']
+tags: []
 toc: false
 author: ""
 ---
-Running omniroute on Docker is the best default for me simply because I don’t want a global npm install polluting my host node environment, and it composes cleanly whether the box is a home server, a VPS, or my throwaway VM.
+This seems to be the best default if you don’t want a *global npm install* polluting your *already bloated* host node environment, and it composes cleanly whether the box is a home server, cheap VPS, and even a throwaway VM.
 
 <!--more-->
 
-### Picking the right image target and compose profile
+### *Luckily for us...*
 The project ships a multi-stage Dockerfile with 3 build targets. `runner-base` is the production Next.js standalone runtime with no provider CLIs baked in, and it’s the correct choice if omniroute is only going to proxy requests from a Codex instance running elsewhere.
 
 `runner-cli` extends that with git, docker.io, docker-compose, and global installs of `@openai/codex`, `@anthropic-ai/claude-code`, `droid`, and `openclaw` - useful for workflows where the agent itself needs to live inside the container, but overkill for the common case of *"Agent runs on my laptop, OmniRoute runs on a server."*
