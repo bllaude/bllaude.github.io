@@ -49,6 +49,34 @@
     </item>
     
     <item>
+      <title>irks</title>
+      <link>http://localhost:1313/article/pet-peeves/</link>
+      <pubDate>Fri, 26 Sep 2025 23:53:47 +0800</pubDate>
+      
+      <guid>http://localhost:1313/article/pet-peeves/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;memory-storage problem
+&lt;ul&gt;
+&lt;li&gt;feels like &lt;a href=&#34;https://www.google.com/url?sa=t&amp;amp;source=web&amp;amp;rct=j&amp;amp;url=https%3A%2F%2Fwww.geeksforgeeks.org%2Foperating-systems%2Fswapping-in-operating-system%2F&amp;amp;opi=89978449&#34;&gt;swapping&lt;/a&gt; because brain really does triage: working memory holds only a handful of items for roughly ~15-30 seconds unless attention actively keeps them or tags them as important, so anything done on autopilot never gets written to longer-term storage in the first place.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;“absent-minded”&lt;/em&gt; forgetfulness, or in the research literature, a failure of working memory encoding (sometimes called &lt;em&gt;“prospective/habitual memory slips”&lt;/em&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;anomia/lethologica
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;&amp;ldquo;tip-of-the-tongue kind&amp;rdquo;&lt;/em&gt; phenomenon&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;centralization whack-a-mole
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;&amp;ldquo;swap one corporate master for another&amp;rdquo;&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.reddit.com/r/degoogle/&#34;&gt;r/degoogle&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;&amp;ldquo;cold-turkey&amp;rdquo;&lt;/em&gt; burnout&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
       <title>Running Kali Linux Containers on a Linux Server with Docker</title>
       <link>http://localhost:1313/article/kali-linux-docker-containers/</link>
       <pubDate>Sun, 08 Jun 2025 18:46:01 +0800</pubDate>
@@ -82,28 +110,7 @@
       <pubDate>Wed, 03 Aug 2022 18:03:48 +0800</pubDate>
       
       <guid>http://localhost:1313/article/installing-linux-external-ssd/</guid>
-      <description>&lt;ol&gt;
-&lt;li&gt;Install &lt;a href=&#34;https://www.virtualbox.org/wiki/Downloads&#34;&gt;Virtualbox&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Install &lt;em&gt;Oracle VM VirtualBox Extension Pack&lt;/em&gt;. This is needed to connect &lt;code&gt;USB2.0&lt;/code&gt; and &lt;code&gt;USB3.0&lt;/code&gt; drives to the virtual machine.&lt;/li&gt;
-&lt;li&gt;If host os = linux, make sure your user is in the &lt;code&gt;vboxusers&lt;/code&gt; group using &lt;code&gt;sudo usermod -aG vboxusers $USER&lt;/code&gt;,then reboot to refresh the groups.&lt;/li&gt;
-&lt;li&gt;Download linux distro of choice. Make sure its 64-bit for UEFI support.&lt;/li&gt;
-&lt;li&gt;Create a new virtual machine in VirtualBox.&lt;/li&gt;
-&lt;li&gt;Don&amp;rsquo;t add a virtual hard disk, as we will be mounting the external SSD into the VM to act as the disk.&lt;/li&gt;
-&lt;li&gt;Go into the VM settings and enable EFI support (&lt;code&gt;Under System &amp;gt; Enable EFI&lt;/code&gt;).&lt;/li&gt;
-&lt;li&gt;Under USB, select the USB controller, try &lt;code&gt;USB3.0&lt;/code&gt; first and if it doesn’t work, try &lt;code&gt;USB2.0&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;Boot up the virtual machine, when asked, supply the ISO image to use.&lt;/li&gt;
-&lt;li&gt;Mount the USB hard drive by clicking the USB icon at the bottom of the virtualbox window and selecting the USB drive (if you don’t see the drive, try changing your USB controller in the options, see step 8).&lt;/li&gt;
-&lt;li&gt;Start the installer as normal.&lt;/li&gt;
-&lt;li&gt;During disk partitioning, ensure you have at least 3 partitions: &lt;code&gt;EFI Boot Partition&lt;/code&gt; (&lt;code&gt;FAT32&lt;/code&gt;, at least 200MB), / (&lt;code&gt;Root mountpoint&lt;/code&gt;, &lt;code&gt;EXT4&lt;/code&gt;), Swap (Should be around the size of computer’s RAM capacity).&lt;/li&gt;
-&lt;li&gt;Install as normal.&lt;/li&gt;
-&lt;li&gt;Shutdown the VM and the computer, try to boot the external SSD on the computer.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;result&#34;&gt;Result&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Bootable system with UEFI support that works on different computers.&lt;/li&gt;
-&lt;li&gt;Makes no changes to the computers internal drive during installation.&lt;/li&gt;
-&lt;li&gt;Tested with Ubuntu and Kali.&lt;/li&gt;
-&lt;/ul&gt;</description>
+      <description>&lt;p&gt;Things I might forget about later since my last memory swap is sinking (if I may call it that way)&lt;/p&gt;</description>
     </item>
     
     <item>

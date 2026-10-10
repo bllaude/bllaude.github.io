@@ -26,7 +26,7 @@
     <meta property="og:url" content="http://localhost:1313/article/installing-linux-external-ssd/">
 	<meta property="og:site_name" content="Brey Laude&#39;s website">
 	<meta property="og:title" content="Install Linux on External SSD">
-	<meta property="og:description" content="Install Virtualbox Install Oracle VM VirtualBox Extension Pack. This is needed to connect USB2.0 and USB3.0 drives to the virtual machine. If host os = linux, make sure your user is in the vboxusers group using sudo usermod -aG vboxusers $USER,then reboot to refresh the groups. Download linux distro of choice. Make sure its 64-bit for UEFI support. Create a new virtual machine in VirtualBox. Don’t add a virtual hard disk, as we will be mounting the external SSD into the VM to act as the disk. Go into the VM settings and enable EFI support (Under System &gt; Enable EFI). Under USB, select the USB controller, try USB3.0 first and if it doesn’t work, try USB2.0. Boot up the virtual machine, when asked, supply the ISO image to use. Mount the USB hard drive by clicking the USB icon at the bottom of the virtualbox window and selecting the USB drive (if you don’t see the drive, try changing your USB controller in the options, see step 8). Start the installer as normal. During disk partitioning, ensure you have at least 3 partitions: EFI Boot Partition (FAT32, at least 200MB), / (Root mountpoint, EXT4), Swap (Should be around the size of computer’s RAM capacity). Install as normal. Shutdown the VM and the computer, try to boot the external SSD on the computer. Result Bootable system with UEFI support that works on different computers. Makes no changes to the computers internal drive during installation. Tested with Ubuntu and Kali.">
+	<meta property="og:description" content="Things I might forget about later since my last memory swap is sinking (if I may call it that way)">
 	<meta property="og:locale" content="en">
 	<meta property="og:type" content="article">
 		<meta property="article:section" content="article">
@@ -221,7 +221,8 @@
     
         
 
-        <ol>
+        <p>Things I might forget about later since my last memory swap is sinking (if I may call it that way)</p>
+<ol>
 <li>Install <a href="https://www.virtualbox.org/wiki/Downloads">Virtualbox</a></li>
 <li>Install <em>Oracle VM VirtualBox Extension Pack</em>. This is needed to connect <code>USB2.0</code> and <code>USB3.0</code> drives to the virtual machine.</li>
 <li>If host os = linux, make sure your user is in the <code>vboxusers</code> group using <code>sudo usermod -aG vboxusers $USER</code>,then reboot to refresh the groups.</li>
@@ -243,7 +244,6 @@
 <li>Makes no changes to the computers internal drive during installation.</li>
 <li>Tested with Ubuntu and Kali.</li>
 </ul>
-
     
 </div>
 
@@ -328,15 +328,15 @@
                     </li>
                 
                     <li>
+                        <a href="http://localhost:1313/article/pet-peeves/">Pet Peeves v23</a>
+                    </li>
+                
+                    <li>
                         <a href="http://localhost:1313/article/kali-linux-docker-containers/">Running Kali Linux Containers on a Linux Server with Docker</a>
                     </li>
                 
                     <li>
                         <a href="http://localhost:1313/article/virtiofsd-debian-rootfs-kernel-testing/">Set up rootfs of a Debian VM with virtiofsd for Linux Kernel Testing</a>
-                    </li>
-                
-                    <li>
-                        <a href="http://localhost:1313/article/normal-form-designators/">Normal Form Designators</a>
                     </li>
                 
             </ul>
@@ -345,6 +345,8 @@
 
         
         <div class="categories">
+            
+            <a href="http://localhost:1313/categories/"><strong>Categories</strong></a>
             
 
             <ul>

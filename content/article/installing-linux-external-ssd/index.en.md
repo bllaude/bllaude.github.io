@@ -8,6 +8,10 @@ tags: ['Linux', 'Tutorial']
 toc: false
 author: ""
 ---
+Things I might forget about later since my last memory swap is sinking (if I may call it that way)
+
+<!--more-->
+
 1. Install [Virtualbox](https://www.virtualbox.org/wiki/Downloads)
 2. Install *Oracle VM VirtualBox Extension Pack*. This is needed to connect `USB2.0` and `USB3.0` drives to the virtual machine.
 3. If host os = linux, make sure your user is in the `vboxusers` group using `sudo usermod -aG vboxusers $USER`,then reboot to refresh the groups.

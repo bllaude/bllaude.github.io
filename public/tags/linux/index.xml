@@ -28,11 +28,11 @@
 				<description>&lt;p&gt;This post builds a Debian 13 (trixie) rootfs with &lt;code&gt;mmdebstrap&lt;/code&gt;, exports it with &lt;code&gt;virtiofsd&lt;/code&gt;, boots it under QEMU with a locally built kernel, and arranges for modules, selftests and the kernel tree itself to appear in the guest without any image rebuild step.&lt;/p&gt;&#xA;&lt;p&gt;Debian is a good fit. Why? because its minimal bootstrap is small, its package set covers nearly every kernel-adjacent tool (&lt;code&gt;linux-perf&lt;/code&gt;, &lt;code&gt;bpftool&lt;/code&gt;, &lt;code&gt;trace-cmd&lt;/code&gt;, &lt;code&gt;stress-ng&lt;/code&gt;), and it is the userspace most existing kernel CI tooling, syzkaller included, already assumes.&lt;/p&gt;</description>
 			</item>
 			<item>
-				<title>Installing Linux on External SSD</title>
+				<title>Install Linux on External SSD</title>
 				<link>http://localhost:1313/article/installing-linux-external-ssd/</link>
 				<pubDate>Wed, 03 Aug 2022 18:03:48 +0800</pubDate>
 				<guid>http://localhost:1313/article/installing-linux-external-ssd/</guid>
-				<description>&lt;p&gt;I wanted to install Linux on a portable SSD and make it bootable from my laptop, it required UEFI support. I came up with my own method since I couldn’t find a better way to do it online.&lt;/p&gt;</description>
+				<description>&lt;p&gt;Things I might forget about later since my last memory swap is sinking (if I may call it that way)&lt;/p&gt;</description>
 			</item>
 	</channel>
 </rss>

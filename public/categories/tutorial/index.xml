@@ -21,11 +21,11 @@
 				<description>&lt;p&gt;Kali Linux ships official OCI images under &lt;code&gt;kalilinux/kali-rolling&lt;/code&gt;, &lt;code&gt;kalilinux/kali-last-release&lt;/code&gt;, and &lt;code&gt;kalilinux/kali-bleeding-edge&lt;/code&gt;. They are deliberately minimal, containing little beyond the base userland, so tooling is layered on top through Kali&amp;rsquo;s metapackages. That makes them well suited to disposable, reproducible assessment environments on a remote server: you get a clean toolchain per engagement, isolated from the host and from each other, without maintaining a full Kali VM. Use them only against systems you are authorized to test.&lt;/p&gt;</description>
 			</item>
 			<item>
-				<title>Installing Linux on External SSD</title>
+				<title>Install Linux on External SSD</title>
 				<link>http://localhost:1313/article/installing-linux-external-ssd/</link>
 				<pubDate>Wed, 03 Aug 2022 18:03:48 +0800</pubDate>
 				<guid>http://localhost:1313/article/installing-linux-external-ssd/</guid>
-				<description>&lt;p&gt;I wanted to install Linux on a portable SSD and make it bootable from my laptop, it required UEFI support. I came up with my own method since I couldn’t find a better way to do it online.&lt;/p&gt;</description>
+				<description>&lt;p&gt;Things I might forget about later since my last memory swap is sinking (if I may call it that way)&lt;/p&gt;</description>
 			</item>
 	</channel>
 </rss>

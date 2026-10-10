@@ -18,14 +18,7 @@
 				<link>http://localhost:1313/article/wiring-codex-dockerized-omniroute/</link>
 				<pubDate>Mon, 31 Aug 2026 17:01:53 +0800</pubDate>
 				<guid>http://localhost:1313/article/wiring-codex-dockerized-omniroute/</guid>
-				<description>&lt;p&gt;For anyone running Codex against multiple backends - official OpenAI, Kimi or DeepSeek endpoint, whatever happens to be cheapest or fastest that week - putting omniroute in front of it means Codex only ever needs to know about one base URL, while omniroute absorbs the churn of provider outages, rate limits, and credential rotation on the other side.&lt;/p&gt;</description>
-			</item>
-			<item>
-				<title>Deploying Omniroute on Docker</title>
-				<link>http://localhost:1313/article/deploying-omniroute-docker/</link>
-				<pubDate>Sat, 29 Aug 2026 16:32:11 +0800</pubDate>
-				<guid>http://localhost:1313/article/deploying-omniroute-docker/</guid>
-				<description>&lt;p&gt;Running omniroute on Docker is the best default for me simply because I don’t want a global npm install polluting my host node environment, and it composes cleanly whether the box is a home server, a VPS, or my throwaway VM.&lt;/p&gt;</description>
+				<description>&lt;p&gt;For anyone running Codex against multiple backends - official OpenAI, Kimi or DeepSeek endpoint, whatever happens to be cheapest or fastest of the week - putting omniroute in front of it means Codex only ever needs to know about one base URL, while omniroute absorbs the churn of provider outages, rate limits, and credential rotation on the other side.&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>Running Kali Linux Containers on a Linux Server with Docker</title>

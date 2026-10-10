@@ -177,65 +177,6 @@
     
         <div class="article-wrapper u-cf">
             
-                <a class="bubble" href="http://localhost:1313/article/quick-containers/">
-    <i class="fas fa-fw fa-pencil-alt"></i>
-</a>
-
-<article class="default article">
-    
-
-    <div class="content">
-    <h1 class="article-title">
-        <a href="http://localhost:1313/article/quick-containers/">
-            Quick containers
-        </a>
-    </h1>
-
-    <div class="meta">
-        
-            
-                <span class="date moment">2026-10-10</span>
-            
-        
-
-        
-            
-                <span class="readingTime">2 min read</span>
-            
-        
-
-        
-
-        
-    </div>
-
-    
-        <p>The post walks through why chroot alone isn’t isolation, then builds qc, a small C runtime that uses <code>pivot_root</code> plus mount, PID, UTS, IPC, network, user and cgroup namespaces to run unprivileged. I confirmed the embedded qc.c compiles cleanly with <code>-Wall -Wextra</code></p>
-<p>I&rsquo;m also going to list what’s missing compared with a real runtime: networking, cgroup limits, seccomp and capabilities, overlayfs and a minimal init.</p>
-<p>Sources: none; this is written from kernel man-page knowledge.</p>
-
-        
-            <a href="http://localhost:1313/article/quick-containers/" class="more">Continue reading</a>
-        
-    
-</div>
-
-    
-<div class="footer no-tags">
-
-
-    
-
-    
-</div>
-
-</article>
-
-            
-        </div>
-    
-        <div class="article-wrapper u-cf">
-            
                 <a class="bubble" href="http://localhost:1313/article/esp32-modbus-rtu/">
     <i class="fas fa-fw fa-pencil-alt"></i>
 </a>
@@ -348,7 +289,7 @@
     </div>
 
     
-        <p>For anyone running Codex against multiple backends - official OpenAI, Kimi or DeepSeek endpoint, whatever happens to be cheapest or fastest that week - putting omniroute in front of it means Codex only ever needs to know about one base URL, while omniroute absorbs the churn of provider outages, rate limits, and credential rotation on the other side.</p>
+        <p>For anyone running Codex against multiple backends - official OpenAI, Kimi or DeepSeek endpoint, whatever happens to be cheapest or fastest of the week - putting omniroute in front of it means Codex only ever needs to know about one base URL, while omniroute absorbs the churn of provider outages, rate limits, and credential rotation on the other side.</p>
 
         
             <a href="http://localhost:1313/article/wiring-codex-dockerized-omniroute/" class="more">Continue reading</a>
@@ -413,7 +354,7 @@
     <div class="content">
     <h1 class="article-title">
         <a href="http://localhost:1313/article/deploying-omniroute-docker/">
-            Deploying Omniroute on Docker
+            Deploying omniroute on Docker
         </a>
     </h1>
 
@@ -436,7 +377,7 @@
     </div>
 
     
-        <p>Running omniroute on Docker is the best default for me simply because I don’t want a global npm install polluting my host node environment, and it composes cleanly whether the box is a home server, a VPS, or my throwaway VM.</p>
+        <p>This seems to be the best default if you don’t want a <em>global npm install</em> polluting your <em>already bloated</em> host node environment, and it composes cleanly whether the box is a home server, cheap VPS, and even a throwaway VM.</p>
 
         
             <a href="http://localhost:1313/article/deploying-omniroute-docker/" class="more">Continue reading</a>
@@ -445,36 +386,9 @@
 </div>
 
     
-<div class="footer">
+<div class="footer no-tags">
 
 
-    
-        <div class="tags">
-            <i class="fa fa-tags"></i>
-            <div class="links">
-                
-                    
-                    
-                    <a href="http://localhost:1313/tags/ai/">AI</a>
-                    
-                
-                    
-                    
-                    <a href="http://localhost:1313/tags/docker/">Docker</a>
-                    
-                
-                    
-                    
-                    <a href="http://localhost:1313/tags/compose/">Compose</a>
-                    
-                
-                    
-                    
-                    <a href="http://localhost:1313/tags/agentic/">Agentic</a>
-                    
-                
-            </div>
-        </div>
     
 
     
@@ -486,6 +400,130 @@
             
         </div>
     </div>
+    
+</div>
+
+</article>
+
+            
+        </div>
+    
+        <div class="article-wrapper u-cf">
+            
+                <a class="bubble" href="http://localhost:1313/article/chroot-namespace-isolation/">
+    <i class="fas fa-fw fa-pencil-alt"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="http://localhost:1313/article/chroot-namespace-isolation/">
+            chroot with namespace isolation
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2026-05-08</span>
+            
+        
+
+        
+            
+                <span class="readingTime">2 min read</span>
+            
+        
+
+        
+
+        
+    </div>
+
+    
+        <p>This is aimed at being <em>&lsquo;chroot alone isn’t isolation&rsquo;</em>, building qc, a small C runtime that uses <code>pivot_root</code> plus mount, PID, UTS, IPC, network, user and cgroup namespaces to run unprivileged. Compiles cleanly with <code>-Wall -Wextra</code></p>
+<p>Follow project on <a href="https://github.com/bllaude/quick-containers">Github</a></p>
+
+        
+            <a href="http://localhost:1313/article/chroot-namespace-isolation/" class="more">Continue reading</a>
+        
+    
+</div>
+
+    
+<div class="footer no-tags">
+
+
+    
+
+    
+</div>
+
+</article>
+
+            
+        </div>
+    
+        <div class="article-wrapper u-cf">
+            
+                <a class="bubble" href="http://localhost:1313/article/pet-peeves/">
+    <i class="fas fa-fw fa-pencil-alt"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="http://localhost:1313/article/pet-peeves/">
+            Pet Peeves v23
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2025-09-26</span>
+            
+        
+
+        
+            
+                <span class="readingTime">1 min read</span>
+            
+        
+
+        
+
+        
+    </div>
+
+    
+        <ul>
+<li>anomia/lethologica
+<ul>
+<li>tip-of-the-tongue kind</li>
+</ul>
+</li>
+<li>memory-storage problem [edit 10.09.26]
+<ul>
+<li>feels like <a href="https://www.google.com/url?sa=t&amp;source=web&amp;rct=j&amp;url=https%3A%2F%2Fwww.geeksforgeeks.org%2Foperating-systems%2Fswapping-in-operating-system%2F&amp;opi=89978449">swapping</a> because the brain really does triage: working memory holds only a handful of items for roughly ~15-30 seconds unless attention actively keeps them or tags them as important, so anything done on autopilot never gets written to longer-term storage in the first place.</li>
+</ul>
+</li>
+</ul>
+
+        
+    
+</div>
+
+    
+<div class="footer no-tags">
+
+
+    
+
     
 </div>
 
@@ -677,96 +715,6 @@
             
         </div>
     
-        <div class="article-wrapper u-cf">
-            
-                <a class="bubble" href="http://localhost:1313/article/normal-form-designators/">
-    <i class="fas fa-fw fa-pencil-alt"></i>
-</a>
-
-<article class="default article">
-    
-
-    <div class="content">
-    <h1 class="article-title">
-        <a href="http://localhost:1313/article/normal-form-designators/">
-            Normal Form Designators
-        </a>
-    </h1>
-
-    <div class="meta">
-        
-            
-                <span class="date moment">2023-04-12</span>
-            
-        
-
-        
-            
-                <span class="readingTime">3 min read</span>
-            
-        
-
-        
-
-        
-            <span class="author">
-                
-                
-                    <a href="http://localhost:1313/author/bllaude/">Bllaude</a>
-                
-            </span>
-        
-    </div>
-
-    
-        <p><a href="https://en.wikipedia.org/wiki/Brian_Cantwell_Smith">Brian Cantwell Smith</a> is one of the many people who are far smarter than I am. His <a href="https://publications.csail.mit.edu/lcs/pubs/pdf/MIT-LCS-TR-272.pdf">MIT thesis Procedural Reflection in Programming Languages</a> — which is something else — is how I first became aware of him.</p>
-
-        
-            <a href="http://localhost:1313/article/normal-form-designators/" class="more">Continue reading</a>
-        
-    
-</div>
-
-    
-<div class="footer">
-
-
-    
-        <div class="tags">
-            <i class="fa fa-tags"></i>
-            <div class="links">
-                
-                    
-                    
-                    <a href="http://localhost:1313/tags/software/">Software</a>
-                    
-                
-                    
-                    
-                    <a href="http://localhost:1313/tags/programming/">Programming</a>
-                    
-                
-            </div>
-        </div>
-    
-
-    
-    <div class="languages">
-        <i class="fa fa-language"></i>
-        <div class="links">
-            
-                <a href="http://localhost:1313/fr/article/normal-form-designators/">fr</a>
-            
-        </div>
-    </div>
-    
-</div>
-
-</article>
-
-            
-        </div>
-    
 
     
     <div class="paginator">
@@ -792,10 +740,6 @@
                 
                 
                     <li>
-                        <a href="http://localhost:1313/article/quick-containers/">Quick containers</a>
-                    </li>
-                
-                    <li>
                         <a href="http://localhost:1313/article/esp32-modbus-rtu/">ESP32 Modbus RTU</a>
                     </li>
                 
@@ -804,7 +748,15 @@
                     </li>
                 
                     <li>
-                        <a href="http://localhost:1313/article/deploying-omniroute-docker/">Deploying Omniroute on Docker</a>
+                        <a href="http://localhost:1313/article/deploying-omniroute-docker/">Deploying omniroute on Docker</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:1313/article/chroot-namespace-isolation/">chroot with namespace isolation</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:1313/article/pet-peeves/">Pet Peeves v23</a>
                     </li>
                 
                     <li>
@@ -813,10 +765,6 @@
                 
                     <li>
                         <a href="http://localhost:1313/article/virtiofsd-debian-rootfs-kernel-testing/">Set up rootfs of a Debian VM with virtiofsd for Linux Kernel Testing</a>
-                    </li>
-                
-                    <li>
-                        <a href="http://localhost:1313/article/normal-form-designators/">Normal Form Designators</a>
                     </li>
                 
             </ul>
@@ -834,30 +782,6 @@
                 <li>
                 
                     <a href="http://localhost:1313/categories/tutorial/">Tutorial (2)</a>
-                
-                </li>
-                
-                <li>
-                
-                    <a href="http://localhost:1313/categories/code/">Code (1)</a>
-                
-                </li>
-                
-                <li>
-                
-                    <a href="http://localhost:1313/categories/privacy/">Privacy (1)</a>
-                
-                </li>
-                
-                <li>
-                
-                    <a href="http://localhost:1313/categories/society/">Society (1)</a>
-                
-                </li>
-                
-                <li>
-                
-                    <a href="http://localhost:1313/categories/tutorials/">Tutorials (1)</a>
                 
                 </li>
                 

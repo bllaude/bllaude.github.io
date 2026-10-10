@@ -31,21 +31,8 @@
     <loc>http://localhost:1313/page/about/</loc>
     <lastmod>2026-10-10T21:56:18+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/article/</loc>
-    <lastmod>2026-10-10T22:05:54+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://localhost:1313/article/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="http://localhost:1313/fr/article/"
-                />
-  </url><url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2026-10-10T22:05:54+08:00</lastmod>
+    <lastmod>2026-10-10T21:56:18+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -56,9 +43,6 @@
                 hreflang="fr"
                 href="http://localhost:1313/fr/"
                 />
-  </url><url>
-    <loc>http://localhost:1313/article/quick-containers/</loc>
-    <lastmod>2026-10-10T22:05:54+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/page/</loc>
     <lastmod>2026-10-10T21:56:18+08:00</lastmod>
@@ -71,6 +55,19 @@
                 rel="alternate"
                 hreflang="fr"
                 href="http://localhost:1313/fr/page/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/article/</loc>
+    <lastmod>2026-09-27T14:29:10+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/article/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="http://localhost:1313/fr/article/"
                 />
   </url><url>
     <loc>http://localhost:1313/author/</loc>
@@ -177,35 +174,6 @@
                 href="http://localhost:1313/fr/article/wiring-codex-dockerized-omniroute/"
                 />
   </url><url>
-    <loc>http://localhost:1313/tags/agentic/</loc>
-    <lastmod>2026-08-29T16:32:11+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://localhost:1313/tags/agentic/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="http://localhost:1313/fr/tags/agentic/"
-                />
-  </url><url>
-    <loc>http://localhost:1313/tags/ai/</loc>
-    <lastmod>2026-08-29T16:32:11+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/compose/</loc>
-    <lastmod>2026-08-29T16:32:11+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://localhost:1313/tags/compose/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="http://localhost:1313/fr/tags/compose/"
-                />
-  </url><url>
     <loc>http://localhost:1313/article/deploying-omniroute-docker/</loc>
     <lastmod>2026-08-29T16:32:11+08:00</lastmod>
     <xhtml:link
@@ -218,6 +186,12 @@
                 hreflang="fr"
                 href="http://localhost:1313/fr/article/deploying-omniroute-docker/"
                 />
+  </url><url>
+    <loc>http://localhost:1313/article/chroot-namespace-isolation/</loc>
+    <lastmod>2026-05-08T22:05:54+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/article/pet-peeves/</loc>
+    <lastmod>2025-09-26T23:53:47+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/</loc>
     <lastmod>2025-06-08T18:46:01+08:00</lastmod>
@@ -307,42 +281,6 @@
     <loc>http://localhost:1313/tags/tutorial/</loc>
     <lastmod>2022-08-03T18:03:48+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/discussions/</loc>
-    <lastmod>2021-11-01T18:10:14+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/ideas/</loc>
-    <lastmod>2021-11-01T18:10:14+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/author/lednerb/</loc>
-    <lastmod>2021-11-01T18:10:14+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/qa/</loc>
-    <lastmod>2021-11-01T18:10:14+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/show-and-tell/</loc>
-    <lastmod>2021-11-01T18:10:14+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/support/</loc>
-    <lastmod>2021-11-01T18:10:14+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/article/support-and-discussions/</loc>
-    <lastmod>2021-11-01T18:10:14+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/quote/edward-snowden-privacy/</loc>
-    <lastmod>2021-11-01T13:01:14+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/free-speech/</loc>
-    <lastmod>2021-11-01T13:01:14+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/privacy/</loc>
-    <lastmod>2021-11-01T13:01:14+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/quote/</loc>
-    <lastmod>2021-11-01T13:01:14+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/society/</loc>
-    <lastmod>2021-11-01T13:01:14+01:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/code/subaru-souce-code/</loc>
     <lastmod>2021-11-01T09:31:27+01:00</lastmod>
     <xhtml:link
@@ -355,12 +293,6 @@
                 hreflang="fr"
                 href="http://localhost:1313/fr/code/subaru-souce-code/"
                 />
-  </url><url>
-    <loc>http://localhost:1313/tags/bilberry-theme/</loc>
-    <lastmod>2021-11-01T09:31:27+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/code/</loc>
-    <lastmod>2021-11-01T09:31:27+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/code/</loc>
     <lastmod>2021-11-01T09:31:27+01:00</lastmod>
@@ -375,16 +307,7 @@
                 href="http://localhost:1313/fr/code/"
                 />
   </url><url>
-    <loc>http://localhost:1313/tags/hugo/</loc>
-    <lastmod>2021-11-01T09:31:27+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/code/installing-bilberry-theme/</loc>
-    <lastmod>2021-11-01T09:31:27+01:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/souce-code/</loc>
-    <lastmod>2021-11-01T09:31:27+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/tutorials/</loc>
     <lastmod>2021-11-01T09:31:27+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/gallery/</loc>
@@ -401,8 +324,6 @@
                 href="http://localhost:1313/fr/archive/"
                 />
   </url><url>
-    <loc>http://localhost:1313/tags/diskussion/</loc>
-  </url><url>
     <loc>http://localhost:1313/series/</loc>
     <xhtml:link
                 rel="alternate"
@@ -414,7 +335,5 @@
                 hreflang="fr"
                 href="http://localhost:1313/fr/series/"
                 />
-  </url><url>
-    <loc>http://localhost:1313/tags/show--tell/</loc>
   </url>
 </urlset>

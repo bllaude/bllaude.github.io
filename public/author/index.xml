@@ -20,12 +20,5 @@
 				<guid>http://localhost:1313/author/bllaude/</guid>
 				<description></description>
 			</item>
-			<item>
-				<title>Lednerb</title>
-				<link>http://localhost:1313/author/lednerb/</link>
-				<pubDate>Mon, 01 Nov 2021 18:10:14 +0100</pubDate>
-				<guid>http://localhost:1313/author/lednerb/</guid>
-				<description></description>
-			</item>
 	</channel>
 </rss>

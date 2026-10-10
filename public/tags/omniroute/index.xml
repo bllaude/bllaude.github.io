@@ -18,7 +18,7 @@
 				<link>http://localhost:1313/article/wiring-codex-dockerized-omniroute/</link>
 				<pubDate>Mon, 31 Aug 2026 17:01:53 +0800</pubDate>
 				<guid>http://localhost:1313/article/wiring-codex-dockerized-omniroute/</guid>
-				<description>&lt;p&gt;For anyone running Codex against multiple backends - official OpenAI, Kimi or DeepSeek endpoint, whatever happens to be cheapest or fastest that week - putting omniroute in front of it means Codex only ever needs to know about one base URL, while omniroute absorbs the churn of provider outages, rate limits, and credential rotation on the other side.&lt;/p&gt;</description>
+				<description>&lt;p&gt;For anyone running Codex against multiple backends - official OpenAI, Kimi or DeepSeek endpoint, whatever happens to be cheapest or fastest of the week - putting omniroute in front of it means Codex only ever needs to know about one base URL, while omniroute absorbs the churn of provider outages, rate limits, and credential rotation on the other side.&lt;/p&gt;</description>
 			</item>
 	</channel>
 </rss>
