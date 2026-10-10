@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+
+
+  
+<html itemscope itemtype="https://schema.org/WebPage" class="no-js" lang="en">
+
+<head prefix="og: http://ogp.me/ns#"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="siteBaseUrl" content="http://localhost:1313/">
+    <meta name="author" content="bllaude">
+    <meta name="description" content="Brey Laude&#39;s website">
+    <meta name="keywords" content="brey laude, brey, laude,">
+    <meta name="generator" content="Hugo 0.165.0">
+    <title>
+        
+           
+               chroot with namespace isolation &vert; Brey Laude&#39;s website
+           
+        
+    </title>
+    <meta itemprop="name" content="chroot with namespace isolation">
+    <meta itemprop="description" content="chroot with namespace isolation - Brey Laude&#39;s website">
+    <meta property="og:site_name" content="Brey Laude&#39;s website">
+
+    <meta property="og:url" content="http://localhost:1313/article/chroot-namespace-isolation/">
+	<meta property="og:site_name" content="Brey Laude&#39;s website">
+	<meta property="og:title" content="chroot with namespace isolation">
+	<meta property="og:description" content="This is aimed at being ‘chroot alone isn’t isolation’, building qc, a small C runtime that uses pivot_root plus mount, PID, UTS, IPC, network, user and cgroup namespaces to run unprivileged. Compiles cleanly with -Wall -Wextra
+Follow project on Github">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="article">
+		<meta property="article:published_time" content="2026-05-08T22:05:54+08:00">
+		<meta property="article:modified_time" content="2026-05-08T22:05:54+08:00">
+
+
+    
+
+
+    
+
+    
+    <link rel="canonical" href="http://localhost:1313/article/chroot-namespace-isolation/">
+    
+
+    
+        
+
+    <script src="http://localhost:1313/js/check-theme-prefer.js"></script>
+
+
+    
+
+    
+
+
+
+    <link id="theme-css" rel="stylesheet" href="http://localhost:1313/theme.css" media="screen">
+
+
+
+    
+
+
+
+    
+
+    
+</head>
+
+<body class="bilberry-hugo-theme">
+    
+
+    
+    <nav>
+
+    <div class="container">
+        <ul class="topnav">
+            
+                
+                
+                    <li><a href="https://github.com/bllaude/bllaude.github.io"
+                           target="_blank">github ↗</a></li>
+                
+            
+                
+                
+                    <li><a href="https://x.com/breylaude"
+                           target="_blank">breylaude ↗</a></li>
+                
+            
+                
+                
+                    <li><a href="/page/about/">About</a></li>
+                
+            
+        </ul>
+
+        
+    </div>
+</nav>
+
+
+    
+    <header>
+
+    <a id="back-to-top-button">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <div class="container">
+        <div class="logo">
+            <a href="/" class="logo">
+                
+                    
+                    
+                        
+                    
+                    <img src="https://seccdn.libravatar.org/avatar/42dbf737f456c657c7c530f44dff7ee5?d=mm&size=200" alt="">
+                
+
+                <span class="overlay"><i class="fa fa-home"></i></span>
+            </a>
+        </div>
+        <div class="titles">
+            <h3 class="title">
+                <a href="/">
+                    Brey Laude&#39;s website
+                </a>
+            </h3>
+
+            
+        </div>
+        <div class="selectors">
+          
+          <div class="light-dark-mode">
+            <button id="light-dark-toggle" class="fa-solid fa-sun"></button>
+          </div>
+          
+          <div class="languages">
+            
+                
+                
+                  
+                
+
+                
+                    <a href="http://localhost:1313/article/chroot-namespace-isolation/" class="active">en</a>
+                
+            
+                
+                
+
+                
+                    <a href="http://localhost:1313/fr/">fr</a>
+                
+            
+            </div>
+        
+       </div>
+
+        
+            <div class="toggler">
+        
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </div>
+    </div>
+    </div>
+</header>
+
+
+    <div class="main container">
+        
+    <div class="article-wrapper u-cf single">
+        
+            <a class="bubble" href="http://localhost:1313/article/chroot-namespace-isolation/">
+    <i class="fas fa-fw fa-pencil-alt"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="http://localhost:1313/article/chroot-namespace-isolation/">
+            chroot with namespace isolation
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2026-05-08</span>
+            
+        
+
+        
+            
+                <span class="readingTime">2 min read</span>
+            
+        
+
+        
+
+        
+    </div>
+
+    
+        
+
+        <p>This is aimed at being <em>&lsquo;chroot alone isn’t isolation&rsquo;</em>, building qc, a small C runtime that uses <code>pivot_root</code> plus mount, PID, UTS, IPC, network, user and cgroup namespaces to run unprivileged. Compiles cleanly with <code>-Wall -Wextra</code></p>
+<p>Follow project on <a href="https://github.com/bllaude/quick-containers">Github</a></p>
+<p>I&rsquo;m also going to list what’s missing compared with a real runtime: networking, cgroup limits, seccomp and capabilities, overlayfs and a minimal init.</p>
+<p>Sources: none; this is written from kernel man-page knowledge (<code>namespaces(7)</code>, <code>user_namespaces(7)</code>, <code>pivot_root(2)</code>, <code>clone(2)</code>).</p>
+<h2 id="the-code">The code</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#6272a4">// qc.c — quick containers. cc -O2 -Wall -o qc qc.c
+</span></span></span><span style="display:flex;"><span><span style="color:#ff79c6">#define _GNU_SOURCE
+</span></span></span><span style="display:flex;"><span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;sched.h&gt;</span><span style="color:#ff79c6">
+</span></span></span><span style="display:flex;"><span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;signal.h&gt;</span><span style="color:#ff79c6">
+</span></span></span><span style="display:flex;"><span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;stdio.h&gt;</span><span style="color:#ff79c6">
+</span></span></span><span style="display:flex;"><span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;stdlib.h&gt;</span><span style="color:#ff79c6">
+</span></span></span><span style="display:flex;"><span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;string.h&gt;</span><span style="color:#ff79c6">
+</span></span></span><span style="display:flex;"><span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;fcntl.h&gt;</span><span style="color:#ff79c6">
+</span></span></span><span style="display:flex;"><span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;unistd.h&gt;</span><span style="color:#ff79c6">
+</span></span></span><span style="display:flex;"><span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;sys/mman.h&gt;</span><span style="color:#ff79c6">
+</span></span></span><span style="display:flex;"><span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;sys/mount.h&gt;</span><span style="color:#ff79c6">
+</span></span></span><span style="display:flex;"><span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;sys/syscall.h&gt;</span><span style="color:#ff79c6">
+</span></span></span><span style="display:flex;"><span><span style="color:#ff79c6">#include</span> <span style="color:#ff79c6">&lt;sys/wait.h&gt;</span><span style="color:#ff79c6">
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">#define die(m) do { perror(m); _exit(1); } while (0)
+</span></span></span><span style="display:flex;"><span><span style="color:#ff79c6">#define STACK_SZ (1024 * 1024)
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">struct</span> cfg { <span style="color:#ff79c6">const</span> <span style="color:#8be9fd">char</span> <span style="color:#ff79c6">*</span>root; <span style="color:#8be9fd">char</span> <span style="color:#ff79c6">**</span>argv; <span style="color:#8be9fd">int</span> sync[<span style="color:#bd93f9">2</span>]; };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">static</span> <span style="color:#8be9fd">void</span> <span style="color:#50fa7b">put</span>(<span style="color:#ff79c6">const</span> <span style="color:#8be9fd">char</span> <span style="color:#ff79c6">*</span>path, <span style="color:#ff79c6">const</span> <span style="color:#8be9fd">char</span> <span style="color:#ff79c6">*</span>s) {
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd">int</span> fd <span style="color:#ff79c6">=</span> <span style="color:#50fa7b">open</span>(path, O_WRONLY);
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">if</span> (fd <span style="color:#ff79c6">&lt;</span> <span style="color:#bd93f9">0</span> <span style="color:#ff79c6">||</span> <span style="color:#50fa7b">write</span>(fd, s, <span style="color:#50fa7b">strlen</span>(s)) <span style="color:#ff79c6">&lt;</span> <span style="color:#bd93f9">0</span>) <span style="color:#50fa7b">die</span>(path);
+</span></span><span style="display:flex;"><span>    <span style="color:#50fa7b">close</span>(fd);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">static</span> <span style="color:#8be9fd">int</span> <span style="color:#50fa7b">child</span>(<span style="color:#8be9fd">void</span> <span style="color:#ff79c6">*</span>arg) {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">struct</span> cfg <span style="color:#ff79c6">*</span>c <span style="color:#ff79c6">=</span> arg;
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd">char</span> b;
+</span></span><span style="display:flex;"><span>    <span style="color:#50fa7b">close</span>(c<span style="color:#ff79c6">-&gt;</span>sync[<span style="color:#bd93f9">1</span>]);
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">if</span> (<span style="color:#50fa7b">read</span>(c<span style="color:#ff79c6">-&gt;</span>sync[<span style="color:#bd93f9">0</span>], <span style="color:#ff79c6">&amp;</span>b, <span style="color:#bd93f9">1</span>) <span style="color:#ff79c6">!=</span> <span style="color:#bd93f9">1</span>) <span style="color:#50fa7b">die</span>(<span style="color:#f1fa8c">&#34;sync&#34;</span>);   <span style="color:#6272a4">// wait for id maps
+</span></span></span><span style="display:flex;"><span>    <span style="color:#50fa7b">close</span>(c<span style="color:#ff79c6">-&gt;</span>sync[<span style="color:#bd93f9">0</span>]);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">if</span> (<span style="color:#50fa7b">sethostname</span>(<span style="color:#f1fa8c">&#34;quick&#34;</span>, <span style="color:#bd93f9">5</span>))                        <span style="color:#50fa7b">die</span>(<span style="color:#f1fa8c">&#34;sethostname&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">if</span> (<span style="color:#50fa7b">mount</span>(<span style="color:#8be9fd;font-style:italic">NULL</span>, <span style="color:#f1fa8c">&#34;/&#34;</span>, <span style="color:#8be9fd;font-style:italic">NULL</span>, MS_REC <span style="color:#ff79c6">|</span> MS_PRIVATE, <span style="color:#8be9fd;font-style:italic">NULL</span>)) <span style="color:#50fa7b">die</span>(<span style="color:#f1fa8c">&#34;make-private&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">if</span> (<span style="color:#50fa7b">mount</span>(c<span style="color:#ff79c6">-&gt;</span>root, c<span style="color:#ff79c6">-&gt;</span>root, <span style="color:#8be9fd;font-style:italic">NULL</span>, MS_BIND <span style="color:#ff79c6">|</span> MS_REC, <span style="color:#8be9fd;font-style:italic">NULL</span>)) <span style="color:#50fa7b">die</span>(<span style="color:#f1fa8c">&#34;bind-root&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">if</span> (<span style="color:#50fa7b">chdir</span>(c<span style="color:#ff79c6">-&gt;</span>root))                                 <span style="color:#50fa7b">die</span>(<span style="color:#f1fa8c">&#34;chdir&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">if</span> (<span style="color:#50fa7b">syscall</span>(SYS_pivot_root, <span style="color:#f1fa8c">&#34;.&#34;</span>, <span style="color:#f1fa8c">&#34;.&#34;</span>))              <span style="color:#50fa7b">die</span>(<span style="color:#f1fa8c">&#34;pivot_root&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">if</span> (<span style="color:#50fa7b">umount2</span>(<span style="color:#f1fa8c">&#34;.&#34;</span>, MNT_DETACH))                       <span style="color:#50fa7b">die</span>(<span style="color:#f1fa8c">&#34;umount-old&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">if</span> (<span style="color:#50fa7b">chdir</span>(<span style="color:#f1fa8c">&#34;/&#34;</span>))                                     <span style="color:#50fa7b">die</span>(<span style="color:#f1fa8c">&#34;chdir /&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">if</span> (<span style="color:#50fa7b">mount</span>(<span style="color:#f1fa8c">&#34;proc&#34;</span>, <span style="color:#f1fa8c">&#34;/proc&#34;</span>, <span style="color:#f1fa8c">&#34;proc&#34;</span>,
+</span></span><span style="display:flex;"><span>              MS_NOSUID <span style="color:#ff79c6">|</span> MS_NODEV <span style="color:#ff79c6">|</span> MS_NOEXEC, <span style="color:#8be9fd;font-style:italic">NULL</span>))  <span style="color:#50fa7b">die</span>(<span style="color:#f1fa8c">&#34;mount-proc&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#50fa7b">clearenv</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#50fa7b">setenv</span>(<span style="color:#f1fa8c">&#34;PATH&#34;</span>, <span style="color:#f1fa8c">&#34;/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin&#34;</span>, <span style="color:#bd93f9">1</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#50fa7b">setenv</span>(<span style="color:#f1fa8c">&#34;HOME&#34;</span>, <span style="color:#f1fa8c">&#34;/root&#34;</span>, <span style="color:#bd93f9">1</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#50fa7b">execvp</span>(c<span style="color:#ff79c6">-&gt;</span>argv[<span style="color:#bd93f9">0</span>], c<span style="color:#ff79c6">-&gt;</span>argv);
+</span></span><span style="display:flex;"><span>    <span style="color:#50fa7b">die</span>(<span style="color:#f1fa8c">&#34;exec&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">return</span> <span style="color:#bd93f9">1</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd">int</span> <span style="color:#50fa7b">main</span>(<span style="color:#8be9fd">int</span> argc, <span style="color:#8be9fd">char</span> <span style="color:#ff79c6">**</span>argv) {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">if</span> (argc <span style="color:#ff79c6">&lt;</span> <span style="color:#bd93f9">3</span>) { <span style="color:#50fa7b">fprintf</span>(stderr, <span style="color:#f1fa8c">&#34;usage: %s &lt;rootfs&gt; &lt;cmd&gt; [args...]</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>, argv[<span style="color:#bd93f9">0</span>]); <span style="color:#ff79c6">return</span> <span style="color:#bd93f9">2</span>; }
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">struct</span> cfg c <span style="color:#ff79c6">=</span> { .root <span style="color:#ff79c6">=</span> argv[<span style="color:#bd93f9">1</span>], .argv <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">&amp;</span>argv[<span style="color:#bd93f9">2</span>] };
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd">uid_t</span> uid <span style="color:#ff79c6">=</span> <span style="color:#50fa7b">getuid</span>(); <span style="color:#8be9fd">gid_t</span> gid <span style="color:#ff79c6">=</span> <span style="color:#50fa7b">getgid</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">if</span> (<span style="color:#50fa7b">pipe</span>(c.sync)) <span style="color:#50fa7b">die</span>(<span style="color:#f1fa8c">&#34;pipe&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd">char</span> <span style="color:#ff79c6">*</span>stack <span style="color:#ff79c6">=</span> <span style="color:#50fa7b">mmap</span>(<span style="color:#8be9fd;font-style:italic">NULL</span>, STACK_SZ, PROT_READ <span style="color:#ff79c6">|</span> PROT_WRITE,
+</span></span><span style="display:flex;"><span>                       MAP_PRIVATE <span style="color:#ff79c6">|</span> MAP_ANONYMOUS <span style="color:#ff79c6">|</span> MAP_STACK, <span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>, <span style="color:#bd93f9">0</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">if</span> (stack <span style="color:#ff79c6">==</span> MAP_FAILED) <span style="color:#50fa7b">die</span>(<span style="color:#f1fa8c">&#34;mmap&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd">int</span> flags <span style="color:#ff79c6">=</span> CLONE_NEWUSER <span style="color:#ff79c6">|</span> CLONE_NEWNS <span style="color:#ff79c6">|</span> CLONE_NEWPID <span style="color:#ff79c6">|</span> CLONE_NEWUTS <span style="color:#ff79c6">|</span>
+</span></span><span style="display:flex;"><span>                CLONE_NEWIPC <span style="color:#ff79c6">|</span> CLONE_NEWNET <span style="color:#ff79c6">|</span> CLONE_NEWCGROUP <span style="color:#ff79c6">|</span> SIGCHLD;
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd">pid_t</span> pid <span style="color:#ff79c6">=</span> <span style="color:#50fa7b">clone</span>(child, stack <span style="color:#ff79c6">+</span> STACK_SZ, flags, <span style="color:#ff79c6">&amp;</span>c);
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">if</span> (pid <span style="color:#ff79c6">&lt;</span> <span style="color:#bd93f9">0</span>) <span style="color:#50fa7b">die</span>(<span style="color:#f1fa8c">&#34;clone&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd">char</span> path[<span style="color:#bd93f9">64</span>], map[<span style="color:#bd93f9">64</span>];
+</span></span><span style="display:flex;"><span>    <span style="color:#50fa7b">snprintf</span>(path, <span style="color:#ff79c6">sizeof</span> path, <span style="color:#f1fa8c">&#34;/proc/%d/setgroups&#34;</span>, pid); <span style="color:#50fa7b">put</span>(path, <span style="color:#f1fa8c">&#34;deny&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#50fa7b">snprintf</span>(path, <span style="color:#ff79c6">sizeof</span> path, <span style="color:#f1fa8c">&#34;/proc/%d/uid_map&#34;</span>, pid);
+</span></span><span style="display:flex;"><span>    <span style="color:#50fa7b">snprintf</span>(map, <span style="color:#ff79c6">sizeof</span> map, <span style="color:#f1fa8c">&#34;0 %u 1</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>, uid);            <span style="color:#50fa7b">put</span>(path, map);
+</span></span><span style="display:flex;"><span>    <span style="color:#50fa7b">snprintf</span>(path, <span style="color:#ff79c6">sizeof</span> path, <span style="color:#f1fa8c">&#34;/proc/%d/gid_map&#34;</span>, pid);
+</span></span><span style="display:flex;"><span>    <span style="color:#50fa7b">snprintf</span>(map, <span style="color:#ff79c6">sizeof</span> map, <span style="color:#f1fa8c">&#34;0 %u 1</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">&#34;</span>, gid);            <span style="color:#50fa7b">put</span>(path, map);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">if</span> (<span style="color:#50fa7b">write</span>(c.sync[<span style="color:#bd93f9">1</span>], <span style="color:#f1fa8c">&#34;x&#34;</span>, <span style="color:#bd93f9">1</span>) <span style="color:#ff79c6">!=</span> <span style="color:#bd93f9">1</span>) <span style="color:#50fa7b">die</span>(<span style="color:#f1fa8c">&#34;sync-write&#34;</span>);  <span style="color:#6272a4">// release the child
+</span></span></span><span style="display:flex;"><span>    <span style="color:#50fa7b">close</span>(c.sync[<span style="color:#bd93f9">0</span>]); <span style="color:#50fa7b">close</span>(c.sync[<span style="color:#bd93f9">1</span>]);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd">int</span> st;
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">if</span> (<span style="color:#50fa7b">waitpid</span>(pid, <span style="color:#ff79c6">&amp;</span>st, <span style="color:#bd93f9">0</span>) <span style="color:#ff79c6">&lt;</span> <span style="color:#bd93f9">0</span>) <span style="color:#50fa7b">die</span>(<span style="color:#f1fa8c">&#34;waitpid&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">return</span> <span style="color:#50fa7b">WIFEXITED</span>(st) <span style="color:#ff79c6">?</span> <span style="color:#50fa7b">WEXITSTATUS</span>(st) <span style="color:#ff79c6">:</span> <span style="color:#bd93f9">128</span> <span style="color:#ff79c6">+</span> <span style="color:#50fa7b">WTERMSIG</span>(st);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+    
+</div>
+
+    
+<div class="footer no-tags">
+
+
+    
+
+    
+</div>
+
+</article>
+
+        
+    </div>
+
+    
+        <div id="comments-container">
+            
+            
+
+            
+
+            
+
+        </div>
+    
+
+    </div>
+
+    
+<footer>
+    <div class="container">
+
+        
+        <div class="recent-posts">
+            <strong>Latest posts</strong>
+            <ul>
+                
+                
+                    <li>
+                        <a href="http://localhost:1313/article/esp32-modbus-rtu/">ESP32 Modbus RTU</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:1313/article/wiring-codex-dockerized-omniroute/">Wiring Codex on Dockerized Omniroute</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:1313/article/deploying-omniroute-docker/">Deploying Omniroute on Docker</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:1313/article/chroot-namespace-isolation/">chroot with namespace isolation</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:1313/article/kali-linux-docker-containers/">Running Kali Linux Containers on a Linux Server with Docker</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:1313/article/virtiofsd-debian-rootfs-kernel-testing/">Set up rootfs of a Debian VM with virtiofsd for Linux Kernel Testing</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:1313/article/normal-form-designators/">Normal Form Designators</a>
+                    </li>
+                
+            </ul>
+        </div>
+        
+
+        
+        <div class="categories">
+            
+            <a href="http://localhost:1313/categories/"><strong>Categories</strong></a>
+            
+
+            <ul>
+                
+                <li>
+                
+                    <a href="http://localhost:1313/categories/tutorial/">Tutorial (2)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="http://localhost:1313/categories/code/">Code (1)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="http://localhost:1313/categories/privacy/">Privacy (1)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="http://localhost:1313/categories/society/">Society (1)</a>
+                
+                </li>
+                
+                <li>
+                
+                    <a href="http://localhost:1313/categories/tutorials/">Tutorials (1)</a>
+                
+                </li>
+                
+            </ul>
+        </div>
+        
+
+        <div class="right">
+            
+            <div class="external-profiles">
+                <strong>Social media</strong>
+                
+                <a href="https://twitter.com/breylaude" target="_blank" rel="me"><em class="fab fa-twitter"></em></a>
+                
+                <a href="https://github.com/bllaude" target="_blank" rel=""><em class="fab fa-github"></em></a>
+                
+            </div>
+            
+
+            <div class="languages">
+                    <strong>Other languages</strong>
+                    
+                        
+                        
+                            
+                        
+
+                        
+                            <a href="http://localhost:1313/article/chroot-namespace-isolation/" class="active">en</a>
+                        
+                    
+                        
+                        
+
+                        
+                            <a href="http://localhost:1313/fr/">fr</a>
+                        
+                    
+                </div>
+            
+
+            
+            <div class="archive">
+                
+                <a href="http://localhost:1313/archive/"><strong>Archive</strong></a>
+                
+            </div>
+            
+        </div>
+    </div>
+</footer>
+
+
+<div class="credits">
+    <div class="container">
+        <div class="copyright">
+            <a href="https://github.com/bllaude" target="_blank">
+                &copy;
+                
+                2026
+                
+                Brey Laude
+            </a>
+            
+        </div>
+        <div class="author">
+            <a href="https://github.com/Lednerb/bilberry-hugo-theme"
+                target="_blank">Bilberry Hugo</a>
+        </div>
+    </div>
+</div>
+
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+
+
+
+    
+    
+
+
+
+
+
+
+
+    <script src="http://localhost:1313/theme.js"></script>
+
+
+
+    
+
+
+
+    
+
+    
+</body>
+
+</html>

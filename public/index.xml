@@ -40,10 +40,10 @@
     
     <item>
       <title>chroot with namespace isolation</title>
-      <link>http://localhost:1313/article/quick-containers/</link>
+      <link>http://localhost:1313/article/chroot-namespace-isolation/</link>
       <pubDate>Fri, 08 May 2026 22:05:54 +0800</pubDate>
       
-      <guid>http://localhost:1313/article/quick-containers/</guid>
+      <guid>http://localhost:1313/article/chroot-namespace-isolation/</guid>
       <description>&lt;p&gt;This is aimed at being &lt;em&gt;&amp;lsquo;chroot alone isn’t isolation&amp;rsquo;&lt;/em&gt;, building qc, a small C runtime that uses &lt;code&gt;pivot_root&lt;/code&gt; plus mount, PID, UTS, IPC, network, user and cgroup namespaces to run unprivileged. Compiles cleanly with &lt;code&gt;-Wall -Wextra&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Follow project on &lt;a href=&#34;https://github.com/bllaude/quick-containers&#34;&gt;Github&lt;/a&gt;&lt;/p&gt;</description>
     </item>
