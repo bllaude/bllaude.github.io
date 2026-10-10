@@ -10,9 +10,16 @@
 		
 		
 		
-			<lastBuildDate>Sun, 27 Sep 2026 14:29:10 +0800</lastBuildDate>
+			<lastBuildDate>Sat, 10 Oct 2026 22:05:54 +0800</lastBuildDate>
 		
 			<atom:link href="http://localhost:1313/article/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Quick containers</title>
+				<link>http://localhost:1313/article/quick-containers/</link>
+				<pubDate>Sat, 10 Oct 2026 22:05:54 +0800</pubDate>
+				<guid>http://localhost:1313/article/quick-containers/</guid>
+				<description>&lt;p&gt;The post walks through why chroot alone isn’t isolation, then builds qc, a small C runtime that uses &lt;code&gt;pivot_root&lt;/code&gt; plus mount, PID, UTS, IPC, network, user and cgroup namespaces to run unprivileged. I confirmed the embedded qc.c compiles cleanly with &lt;code&gt;-Wall -Wextra&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;m also going to list what’s missing compared with a real runtime: networking, cgroup limits, seccomp and capabilities, overlayfs and a minimal init.&lt;/p&gt;&#xA;&lt;p&gt;Sources: none; this is written from kernel man-page knowledge.&lt;/p&gt;</description>
+			</item>
 			<item>
 				<title>ESP32 Modbus RTU</title>
 				<link>http://localhost:1313/article/esp32-modbus-rtu/</link>

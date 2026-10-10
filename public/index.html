@@ -462,6 +462,69 @@
         
     <div class="article-wrapper u-cf">
         
+            <a class="bubble" href="http://localhost:1313/article/quick-containers/">
+    <i class="fas fa-fw fa-pencil-alt"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="http://localhost:1313/article/quick-containers/">
+            Quick containers
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2026-05-08</span>
+            
+        
+
+        
+            
+                <span class="readingTime">2 min read</span>
+            
+        
+
+        
+
+        
+    </div>
+
+    
+        <p>This is aimed at being <em>&lsquo;a chroot alone isn’t isolation&rsquo;</em>, building qc, a small C runtime that uses <code>pivot_root</code> plus mount, PID, UTS, IPC, network, user and cgroup namespaces to run unprivileged. I confirmed the embedded qc.c compiles cleanly with <code>-Wall -Wextra</code></p>
+<p>Follow project on <a href="https://github.com/bllaude/quick-containers">Github</a></p>
+<p>I&rsquo;m also going to list what’s missing compared with a real runtime: networking, cgroup limits, seccomp and capabilities, overlayfs and a minimal init.</p>
+<p>Sources: none; this is written from kernel man-page knowledge (<code>namespaces(7)</code>, <code>user_namespaces(7)</code>, <code>pivot_root(2)</code>, <code>clone(2)</code>).</p>
+
+        
+            <a href="http://localhost:1313/article/quick-containers/" class="more">Continue reading</a>
+        
+    
+</div>
+
+    
+<div class="footer no-tags">
+
+
+    
+
+    
+</div>
+
+</article>
+
+        
+    </div>
+
+
+    
+        
+    <div class="article-wrapper u-cf">
+        
             <a class="bubble" href="http://localhost:1313/article/kali-linux-docker-containers/">
     <i class="fas fa-fw fa-pencil-alt"></i>
 </a>
@@ -741,101 +804,6 @@
 
 
     
-        
-    <div class="article-wrapper u-cf">
-        
-            <a class="bubble" href="http://localhost:1313/article/installing-linux-external-ssd/">
-    <i class="fas fa-fw fa-pencil-alt"></i>
-</a>
-
-<article class="default article">
-    
-
-    <div class="content">
-    <h1 class="article-title">
-        <a href="http://localhost:1313/article/installing-linux-external-ssd/">
-            Installing Linux on External SSD
-        </a>
-    </h1>
-
-    <div class="meta">
-        
-            
-                <span class="date moment">2022-08-03</span>
-            
-        
-
-        
-            
-                <span class="readingTime">3 min read</span>
-            
-        
-
-        
-            <span class="categories">
-                
-                    
-                    
-                        <a href="http://localhost:1313/categories/tutorial/">Tutorial</a>
-                    
-                
-            </span>
-        
-
-        
-    </div>
-
-    
-        <p>I wanted to install Linux on a portable SSD and make it bootable from my laptop, it required UEFI support. I came up with my own method since I couldn’t find a better way to do it online.</p>
-
-        
-            <a href="http://localhost:1313/article/installing-linux-external-ssd/" class="more">Continue reading</a>
-        
-    
-</div>
-
-    
-<div class="footer">
-
-
-    
-        <div class="tags">
-            <i class="fa fa-tags"></i>
-            <div class="links">
-                
-                    
-                    
-                    <a href="http://localhost:1313/tags/linux/">Linux</a>
-                    
-                
-                    
-                    
-                    <a href="http://localhost:1313/tags/tutorial/">Tutorial</a>
-                    
-                
-            </div>
-        </div>
-    
-
-    
-    <div class="languages">
-        <i class="fa fa-language"></i>
-        <div class="links">
-            
-                <a href="http://localhost:1313/fr/article/installing-linux-external-ssd/">fr</a>
-            
-        </div>
-    </div>
-    
-</div>
-
-</article>
-
-        
-    </div>
-
-
-    
 
     
     <div class="paginator">
@@ -873,6 +841,10 @@
                     </li>
                 
                     <li>
+                        <a href="http://localhost:1313/article/quick-containers/">Quick containers</a>
+                    </li>
+                
+                    <li>
                         <a href="http://localhost:1313/article/kali-linux-docker-containers/">Running Kali Linux Containers on a Linux Server with Docker</a>
                     </li>
                 
@@ -882,10 +854,6 @@
                 
                     <li>
                         <a href="http://localhost:1313/article/normal-form-designators/">Normal Form Designators</a>
-                    </li>
-                
-                    <li>
-                        <a href="http://localhost:1313/article/installing-linux-external-ssd/">Installing Linux on External SSD</a>
                     </li>
                 
             </ul>

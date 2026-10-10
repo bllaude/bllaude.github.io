@@ -31,8 +31,21 @@
     <loc>http://localhost:1313/page/about/</loc>
     <lastmod>2026-10-10T21:56:18+08:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/article/</loc>
+    <lastmod>2026-10-10T22:05:54+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/article/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="http://localhost:1313/fr/article/"
+                />
+  </url><url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2026-10-10T21:56:18+08:00</lastmod>
+    <lastmod>2026-10-10T22:05:54+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -43,6 +56,9 @@
                 hreflang="fr"
                 href="http://localhost:1313/fr/"
                 />
+  </url><url>
+    <loc>http://localhost:1313/article/quick-containers/</loc>
+    <lastmod>2026-10-10T22:05:54+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/page/</loc>
     <lastmod>2026-10-10T21:56:18+08:00</lastmod>
@@ -55,19 +71,6 @@
                 rel="alternate"
                 hreflang="fr"
                 href="http://localhost:1313/fr/page/"
-                />
-  </url><url>
-    <loc>http://localhost:1313/article/</loc>
-    <lastmod>2026-09-27T14:29:10+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://localhost:1313/article/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="http://localhost:1313/fr/article/"
                 />
   </url><url>
     <loc>http://localhost:1313/author/</loc>
