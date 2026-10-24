@@ -16,5 +16,5 @@ link: ""
 target: ""
 ---
 
-I'm a [non-linear, first-order component](https://www.martinfowler.com/articles/newMethodologyOriginal.html#PlugCompatibleProgrammingUnits) in the programming industry.
+A [non-linear, first-order component](https://www.martinfowler.com/articles/newMethodologyOriginal.html#PlugCompatibleProgrammingUnits)
 

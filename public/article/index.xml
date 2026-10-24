@@ -49,13 +49,6 @@
 				<description>&lt;p&gt;This is aimed at being &lt;em&gt;&amp;lsquo;chroot alone isn’t isolation&amp;rsquo;&lt;/em&gt;, building qc, a small C runtime that uses &lt;code&gt;pivot_root&lt;/code&gt; plus mount, PID, UTS, IPC, network, user and cgroup namespaces to run unprivileged. Compiles cleanly with &lt;code&gt;-Wall -Wextra&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;Follow project on &lt;a href=&#34;https://github.com/bllaude/quick-containers&#34;&gt;Github&lt;/a&gt;&lt;/p&gt;</description>
 			</item>
 			<item>
-				<title>irks</title>
-				<link>http://localhost:1313/article/pet-peeves/</link>
-				<pubDate>Fri, 26 Sep 2025 23:53:47 +0800</pubDate>
-				<guid>http://localhost:1313/article/pet-peeves/</guid>
-				<description>&lt;ul&gt;&#xA;&lt;li&gt;memory-storage problem&#xA;&lt;ul&gt;&#xA;&lt;li&gt;feels like &lt;a href=&#34;https://www.google.com/url?sa=t&amp;amp;source=web&amp;amp;rct=j&amp;amp;url=https%3A%2F%2Fwww.geeksforgeeks.org%2Foperating-systems%2Fswapping-in-operating-system%2F&amp;amp;opi=89978449&#34;&gt;swapping&lt;/a&gt; because brain really does triage: working memory holds only a handful of items for roughly ~15-30 seconds unless attention actively keeps them or tags them as important, so anything done on autopilot never gets written to longer-term storage in the first place.&lt;/li&gt;&#xA;&lt;li&gt;&lt;em&gt;“absent-minded”&lt;/em&gt; forgetfulness, or in the research literature, a failure of working memory encoding (sometimes called &lt;em&gt;“prospective/habitual memory slips”&lt;/em&gt;)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;anomia/lethologica&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;em&gt;&amp;ldquo;tip-of-the-tongue kind&amp;rdquo;&lt;/em&gt; phenomenon&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;centralization whack-a-mole&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;em&gt;&amp;ldquo;swap one corporate master for another&amp;rdquo;&lt;/em&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.reddit.com/r/degoogle/&#34;&gt;r/degoogle&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;em&gt;&amp;ldquo;cold-turkey&amp;rdquo;&lt;/em&gt; burnout&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
-			</item>
-			<item>
 				<title>Running Kali Linux Containers on a Linux Server with Docker</title>
 				<link>http://localhost:1313/article/kali-linux-docker-containers/</link>
 				<pubDate>Sun, 08 Jun 2025 18:46:01 +0800</pubDate>
