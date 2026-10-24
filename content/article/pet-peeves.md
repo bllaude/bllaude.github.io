@@ -1,7 +1,7 @@
 ---
 title: "irks"
 date: 2025-09-26T23:53:47+08:00
-draft: false
+draft: true
 
 categories: []
 tags: []

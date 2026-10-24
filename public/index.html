@@ -112,11 +112,7 @@
         <div class="logo">
             <a href="/" class="logo">
                 
-                    
-                    
-                        
-                    
-                    <img src="https://seccdn.libravatar.org/avatar/42dbf737f456c657c7c530f44dff7ee5?d=mm&size=200" alt="">
+                    <img src="/avatar.jpeg" alt="">
                 
 
                 <span class="overlay"><i class="fa fa-home"></i></span>
@@ -188,6 +184,94 @@
 
 
     
+
+    
+        
+    <div class="article-wrapper u-cf">
+        
+            <a class="bubble" href="http://localhost:1313/article/computer-security/">
+    <i class="fas fa-fw fa-pencil-alt"></i>
+</a>
+
+<article class="default article">
+    
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="http://localhost:1313/article/computer-security/">
+            Computer Security
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2026-10-10</span>
+            
+        
+
+        
+            
+                <span class="readingTime">1 min read</span>
+            
+        
+
+        
+
+        
+    </div>
+
+    
+        <ul>
+<li>hardening your system
+<ul>
+<li>full-disk encryption with a long passphrase (FileVault / LUKS), + a firmware password or secure boot with your own keys</li>
+<li><a href="https://www.yubico.com/authentication-standards/fido2/">FIDO2</a> hardware keys for login, sudo, and SSH instead of TOTP or SMS</li>
+<li>egress-aware firewalling per application
+<ul>
+<li>Little Snitch/LuLu on macOS,</li>
+<li><a href="https://github.com/evilsocket/opensnitch">OpenSnitch</a> on Linux</li>
+</ul>
+</li>
+<li>kernel and userland hardening on Linux: <code>sysctl</code> (<code>kernel.kptr_restrict</code>, <code>kernel.dmesg_restrict</code>, unprivileged user namespaces off where unused), + audit with <a href="https://github.com/cisofy/lynis">lynis</a></li>
+<li>randomize MAC addresses on untrusted Wi-Fi, and disable Bluetooth and AirDrop discovery when idle</li>
+<li>compartmentalize high-risk work (Qubes OS, or dedicated VMs per trust level)</li>
+<li>verify package and release signatures, and prefer reproducible builds where available</li>
+</ul>
+</li>
+<li>hardening network access
+<ul>
+<li>SSH: Ed25519 keys only, PasswordAuthentication no, AllowUsers, and consider <a href="https://github.com/mrash/fwknop">fwknop</a> <em>(port knocking)</em> in front of it</li>
+<li>WireGuard -&gt; remote access rather than exposing services directly</li>
+<li>encrypted DNS (DoT/DoH) through a resolver you control, with DNSSEC validation
+<ul>
+<li>why? mitm, cache poisoning</li>
+</ul>
+</li>
+<li>monitor Certificate Transparency logs for your own domains (crt.sh, certspotter)</li>
+<li>disable IPv6 where unused so it can’t bypass your v4 firewall rules</li>
+</ul>
+</li>
+</ul>
+
+        
+    
+</div>
+
+    
+<div class="footer no-tags">
+
+
+    
+
+    
+</div>
+
+</article>
+
+        
+    </div>
+
 
     
         
@@ -496,83 +580,6 @@
         
     <div class="article-wrapper u-cf">
         
-            <a class="bubble" href="http://localhost:1313/article/pet-peeves/">
-    <i class="fas fa-fw fa-pencil-alt"></i>
-</a>
-
-<article class="default article">
-    
-
-    <div class="content">
-    <h1 class="article-title">
-        <a href="http://localhost:1313/article/pet-peeves/">
-            irks
-        </a>
-    </h1>
-
-    <div class="meta">
-        
-            
-                <span class="date moment">2025-09-26</span>
-            
-        
-
-        
-            
-                <span class="readingTime">1 min read</span>
-            
-        
-
-        
-
-        
-    </div>
-
-    
-        <ul>
-<li>memory-storage problem
-<ul>
-<li>feels like <a href="https://www.google.com/url?sa=t&amp;source=web&amp;rct=j&amp;url=https%3A%2F%2Fwww.geeksforgeeks.org%2Foperating-systems%2Fswapping-in-operating-system%2F&amp;opi=89978449">swapping</a> because brain really does triage: working memory holds only a handful of items for roughly ~15-30 seconds unless attention actively keeps them or tags them as important, so anything done on autopilot never gets written to longer-term storage in the first place.</li>
-<li><em>“absent-minded”</em> forgetfulness, or in the research literature, a failure of working memory encoding (sometimes called <em>“prospective/habitual memory slips”</em>)</li>
-</ul>
-</li>
-<li>anomia/lethologica
-<ul>
-<li><em>&ldquo;tip-of-the-tongue kind&rdquo;</em> phenomenon</li>
-</ul>
-</li>
-<li>centralization whack-a-mole
-<ul>
-<li><em>&ldquo;swap one corporate master for another&rdquo;</em></li>
-<li><a href="https://www.reddit.com/r/degoogle/">r/degoogle</a></li>
-</ul>
-</li>
-<li><em>&ldquo;cold-turkey&rdquo;</em> burnout</li>
-</ul>
-
-        
-    
-</div>
-
-    
-<div class="footer no-tags">
-
-
-    
-
-    
-</div>
-
-</article>
-
-        
-    </div>
-
-
-    
-        
-    <div class="article-wrapper u-cf">
-        
             <a class="bubble" href="http://localhost:1313/article/kali-linux-docker-containers/">
     <i class="fas fa-fw fa-pencil-alt"></i>
 </a>
@@ -784,6 +791,10 @@
                 
                 
                     <li>
+                        <a href="http://localhost:1313/article/computer-security/">Computer Security</a>
+                    </li>
+                
+                    <li>
                         <a href="http://localhost:1313/article/esp32-modbus-rtu/">ESP32 Modbus RTU</a>
                     </li>
                 
@@ -797,10 +808,6 @@
                 
                     <li>
                         <a href="http://localhost:1313/article/chroot-namespace-isolation/">chroot with namespace isolation</a>
-                    </li>
-                
-                    <li>
-                        <a href="http://localhost:1313/article/pet-peeves/">irks</a>
                     </li>
                 
                     <li>

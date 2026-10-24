@@ -13,7 +13,7 @@ This seems to be the best default if you don’t want a *global npm install* pol
 <!--more-->
 
 ### *Luckily for us...*
-The project ships a multi-stage Dockerfile with 3 build targets. `runner-base` is the production Next.js standalone runtime with no provider CLIs baked in, and it’s the correct choice if omniroute is only going to proxy requests from a Codex instance running elsewhere.
+The project ships a multi-stage Dockerfile with 3 build targets. `runner-base` is the production Next.js standalone runtime with no provider CLIs baked in, and it’s the correct choice since is only going to proxy requests from a Codex instance running elsewhere.
 
 `runner-cli` extends that with git, docker.io, docker-compose, and global installs of `@openai/codex`, `@anthropic-ai/claude-code`, `droid`, and `openclaw` - useful for workflows where the agent itself needs to live inside the container, but overkill for the common case of *"Agent runs on my laptop, OmniRoute runs on a server."*
 

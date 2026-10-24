@@ -58,7 +58,7 @@
                 />
   </url><url>
     <loc>http://localhost:1313/article/</loc>
-    <lastmod>2026-09-27T14:29:10+08:00</lastmod>
+    <lastmod>2026-10-10T12:08:43+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -69,6 +69,9 @@
                 hreflang="fr"
                 href="http://localhost:1313/fr/article/"
                 />
+  </url><url>
+    <loc>http://localhost:1313/article/computer-security/</loc>
+    <lastmod>2026-10-10T12:08:43+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/author/</loc>
     <lastmod>2026-09-27T14:29:10+08:00</lastmod>

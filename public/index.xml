@@ -11,6 +11,45 @@
     
     
     <item>
+      <title>Computer Security</title>
+      <link>http://localhost:1313/article/computer-security/</link>
+      <pubDate>Sat, 10 Oct 2026 12:08:43 +0800</pubDate>
+      
+      <guid>http://localhost:1313/article/computer-security/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;hardening your system
+&lt;ul&gt;
+&lt;li&gt;full-disk encryption with a long passphrase (FileVault / LUKS), + a firmware password or secure boot with your own keys&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.yubico.com/authentication-standards/fido2/&#34;&gt;FIDO2&lt;/a&gt; hardware keys for login, sudo, and SSH instead of TOTP or SMS&lt;/li&gt;
+&lt;li&gt;egress-aware firewalling per application
+&lt;ul&gt;
+&lt;li&gt;Little Snitch/LuLu on macOS,&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/evilsocket/opensnitch&#34;&gt;OpenSnitch&lt;/a&gt; on Linux&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;kernel and userland hardening on Linux: &lt;code&gt;sysctl&lt;/code&gt; (&lt;code&gt;kernel.kptr_restrict&lt;/code&gt;, &lt;code&gt;kernel.dmesg_restrict&lt;/code&gt;, unprivileged user namespaces off where unused), + audit with &lt;a href=&#34;https://github.com/cisofy/lynis&#34;&gt;lynis&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;randomize MAC addresses on untrusted Wi-Fi, and disable Bluetooth and AirDrop discovery when idle&lt;/li&gt;
+&lt;li&gt;compartmentalize high-risk work (Qubes OS, or dedicated VMs per trust level)&lt;/li&gt;
+&lt;li&gt;verify package and release signatures, and prefer reproducible builds where available&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;hardening network access
+&lt;ul&gt;
+&lt;li&gt;SSH: Ed25519 keys only, PasswordAuthentication no, AllowUsers, and consider &lt;a href=&#34;https://github.com/mrash/fwknop&#34;&gt;fwknop&lt;/a&gt; &lt;em&gt;(port knocking)&lt;/em&gt; in front of it&lt;/li&gt;
+&lt;li&gt;WireGuard -&amp;gt; remote access rather than exposing services directly&lt;/li&gt;
+&lt;li&gt;encrypted DNS (DoT/DoH) through a resolver you control, with DNSSEC validation
+&lt;ul&gt;
+&lt;li&gt;why? mitm, cache poisoning&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;monitor Certificate Transparency logs for your own domains (crt.sh, certspotter)&lt;/li&gt;
+&lt;li&gt;disable IPv6 where unused so it can’t bypass your v4 firewall rules&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
       <title>ESP32 Modbus RTU</title>
       <link>http://localhost:1313/article/esp32-modbus-rtu/</link>
       <pubDate>Sun, 27 Sep 2026 14:29:10 +0800</pubDate>
@@ -46,34 +85,6 @@
       <guid>http://localhost:1313/article/chroot-namespace-isolation/</guid>
       <description>&lt;p&gt;This is aimed at being &lt;em&gt;&amp;lsquo;chroot alone isn’t isolation&amp;rsquo;&lt;/em&gt;, building qc, a small C runtime that uses &lt;code&gt;pivot_root&lt;/code&gt; plus mount, PID, UTS, IPC, network, user and cgroup namespaces to run unprivileged. Compiles cleanly with &lt;code&gt;-Wall -Wextra&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Follow project on &lt;a href=&#34;https://github.com/bllaude/quick-containers&#34;&gt;Github&lt;/a&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>irks</title>
-      <link>http://localhost:1313/article/pet-peeves/</link>
-      <pubDate>Fri, 26 Sep 2025 23:53:47 +0800</pubDate>
-      
-      <guid>http://localhost:1313/article/pet-peeves/</guid>
-      <description>&lt;ul&gt;
-&lt;li&gt;memory-storage problem
-&lt;ul&gt;
-&lt;li&gt;feels like &lt;a href=&#34;https://www.google.com/url?sa=t&amp;amp;source=web&amp;amp;rct=j&amp;amp;url=https%3A%2F%2Fwww.geeksforgeeks.org%2Foperating-systems%2Fswapping-in-operating-system%2F&amp;amp;opi=89978449&#34;&gt;swapping&lt;/a&gt; because brain really does triage: working memory holds only a handful of items for roughly ~15-30 seconds unless attention actively keeps them or tags them as important, so anything done on autopilot never gets written to longer-term storage in the first place.&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;“absent-minded”&lt;/em&gt; forgetfulness, or in the research literature, a failure of working memory encoding (sometimes called &lt;em&gt;“prospective/habitual memory slips”&lt;/em&gt;)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;anomia/lethologica
-&lt;ul&gt;
-&lt;li&gt;&lt;em&gt;&amp;ldquo;tip-of-the-tongue kind&amp;rdquo;&lt;/em&gt; phenomenon&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;centralization whack-a-mole
-&lt;ul&gt;
-&lt;li&gt;&lt;em&gt;&amp;ldquo;swap one corporate master for another&amp;rdquo;&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.reddit.com/r/degoogle/&#34;&gt;r/degoogle&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;&amp;ldquo;cold-turkey&amp;rdquo;&lt;/em&gt; burnout&lt;/li&gt;
-&lt;/ul&gt;</description>
     </item>
     
     <item>
