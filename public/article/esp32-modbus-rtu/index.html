@@ -235,7 +235,27 @@ View project on Github">
 
     
         <div id="comments-container">
-            
+            <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "bllaude" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+		<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+	
             
 
             
@@ -266,10 +286,6 @@ View project on Github">
                     </li>
                 
                     <li>
-                        <a href="http://localhost:1313/article/wiring-codex-dockerized-omniroute/">Wiring Codex on Dockerized Omniroute</a>
-                    </li>
-                
-                    <li>
                         <a href="http://localhost:1313/article/deploying-omniroute-docker/">Deploying omniroute on Docker</a>
                     </li>
                 
@@ -278,11 +294,15 @@ View project on Github">
                     </li>
                 
                     <li>
-                        <a href="http://localhost:1313/article/kali-linux-docker-containers/">Running Kali Linux Containers on a Linux Server with Docker</a>
+                        <a href="http://localhost:1313/article/kali-linux-docker-containers/">Running Kali Linux Container on a Linux Server with Docker</a>
                     </li>
                 
                     <li>
                         <a href="http://localhost:1313/article/virtiofsd-debian-rootfs-kernel-testing/">Set up rootfs of a Debian VM with virtiofsd for Linux Kernel Testing</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:1313/article/normal-form-designators/">Normal Form Designators</a>
                     </li>
                 
             </ul>
@@ -299,7 +319,7 @@ View project on Github">
                 
                 <li>
                 
-                    <a href="http://localhost:1313/categories/tutorial/">Tutorial (2)</a>
+                    <a href="http://localhost:1313/categories/tutorial/">Tutorial (1)</a>
                 
                 </li>
                 

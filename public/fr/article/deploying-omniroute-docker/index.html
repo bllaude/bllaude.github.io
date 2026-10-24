@@ -269,7 +269,27 @@
 
     
         <div id="comments-container">
-            
+            <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "bllaude" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+		<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+	
             
 
             
@@ -296,19 +316,11 @@
                     </li>
                 
                     <li>
-                        <a href="http://localhost:1313/fr/article/wiring-codex-dockerized-omniroute/">Codex de câblage sur Omniroute en Docker</a>
-                    </li>
-                
-                    <li>
                         <a href="http://localhost:1313/fr/article/deploying-omniroute-docker/">Déploiement d&#39;OmniRoute sur Docker</a>
                     </li>
                 
                     <li>
                         <a href="http://localhost:1313/fr/article/normal-form-designators/">Normal Form Designators</a>
-                    </li>
-                
-                    <li>
-                        <a href="http://localhost:1313/fr/article/installing-linux-external-ssd/">Installation de Linux sur un SSD externe</a>
                     </li>
                 
                     <li>
@@ -319,22 +331,6 @@
         </div>
         
 
-        
-        <div class="categories">
-            
-            <a href="http://localhost:1313/fr/categories/"><strong>Catégories</strong></a>
-            
-
-            <ul>
-                
-                <li>
-                
-                    <a href="http://localhost:1313/fr/categories/tutoriel/">Tutoriel (1)</a>
-                
-                </li>
-                
-            </ul>
-        </div>
         
 
         <div class="right">

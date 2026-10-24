@@ -10,18 +10,11 @@
 		
 		
 		
-			<lastBuildDate>Mon, 31 Aug 2026 17:01:53 +0800</lastBuildDate>
+			<lastBuildDate>Sun, 08 Jun 2025 18:46:01 +0800</lastBuildDate>
 		
 			<atom:link href="http://localhost:1313/tags/docker/index.xml" rel="self" type="application/rss+xml" />
 			<item>
-				<title>Wiring Codex on Dockerized Omniroute</title>
-				<link>http://localhost:1313/article/wiring-codex-dockerized-omniroute/</link>
-				<pubDate>Mon, 31 Aug 2026 17:01:53 +0800</pubDate>
-				<guid>http://localhost:1313/article/wiring-codex-dockerized-omniroute/</guid>
-				<description>&lt;p&gt;For anyone running Codex against multiple backends - official OpenAI, Kimi or DeepSeek endpoint, whatever happens to be cheapest or fastest of the week - putting omniroute in front of it means Codex only ever needs to know about one base URL, while omniroute absorbs the churn of provider outages, rate limits, and credential rotation on the other side.&lt;/p&gt;</description>
-			</item>
-			<item>
-				<title>Running Kali Linux Containers on a Linux Server with Docker</title>
+				<title>Running Kali Linux Container on a Linux Server with Docker</title>
 				<link>http://localhost:1313/article/kali-linux-docker-containers/</link>
 				<pubDate>Sun, 08 Jun 2025 18:46:01 +0800</pubDate>
 				<guid>http://localhost:1313/article/kali-linux-docker-containers/</guid>

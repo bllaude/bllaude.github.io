@@ -21,13 +21,6 @@
 				<description>&lt;p&gt;Une implémentation complète du protocole Modbus RTU pour le framework ESP-IDF, prenant en charge à la fois les modes maître et esclave avec un contrôle matériel RS485.&lt;/p&gt;&#xA;&lt;p&gt;Consulter le projet sur &lt;a href=&#34;https://github.com/bllaude/esp32-modbus-rtu&#34;&gt;Github&lt;/a&gt;&lt;/p&gt;</description>
 			</item>
 			<item>
-				<title>Codex de câblage sur Omniroute en Docker</title>
-				<link>http://localhost:1313/fr/article/wiring-codex-dockerized-omniroute/</link>
-				<pubDate>Mon, 31 Aug 2026 17:01:53 +0800</pubDate>
-				<guid>http://localhost:1313/fr/article/wiring-codex-dockerized-omniroute/</guid>
-				<description>&lt;p&gt;Pour tous ceux qui utilisent Codex avec plusieurs backends (le point de terminaison officiel d’OpenAI, Kimi ou DeepSeek, selon ce qui s’avère le moins cher ou le plus rapide cette semaine-là), le fait de placer Omniroute en amont permet à Codex de n’avoir à connaître qu’une seule URL de base, tandis qu’Omniroute gère les interruptions de service des fournisseurs, les rate-limit et la rotation des identifiants de l’autre côté.&lt;/p&gt;</description>
-			</item>
-			<item>
 				<title>Déploiement d&#39;OmniRoute sur Docker</title>
 				<link>http://localhost:1313/fr/article/deploying-omniroute-docker/</link>
 				<pubDate>Sat, 29 Aug 2026 16:32:11 +0800</pubDate>

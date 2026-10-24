@@ -21,13 +21,6 @@
 				<description>&lt;p&gt;A complete implementation of Modbus RTU protocol for ESP-IDF framework, supporting both master and slave modes with RS485 hardware control.&lt;/p&gt;&#xA;&lt;p&gt;View project on &lt;a href=&#34;https://github.com/bllaude/esp32-modbus-rtu&#34;&gt;Github&lt;/a&gt;&lt;/p&gt;</description>
 			</item>
 			<item>
-				<title>Wiring Codex on Dockerized Omniroute</title>
-				<link>http://localhost:1313/article/wiring-codex-dockerized-omniroute/</link>
-				<pubDate>Mon, 31 Aug 2026 17:01:53 +0800</pubDate>
-				<guid>http://localhost:1313/article/wiring-codex-dockerized-omniroute/</guid>
-				<description>&lt;p&gt;For anyone running Codex against multiple backends - official OpenAI, Kimi or DeepSeek endpoint, whatever happens to be cheapest or fastest of the week - putting omniroute in front of it means Codex only ever needs to know about one base URL, while omniroute absorbs the churn of provider outages, rate limits, and credential rotation on the other side.&lt;/p&gt;</description>
-			</item>
-			<item>
 				<title>Normal Form Designators</title>
 				<link>http://localhost:1313/article/normal-form-designators/</link>
 				<pubDate>Wed, 12 Apr 2023 15:31:47 +0800</pubDate>

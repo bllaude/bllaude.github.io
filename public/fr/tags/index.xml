@@ -10,30 +10,9 @@
 		
 		
 		
-			<lastBuildDate>Mon, 31 Aug 2026 17:01:53 +0800</lastBuildDate>
+			<lastBuildDate>Sat, 29 Aug 2026 16:32:11 +0800</lastBuildDate>
 		
 			<atom:link href="http://localhost:1313/fr/tags/index.xml" rel="self" type="application/rss+xml" />
-			<item>
-				<title>Codex</title>
-				<link>http://localhost:1313/fr/tags/codex/</link>
-				<pubDate>Mon, 31 Aug 2026 17:01:53 +0800</pubDate>
-				<guid>http://localhost:1313/fr/tags/codex/</guid>
-				<description></description>
-			</item>
-			<item>
-				<title>Docker</title>
-				<link>http://localhost:1313/fr/tags/docker/</link>
-				<pubDate>Mon, 31 Aug 2026 17:01:53 +0800</pubDate>
-				<guid>http://localhost:1313/fr/tags/docker/</guid>
-				<description></description>
-			</item>
-			<item>
-				<title>Omniroute</title>
-				<link>http://localhost:1313/fr/tags/omniroute/</link>
-				<pubDate>Mon, 31 Aug 2026 17:01:53 +0800</pubDate>
-				<guid>http://localhost:1313/fr/tags/omniroute/</guid>
-				<description></description>
-			</item>
 			<item>
 				<title>Agentic</title>
 				<link>http://localhost:1313/fr/tags/agentic/</link>
@@ -46,6 +25,13 @@
 				<link>http://localhost:1313/fr/tags/compose/</link>
 				<pubDate>Sat, 29 Aug 2026 16:32:11 +0800</pubDate>
 				<guid>http://localhost:1313/fr/tags/compose/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Docker</title>
+				<link>http://localhost:1313/fr/tags/docker/</link>
+				<pubDate>Sat, 29 Aug 2026 16:32:11 +0800</pubDate>
+				<guid>http://localhost:1313/fr/tags/docker/</guid>
 				<description></description>
 			</item>
 			<item>
@@ -67,20 +53,6 @@
 				<link>http://localhost:1313/fr/tags/programmation/</link>
 				<pubDate>Wed, 12 Apr 2023 15:31:47 +0800</pubDate>
 				<guid>http://localhost:1313/fr/tags/programmation/</guid>
-				<description></description>
-			</item>
-			<item>
-				<title>Linux</title>
-				<link>http://localhost:1313/fr/tags/linux/</link>
-				<pubDate>Wed, 03 Aug 2022 18:03:48 +0800</pubDate>
-				<guid>http://localhost:1313/fr/tags/linux/</guid>
-				<description></description>
-			</item>
-			<item>
-				<title>Tutoriel</title>
-				<link>http://localhost:1313/fr/tags/tutoriel/</link>
-				<pubDate>Wed, 03 Aug 2022 18:03:48 +0800</pubDate>
-				<guid>http://localhost:1313/fr/tags/tutoriel/</guid>
 				<description></description>
 			</item>
 			<item>
