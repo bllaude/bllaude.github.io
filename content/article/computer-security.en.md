@@ -12,7 +12,7 @@ author: ""
   - full-disk encryption with a long passphrase (FileVault / LUKS), + a firmware password or secure boot with your own keys
   - [FIDO2](https://www.yubico.com/authentication-standards/fido2/) hardware keys for login, sudo, and SSH instead of TOTP or SMS
   - egress-aware firewalling per application
-    - Little Snitch/LuLu on macOS,
+    - [Little Snitch](www.obdev.at/products/littlesnitch/index.html)/[LuLu](https://objective-see.org/products/lulu.html) on macOS,
     - [OpenSnitch](https://github.com/evilsocket/opensnitch) on Linux
   - kernel and userland hardening on Linux: `sysctl` (`kernel.kptr_restrict`, `kernel.dmesg_restrict`, unprivileged user namespaces off where unused), + audit with [lynis](https://github.com/cisofy/lynis)
   - randomize MAC addresses on untrusted Wi-Fi, and disable Bluetooth and AirDrop discovery when idle

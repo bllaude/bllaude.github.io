@@ -23,7 +23,7 @@
 &lt;li&gt;&lt;a href=&#34;https://www.yubico.com/authentication-standards/fido2/&#34;&gt;FIDO2&lt;/a&gt; hardware keys for login, sudo, and SSH instead of TOTP or SMS&lt;/li&gt;
 &lt;li&gt;egress-aware firewalling per application
 &lt;ul&gt;
-&lt;li&gt;Little Snitch/LuLu on macOS,&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;www.obdev.at/products/littlesnitch/index.html&#34;&gt;Little Snitch&lt;/a&gt;/&lt;a href=&#34;https://objective-see.org/products/lulu.html&#34;&gt;LuLu&lt;/a&gt; on macOS,&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/evilsocket/opensnitch&#34;&gt;OpenSnitch&lt;/a&gt; on Linux&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -57,15 +57,6 @@
       <guid>http://localhost:1313/article/esp32-modbus-rtu/</guid>
       <description>&lt;p&gt;A complete implementation of Modbus RTU protocol for ESP-IDF framework, supporting both master and slave modes with RS485 hardware control.&lt;/p&gt;
 &lt;p&gt;View project on &lt;a href=&#34;https://github.com/bllaude/esp32-modbus-rtu&#34;&gt;Github&lt;/a&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Deploying omniroute on Docker</title>
-      <link>http://localhost:1313/article/deploying-omniroute-docker/</link>
-      <pubDate>Sat, 29 Aug 2026 16:32:11 +0800</pubDate>
-      
-      <guid>http://localhost:1313/article/deploying-omniroute-docker/</guid>
-      <description>&lt;p&gt;This seems to be the best default if you don’t want a &lt;em&gt;global npm install&lt;/em&gt; polluting your &lt;em&gt;already bloated&lt;/em&gt; host node environment, and it composes cleanly whether the box is a home server, cheap VPS, and even a throwaway VM.&lt;/p&gt;</description>
     </item>
     
     <item>

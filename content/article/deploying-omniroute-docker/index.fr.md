@@ -1,7 +1,7 @@
 ---
 title: "Déploiement d'OmniRoute sur Docker"
 date: 2026-08-29T16:32:11+08:00
-draft: false
+draft: true
 
 categories: []
 tags: ['IA', 'Docker', 'Compose', 'Agentic']
