@@ -1,7 +1,7 @@
 ---
 title: "Wiring Codex on Dockerized Omniroute"
 date: 2026-08-31T17:01:53+08:00
-draft: false
+draft: true
 
 categories: []
 tags: ['Codex', 'Docker', 'Omniroute']

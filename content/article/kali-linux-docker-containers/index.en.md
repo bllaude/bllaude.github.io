@@ -1,5 +1,5 @@
 ---
-title: "Running Kali Linux Containers on a Linux Server with Docker"
+title: "Running Kali Linux Container on a Linux Server with Docker"
 date: 2025-06-08T18:46:01+08:00
 draft: false
 

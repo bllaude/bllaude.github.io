@@ -1,7 +1,7 @@
 ---
 title: "Installation de Linux sur un SSD externe"
 date: 2022-08-03T18:03:48+08:00
-draft: false
+draft: true
 
 categories: ['Tutoriel']
 tags: ['Linux', 'Tutoriel']
