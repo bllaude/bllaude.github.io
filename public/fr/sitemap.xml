@@ -93,54 +93,6 @@
                 href="http://localhost:1313/fr/"
                 />
   </url><url>
-    <loc>http://localhost:1313/fr/tags/agentic/</loc>
-    <lastmod>2026-08-29T16:32:11+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/fr/tags/compose/</loc>
-    <lastmod>2026-08-29T16:32:11+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/fr/article/deploying-omniroute-docker/</loc>
-    <lastmod>2026-08-29T16:32:11+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://localhost:1313/article/deploying-omniroute-docker/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="http://localhost:1313/fr/article/deploying-omniroute-docker/"
-                />
-  </url><url>
-    <loc>http://localhost:1313/fr/tags/docker/</loc>
-    <lastmod>2026-08-29T16:32:11+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://localhost:1313/tags/docker/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="http://localhost:1313/fr/tags/docker/"
-                />
-  </url><url>
-    <loc>http://localhost:1313/fr/tags/ia/</loc>
-    <lastmod>2026-08-29T16:32:11+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/fr/tags/</loc>
-    <lastmod>2026-08-29T16:32:11+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://localhost:1313/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="http://localhost:1313/fr/tags/"
-                />
-  </url><url>
     <loc>http://localhost:1313/fr/tags/logiciel/</loc>
     <lastmod>2023-04-12T15:31:47+08:00</lastmod>
   </url><url>
@@ -159,6 +111,19 @@
   </url><url>
     <loc>http://localhost:1313/fr/tags/programmation/</loc>
     <lastmod>2023-04-12T15:31:47+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/fr/tags/</loc>
+    <lastmod>2023-04-12T15:31:47+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="http://localhost:1313/fr/tags/"
+                />
   </url><url>
     <loc>http://localhost:1313/fr/page/</loc>
     <lastmod>2021-11-01T13:17:56+01:00</lastmod>

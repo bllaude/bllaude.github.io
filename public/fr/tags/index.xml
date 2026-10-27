@@ -10,37 +10,9 @@
 		
 		
 		
-			<lastBuildDate>Sat, 29 Aug 2026 16:32:11 +0800</lastBuildDate>
+			<lastBuildDate>Wed, 12 Apr 2023 15:31:47 +0800</lastBuildDate>
 		
 			<atom:link href="http://localhost:1313/fr/tags/index.xml" rel="self" type="application/rss+xml" />
-			<item>
-				<title>Agentic</title>
-				<link>http://localhost:1313/fr/tags/agentic/</link>
-				<pubDate>Sat, 29 Aug 2026 16:32:11 +0800</pubDate>
-				<guid>http://localhost:1313/fr/tags/agentic/</guid>
-				<description></description>
-			</item>
-			<item>
-				<title>Compose</title>
-				<link>http://localhost:1313/fr/tags/compose/</link>
-				<pubDate>Sat, 29 Aug 2026 16:32:11 +0800</pubDate>
-				<guid>http://localhost:1313/fr/tags/compose/</guid>
-				<description></description>
-			</item>
-			<item>
-				<title>Docker</title>
-				<link>http://localhost:1313/fr/tags/docker/</link>
-				<pubDate>Sat, 29 Aug 2026 16:32:11 +0800</pubDate>
-				<guid>http://localhost:1313/fr/tags/docker/</guid>
-				<description></description>
-			</item>
-			<item>
-				<title>IA</title>
-				<link>http://localhost:1313/fr/tags/ia/</link>
-				<pubDate>Sat, 29 Aug 2026 16:32:11 +0800</pubDate>
-				<guid>http://localhost:1313/fr/tags/ia/</guid>
-				<description></description>
-			</item>
 			<item>
 				<title>Logiciel</title>
 				<link>http://localhost:1313/fr/tags/logiciel/</link>

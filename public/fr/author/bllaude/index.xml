@@ -21,13 +21,6 @@
 				<description>&lt;p&gt;Une implémentation complète du protocole Modbus RTU pour le framework ESP-IDF, prenant en charge à la fois les modes maître et esclave avec un contrôle matériel RS485.&lt;/p&gt;&#xA;&lt;p&gt;Consulter le projet sur &lt;a href=&#34;https://github.com/bllaude/esp32-modbus-rtu&#34;&gt;Github&lt;/a&gt;&lt;/p&gt;</description>
 			</item>
 			<item>
-				<title>Déploiement d&#39;OmniRoute sur Docker</title>
-				<link>http://localhost:1313/fr/article/deploying-omniroute-docker/</link>
-				<pubDate>Sat, 29 Aug 2026 16:32:11 +0800</pubDate>
-				<guid>http://localhost:1313/fr/article/deploying-omniroute-docker/</guid>
-				<description>&lt;p&gt;Pour moi, exécuter Omniroute sur Docker est la meilleure solution par défaut, tout simplement parce que je ne veux pas qu&amp;rsquo;une installation globale de npm vienne polluer l&amp;rsquo;environnement de mon nœud hôte, et que cela s&amp;rsquo;intègre parfaitement, que la machine soit un serveur domestique, un VPS ou ma machine virtuelle jetable.&lt;/p&gt;</description>
-			</item>
-			<item>
 				<title>Normal Form Designators</title>
 				<link>http://localhost:1313/fr/article/normal-form-designators/</link>
 				<pubDate>Wed, 12 Apr 2023 15:31:47 +0800</pubDate>

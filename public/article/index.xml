@@ -10,15 +10,29 @@
 		
 		
 		
-			<lastBuildDate>Sat, 10 Oct 2026 12:08:43 +0800</lastBuildDate>
+			<lastBuildDate>Tue, 27 Oct 2026 15:49:12 +0800</lastBuildDate>
 		
 			<atom:link href="http://localhost:1313/article/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Support Discussions - Renta Marketplace</title>
+				<link>http://localhost:1313/article/support-discussions-renta/</link>
+				<pubDate>Tue, 27 Oct 2026 15:49:12 +0800</pubDate>
+				<guid>http://localhost:1313/article/support-discussions-renta/</guid>
+				<description>&lt;h2 id=&#34;support--discussions&#34;&gt;Support &amp;amp; Discussions&lt;/h2&gt;&#xA;&lt;p&gt;Support for the app is provided through the &lt;strong&gt;Issues and Discussions&lt;/strong&gt; sections of the project. Please use the Issues section if you would like to report a defect or bug. For any other requests, use the Discussions section.&lt;/p&gt;&#xA;&lt;p&gt;Please use the following guidelines if you want to start a discussion:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;For any questions regarding a specific feature, or if you need help using, customization, or management, use the Questions &amp;amp; Answers (Q&amp;amp;A) category.&lt;/li&gt;&#xA;&lt;li&gt;For a new feature or any other improvements, use the Ideas category.&lt;/li&gt;&#xA;&lt;li&gt;For any other inquiries, please use the General type discussion.&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>🚀 Renta Philippines  🚀</title>
+				<link>http://localhost:1313/article/building-renta-ph/</link>
+				<pubDate>Tue, 27 Oct 2026 15:22:28 +0800</pubDate>
+				<guid>http://localhost:1313/article/building-renta-ph/</guid>
+				<description>&lt;p&gt;I&amp;rsquo;m building Renta, a peer-to-peer (P2P) car rental marketplace in the Philippines.&lt;/p&gt;&#xA;&lt;p&gt;Help grow the marketplace by exploring the platform, sharing it with others, or joining as a rental provider. If you&amp;rsquo;re looking to rent a vehicle, offer one for rent, or explore a potential partnership, I&amp;rsquo;d love for you to check it out.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://rent-ph.com/&#34;&gt;Explore the Marketplace -&amp;gt;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Know someone who might find it useful? Share it with them and help the marketplace grow.&lt;/p&gt;</description>
+			</item>
 			<item>
 				<title>Computer Security</title>
 				<link>http://localhost:1313/article/computer-security/</link>
 				<pubDate>Sat, 10 Oct 2026 12:08:43 +0800</pubDate>
 				<guid>http://localhost:1313/article/computer-security/</guid>
-				<description>&lt;ul&gt;&#xA;&lt;li&gt;hardening your system&#xA;&lt;ul&gt;&#xA;&lt;li&gt;full-disk encryption with a long passphrase (FileVault / LUKS), + a firmware password or secure boot with your own keys&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.yubico.com/authentication-standards/fido2/&#34;&gt;FIDO2&lt;/a&gt; hardware keys for login, sudo, and SSH instead of TOTP or SMS&lt;/li&gt;&#xA;&lt;li&gt;egress-aware firewalling per application&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Little Snitch/LuLu on macOS,&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/evilsocket/opensnitch&#34;&gt;OpenSnitch&lt;/a&gt; on Linux&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;kernel and userland hardening on Linux: &lt;code&gt;sysctl&lt;/code&gt; (&lt;code&gt;kernel.kptr_restrict&lt;/code&gt;, &lt;code&gt;kernel.dmesg_restrict&lt;/code&gt;, unprivileged user namespaces off where unused), + audit with &lt;a href=&#34;https://github.com/cisofy/lynis&#34;&gt;lynis&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;randomize MAC addresses on untrusted Wi-Fi, and disable Bluetooth and AirDrop discovery when idle&lt;/li&gt;&#xA;&lt;li&gt;compartmentalize high-risk work (Qubes OS, or dedicated VMs per trust level)&lt;/li&gt;&#xA;&lt;li&gt;verify package and release signatures, and prefer reproducible builds where available&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;hardening network access&#xA;&lt;ul&gt;&#xA;&lt;li&gt;SSH: Ed25519 keys only, PasswordAuthentication no, AllowUsers, and consider &lt;a href=&#34;https://github.com/mrash/fwknop&#34;&gt;fwknop&lt;/a&gt; &lt;em&gt;(port knocking)&lt;/em&gt; in front of it&lt;/li&gt;&#xA;&lt;li&gt;WireGuard -&amp;gt; remote access rather than exposing services directly&lt;/li&gt;&#xA;&lt;li&gt;encrypted DNS (DoT/DoH) through a resolver you control, with DNSSEC validation&#xA;&lt;ul&gt;&#xA;&lt;li&gt;why? mitm, cache poisoning&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;monitor Certificate Transparency logs for your own domains (crt.sh, certspotter)&lt;/li&gt;&#xA;&lt;li&gt;disable IPv6 where unused so it can’t bypass your v4 firewall rules&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+				<description>&lt;ul&gt;&#xA;&lt;li&gt;hardening your system&#xA;&lt;ul&gt;&#xA;&lt;li&gt;full-disk encryption with a long passphrase (FileVault / LUKS), + a firmware password or secure boot with your own keys&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.yubico.com/authentication-standards/fido2/&#34;&gt;FIDO2&lt;/a&gt; hardware keys for login, sudo, and SSH instead of TOTP or SMS&lt;/li&gt;&#xA;&lt;li&gt;egress-aware firewalling per application&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;www.obdev.at/products/littlesnitch/index.html&#34;&gt;Little Snitch&lt;/a&gt;/&lt;a href=&#34;https://objective-see.org/products/lulu.html&#34;&gt;LuLu&lt;/a&gt; on macOS,&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/evilsocket/opensnitch&#34;&gt;OpenSnitch&lt;/a&gt; on Linux&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;kernel and userland hardening on Linux: &lt;code&gt;sysctl&lt;/code&gt; (&lt;code&gt;kernel.kptr_restrict&lt;/code&gt;, &lt;code&gt;kernel.dmesg_restrict&lt;/code&gt;, unprivileged user namespaces off where unused), + audit with &lt;a href=&#34;https://github.com/cisofy/lynis&#34;&gt;lynis&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;randomize MAC addresses on untrusted Wi-Fi, and disable Bluetooth and AirDrop discovery when idle&lt;/li&gt;&#xA;&lt;li&gt;compartmentalize high-risk work (Qubes OS, or dedicated VMs per trust level)&lt;/li&gt;&#xA;&lt;li&gt;verify package and release signatures, and prefer reproducible builds where available&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;hardening network access&#xA;&lt;ul&gt;&#xA;&lt;li&gt;SSH: Ed25519 keys only, PasswordAuthentication no, AllowUsers, and consider &lt;a href=&#34;https://github.com/mrash/fwknop&#34;&gt;fwknop&lt;/a&gt; &lt;em&gt;(port knocking)&lt;/em&gt; in front of it&lt;/li&gt;&#xA;&lt;li&gt;WireGuard -&amp;gt; remote access rather than exposing services directly&lt;/li&gt;&#xA;&lt;li&gt;encrypted DNS (DoT/DoH) through a resolver you control, with DNSSEC validation&#xA;&lt;ul&gt;&#xA;&lt;li&gt;why? mitm, cache poisoning&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;monitor Certificate Transparency logs for your own domains (crt.sh, certspotter)&lt;/li&gt;&#xA;&lt;li&gt;disable IPv6 where unused so it can’t bypass your v4 firewall rules&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
 			</item>
 			<item>
 				<title>ESP32 Modbus RTU</title>
@@ -26,13 +40,6 @@
 				<pubDate>Sun, 27 Sep 2026 14:29:10 +0800</pubDate>
 				<guid>http://localhost:1313/article/esp32-modbus-rtu/</guid>
 				<description>&lt;p&gt;A complete implementation of Modbus RTU protocol for ESP-IDF framework, supporting both master and slave modes with RS485 hardware control.&lt;/p&gt;&#xA;&lt;p&gt;View project on &lt;a href=&#34;https://github.com/bllaude/esp32-modbus-rtu&#34;&gt;Github&lt;/a&gt;&lt;/p&gt;</description>
-			</item>
-			<item>
-				<title>Deploying omniroute on Docker</title>
-				<link>http://localhost:1313/article/deploying-omniroute-docker/</link>
-				<pubDate>Sat, 29 Aug 2026 16:32:11 +0800</pubDate>
-				<guid>http://localhost:1313/article/deploying-omniroute-docker/</guid>
-				<description>&lt;p&gt;This seems to be the best default if you don’t want a &lt;em&gt;global npm install&lt;/em&gt; polluting your &lt;em&gt;already bloated&lt;/em&gt; host node environment, and it composes cleanly whether the box is a home server, cheap VPS, and even a throwaway VM.&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>chroot with namespace isolation</title>
