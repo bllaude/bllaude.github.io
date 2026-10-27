@@ -157,8 +157,8 @@ disqusShortname = "bllaude"
     copyrightUseCurrentYear = true  # set to true to always display the current year in the copyright
     copyrightYearOverride = "2017"
     copyrightUrl = "https://github.com/bllaude"
-    creditsText = "Bilberry Hugo"
-    creditsUrl = "https://github.com/Lednerb/bilberry-hugo-theme"
+    # creditsText = "Lednerb's Bilberry Hugo"
+    # creditsUrl = "https://github.com/Lednerb/bilberry-hugo-theme"
 
 # Enable/Disable Google Analytics statistics for your site
 [services]
