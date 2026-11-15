@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+
+
+    
+
+    
+         
+    
+
+    
+
+<html itemscope itemtype="https://schema.org/WebPage" class="no-js" lang="en">
+
+<head prefix="og: http://ogp.me/ns#"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="siteBaseUrl" content="http://localhost:1313/">
+    <meta name="author" content="bllaude">
+    <meta name="description" content="Brey Laude&#39;s website">
+    <meta name="keywords" content="brey laude, brey, laude,">
+    <meta name="generator" content="Hugo 0.165.0">
+    <title>
+        
+           
+               Arduino anti-suffocation alarm prototype &vert; Brey Laude&#39;s website
+           
+        
+    </title>
+    <meta itemprop="name" content="Arduino anti-suffocation alarm prototype">
+    <meta itemprop="description" content="Arduino anti-suffocation alarm prototype - Brey Laude&#39;s website">
+    <meta property="og:site_name" content="Brey Laude&#39;s website">
+
+    <meta property="og:url" content="http://localhost:1313/article/arduino-alarm-system/">
+	<meta property="og:site_name" content="Brey Laude&#39;s website">
+	<meta property="og:title" content="Arduino anti-suffocation alarm prototype">
+	<meta property="og:description" content="This post is the design-paper treatment of an Arduino based system that detects a person or pet left in a locked vehicle, sounds a buzzer, opens the window, and alerts the owner by SMS and voice call through a GSM module. A push button provides manual on/off control. The emphasis here is on the problem framing, requirements, system design and the engineering issues met during integration.">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="article">
+		<meta property="article:published_time" content="2025-03-07T21:00:32+08:00">
+		<meta property="article:modified_time" content="2025-03-07T21:00:32+08:00">
+		<meta property="og:image" content="http://localhost:1313/article/arduino-alarm-system/featuredImage.png">
+
+
+    
+
+
+    
+
+    
+    <link rel="canonical" href="http://localhost:1313/article/arduino-alarm-system/">
+    
+
+    
+        
+
+    <script src="http://localhost:1313/js/check-theme-prefer.js"></script>
+
+
+    
+
+    
+
+
+
+    <link id="theme-css" rel="stylesheet" href="http://localhost:1313/theme.css" media="screen">
+
+
+
+    
+
+
+
+    
+
+    
+</head>
+
+<body class="bilberry-hugo-theme">
+    
+
+    
+    <nav>
+
+    <div class="container">
+        <ul class="topnav">
+            
+                
+                
+                    <li><a href="https://github.com/bllaude/bllaude.github.io"
+                           target="_blank">github ↗</a></li>
+                
+            
+                
+                
+                    <li><a href="https://x.com/breylaude"
+                           target="_blank">breylaude ↗</a></li>
+                
+            
+                
+                
+                    <li><a href="/page/about/">About</a></li>
+                
+            
+        </ul>
+
+        
+    </div>
+</nav>
+
+
+    
+    <header>
+
+    <a id="back-to-top-button">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <div class="container">
+        <div class="logo">
+            <a href="/" class="logo">
+                
+                    <img src="/avatar.jpg" alt="">
+                
+
+                <span class="overlay"><i class="fa fa-rocket"></i></span>
+            </a>
+        </div>
+        <div class="titles">
+            <h3 class="title">
+                <a href="/">
+                    Brey Laude&#39;s website
+                </a>
+            </h3>
+
+            
+        </div>
+        <div class="selectors">
+          
+          <div class="light-dark-mode">
+            <button id="light-dark-toggle" class="fa-solid fa-sun"></button>
+          </div>
+          
+          <div class="languages">
+            
+                
+                
+                  
+                
+
+                
+                    <a href="http://localhost:1313/article/arduino-alarm-system/" class="active">en</a>
+                
+            
+                
+                
+
+                
+                    <a href="http://localhost:1313/fr/">fr</a>
+                
+            
+            </div>
+        
+       </div>
+
+        
+            <div class="toggler">
+        
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </div>
+    </div>
+    </div>
+</header>
+
+
+    <div class="main container">
+        
+    <div class="article-wrapper u-cf single">
+        
+            <a class="bubble" href="http://localhost:1313/article/arduino-alarm-system/">
+    <i class="fas fa-fw fa-pencil-alt"></i>
+</a>
+
+<article class="default article">
+    
+    <div class="featured-image">
+        <a href="http://localhost:1313/article/arduino-alarm-system/">
+            
+                <img src="/article/arduino-alarm-system/featuredImage_hu_29d5f5b17e9615c4.png" alt="">
+            
+        </a>
+    </div>
+
+
+    <div class="content">
+    <h1 class="article-title">
+        <a href="http://localhost:1313/article/arduino-alarm-system/">
+            Arduino anti-suffocation alarm prototype
+        </a>
+    </h1>
+
+    <div class="meta">
+        
+            
+                <span class="date moment">2025-03-07</span>
+            
+        
+
+        
+            
+                <span class="readingTime">5 min read</span>
+            
+        
+
+        
+
+        
+    </div>
+
+    
+        
+
+        <p>This post is the design-paper treatment of an Arduino based system that detects a person or pet left in a locked vehicle, sounds a buzzer, opens the window, and alerts the owner by SMS and voice call through a GSM module. A push button provides manual on/off control. The emphasis here is on the problem framing, requirements, system design and the engineering issues met during integration.</p>
+<h2 id="system-design">System design</h2>
+<p>The architecture is modular, with separate functional blocks connected through a single-chip microcontroller. A PIR motion sensor, a servo motor for window control and a SIM800L GSM module connect to an Arduino Uno on one side, and a buzzer, a push button and a power supply connect on the other.</p>
+<p>
+<a href="/article/arduino-alarm-system/architecture.png" data-dimbox data-dimbox-caption="System architecture block diagram">
+  <img alt="System architecture block diagram" src="/article/arduino-alarm-system/architecture.png"/>
+</a>
+
+<em>Fig. 1. System architecture.</em></p>
+<table>
+	<thead>
+			<tr>
+					<th>Module</th>
+					<th>Part</th>
+					<th>Role</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Sensing</td>
+					<td>PIR motion sensor (HC-SR501)</td>
+					<td>Detects movement inside the vehicle.</td>
+			</tr>
+			<tr>
+					<td>Control</td>
+					<td>Arduino Uno</td>
+					<td>Processes sensor data and controls actuators.</td>
+			</tr>
+			<tr>
+					<td>Actuation</td>
+					<td>Servo motor (MG996R)</td>
+					<td>Opens and closes the car window.</td>
+			</tr>
+			<tr>
+					<td>Communication</td>
+					<td>SIM800L GSM module</td>
+					<td>Sends SMS and makes voice calls to the owner.</td>
+			</tr>
+			<tr>
+					<td>Power</td>
+					<td>9 V battery</td>
+					<td>Supplies the Uno, which regulates it through its onboard regulator.</td>
+			</tr>
+	</tbody>
+</table>
+<h3 id="logic">Logic</h3>
+<p>At start-up the system initializes the PIR sensor, servo, GSM module, buzzer and push button, and the servo drives the window to the closed position. It then checks whether the system is active, which the push button controls. If it is off, it waits for a button press to turn it on. If it is on, it monitors the PIR output continuously, and on detecting motion it sounds the buzzer to alert people nearby, opens the window with the servo for ventilation, and sends an SMS and places a voice call to the owner. The button can toggle the system on or off at any time.</p>
+<p>
+<a href="/article/arduino-alarm-system/logic-flow.png" data-dimbox data-dimbox-caption="Logic flow chart">
+  <img alt="Logic flow chart" src="/article/arduino-alarm-system/logic-flow.png"/>
+</a>
+
+<em>Fig. 2. System logic flow.</em></p>
+<h2 id="implementation">Implementation</h2>
+<h3 id="hardware">Hardware</h3>
+<p>The PIR sensor connects to a digital input pin of the Arduino, and the servo connects to a PWM pin. The SIM800L connects to the Arduino&rsquo;s serial pins, the buzzer to a digital output pin, and the push button to a digital pin with a pull-up resistor so that an unpressed button reads HIGH and a press pulls the line LOW.</p>
+<h3 id="software">Software</h3>
+<p>The firmware implements four behaviors. Motion detection reads the PIR output. Window control drives the servo open when a person is detected. Alerts use the GSM module to send an SMS and place a voice call to the owner. Manual override toggles the system on and off from the push button. In algorithm form: initialize the system and components, monitor the PIR continuously, and on movement sound the buzzer, open the window through the servo and send the SMS and voice call, while a button press at any point toggles the system state.</p>
+<h2 id="challenges-and-solutions">Challenges and solutions</h2>
+<h3 id="power-supply-stability">Power supply stability</h3>
+<p>The system needs a stable 5 V rail, but a car&rsquo;s nominal 12 V battery supply fluctuates, especially around engine start and with other loads on the circuit. The paper&rsquo;s solution is either an external 5 V supply or a 5 V voltage regulator when drawing from the car battery, with capacitors added to smooth voltage spikes.</p>
+<h3 id="servo-torque">Servo torque</h3>
+<p>A standard hobby servo may not have the torque to move a heavy car window. The paper uses a high-torque servo, the MG996R, together with a proper mechanical linkage to the window regulator.</p>
+<h3 id="false-alarms">False alarms</h3>
+<p>A PIR sensor can be triggered by sunlight changes or moving objects outside the car, since it responds to changes in infrared level and not to what causes them. The paper&rsquo;s mitigation is to adjust the sensor&rsquo;s sensitivity and to add a confirmation delay before triggering, so a single transient does not fire the alarm.</p>
+<h3 id="gsm-connectivity">GSM connectivity</h3>
+<p>The SIM800L may fail to send alerts on poor network coverage. The paper proposes a retry mechanism in the code that resends the alert if the first attempt fails, plus a strong antenna signal.</p>
+<h3 id="mechanical-integration">Mechanical integration</h3>
+<p>Mounting the servo and coupling it to the window mechanism is difficult in practice. The paper&rsquo;s answer is custom brackets and flexible couplings that attach the servo securely to the window mechanism.</p>
+<h2 id="results-and-discussion">Results and discussion</h2>
+<p>The system was tested in a simulated car environment. The PIR sensor accurately detected the presence of a person, the servo opened and closed the window, and the GSM module sent SMS alerts and made voice calls as expected.</p>
+<p>
+<a href="/article/arduino-alarm-system/sms-alert.jpg" data-dimbox data-dimbox-caption="SMS alert received by the owner">
+  <img alt="SMS alert received by the owner" src="/article/arduino-alarm-system/sms-alert.jpg"/>
+</a>
+
+<em>Fig. 3. SMS alert sent to the car owner.</em></p>
+<p>The system responded within 2 to 3 seconds of detecting a person, operated consistently under the conditions tested, and drew minimal power, which suits in-vehicle use. The serial monitor capture in Fig. 4 backs up the timing: in the first logged trial, motion was detected at 12:47:48.403 and the SMS was confirmed at 12:47:50.495, about 2.1 s later, with the window-opened message at 12:47:52.522. A second trial after a reset shows motion at 12:48:57.615 and the SMS confirmed at 12:48:59.705, again about 2.1 s. The log shows the SMS path only, so the voice call is not independently confirmed by the capture.</p>
+<p>
+<a href="/article/arduino-alarm-system/featuredImage.png" data-dimbox data-dimbox-caption="Serial monitor during testing">
+  <img alt="Serial monitor during testing" src="/article/arduino-alarm-system/featuredImage.png"/>
+</a>
+
+<em>Fig. 4. Testing: serial monitor.</em></p>
+<p>
+<a href="/article/arduino-alarm-system/prototype.jpg" data-dimbox data-dimbox-caption="Prototype hardware">
+  <img alt="Prototype hardware" src="/article/arduino-alarm-system/prototype.jpg"/>
+</a>
+
+<em>Fig. 5. The prototype: Arduino Uno, PIR sensor, buzzer, MG996R servo and SIM800L on a breadboard.</em></p>
+<h3 id="limitations">Limitations</h3>
+<p>The system relies on a PIR sensor with limited range and sensitivity, and because PIR detection is motion-based, a very still occupant such as a sleeping infant may not retrigger it. The servo needs calibration for different car models. The GSM module needs a stable network connection to deliver alerts, and the SIM800L is a 2G modem, which matters where 2G networks are being retired. Opening a window on an unattended vehicle is also a security trade-off, so limiting travel to a ventilation gap is worth considering.</p>
+    
+</div>
+
+    
+<div class="footer no-tags">
+
+
+    
+
+    
+</div>
+
+</article>
+
+        
+    </div>
+
+    
+        <div id="comments-container">
+            <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "bllaude" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+		<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+	
+            
+
+            
+
+            
+
+        </div>
+    
+
+    </div>
+
+    
+<footer>
+    <div class="container">
+
+        
+        <div class="recent-posts">
+            <strong>Latest posts</strong>
+            <ul>
+                
+                
+                    <li>
+                        <a href="http://localhost:1313/article/computer-security/">Computer Security</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:1313/article/esp32-modbus-rtu/">ESP32 Modbus RTU</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:1313/gallery/security/">Pic of the day</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:1313/article/chroot-namespace-isolation/">chroot with namespace isolation</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:1313/article/kali-linux-docker-containers/">Running Kali Linux Container on a Linux Server with Docker</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:1313/article/arduino-alarm-system/">Arduino anti-suffocation alarm prototype</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:1313/article/virtiofsd-debian-rootfs-kernel-testing/">Set up rootfs of a Debian VM with virtiofsd for Linux Kernel Testing</a>
+                    </li>
+                
+            </ul>
+        </div>
+        
+
+        
+        <div class="categories">
+            
+            <a href="http://localhost:1313/categories/"><strong>Categories</strong></a>
+            
+
+            <ul>
+                
+                <li>
+                
+                    <a href="http://localhost:1313/categories/tutorial/">Tutorial (1)</a>
+                
+                </li>
+                
+            </ul>
+        </div>
+        
+
+        <div class="right">
+            
+            <div class="external-profiles">
+                <strong>Social media</strong>
+                
+                <a href="https://twitter.com/breylaude" target="_blank" rel="me"><em class="fab fa-x-twitter"></em></a>
+                
+                <a href="https://github.com/bllaude" target="_blank" rel=""><em class="fab fa-github"></em></a>
+                
+                <a href="https://linkedin.com/in/blaude" target="_blank" rel=""><em class="fab fa-linkedin"></em></a>
+                
+                <a href="https://facebook.com/" target="_blank" rel=""><em class="fab fa-facebook"></em></a>
+                
+            </div>
+            
+
+            <div class="languages">
+                    <strong>Other languages</strong>
+                    
+                        
+                        
+                            
+                        
+
+                        
+                            <a href="http://localhost:1313/article/arduino-alarm-system/" class="active">en</a>
+                        
+                    
+                        
+                        
+
+                        
+                            <a href="http://localhost:1313/fr/">fr</a>
+                        
+                    
+                </div>
+            
+
+            
+            <div class="archive">
+                
+                <a href="http://localhost:1313/archive/"><strong>Archive</strong></a>
+                
+            </div>
+            
+        </div>
+    </div>
+</footer>
+
+
+<div class="credits">
+    <div class="container">
+        <div class="copyright">
+            <a href="https://github.com/bllaude" target="_blank">
+                &copy;
+                
+                2026
+                
+                Brey Laude
+            </a>
+            
+        </div>
+        <div class="author">
+            <a href="https://github.com/Lednerb"
+                target="_blank">Credits to Lednerb!</a>
+        </div>
+    </div>
+</div>
+
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+
+
+
+    
+    
+
+
+
+
+
+
+
+    <script src="http://localhost:1313/theme.js"></script>
+
+
+
+    
+
+
+
+    
+
+    
+</body>
+
+</html>

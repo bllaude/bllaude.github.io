@@ -19,7 +19,7 @@ disqusShortname = "bllaude"
     # path = "bilberry-hugo-theme/v4"
 
 [params]
-  enableLightDarkTheme = false
+  enableLightDarkTheme = true
   # Custom CSS/JS modules that will be imported by the template.
   # Files are relative to the static/ directory or a URL.
   # Files are imported in the order they appear here, after
@@ -86,10 +86,10 @@ disqusShortname = "bllaude"
     avatarEmail = "laude822@gmail.com"
 
     # set an path to the image file you want to use | overwrites avatar by email
-    customImage = "avatar.jpeg"
+    customImage = "avatar.jpg"
 
     # define the icon you want to use for the overlay for the customImage or avatar.
-    overlayIcon = "fa-home"
+    overlayIcon = "fa-rocket"
 
     # always display the top navigation (with pages and search) on non-mobile screens
     permanentTopNav = false
@@ -142,8 +142,10 @@ disqusShortname = "bllaude"
     # all icons https://fontawesome.com/icons?d=gallery&m=free
     # brand icons https://fontawesome.com/icons?d=gallery&s=brands&m=free
     socialMediaLinks = [
-      { link = "https://twitter.com/breylaude", icon = "fab fa-twitter", rel = "me" },
+      { link = "https://twitter.com/breylaude", icon = "fab fa-x-twitter", rel = "me" },
       { link = "https://github.com/bllaude", icon = "fab fa-github" },
+      { link = "https://linkedin.com/in/blaude", icon = "fab fa-linkedin" },
+      { link= "https://facebook.com/", icon = "fab fa-facebook" },
     ]
 
     # show an archive link in the footer
@@ -157,8 +159,8 @@ disqusShortname = "bllaude"
     copyrightUseCurrentYear = true  # set to true to always display the current year in the copyright
     copyrightYearOverride = "2017"
     copyrightUrl = "https://github.com/bllaude"
-    # creditsText = "Lednerb's Bilberry Hugo"
-    # creditsUrl = "https://github.com/Lednerb/bilberry-hugo-theme"
+    creditsText = "Credits to Lednerb!"
+    creditsUrl = "https://github.com/Lednerb"
 
 # Enable/Disable Google Analytics statistics for your site
 [services]

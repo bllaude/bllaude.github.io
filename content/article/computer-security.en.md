@@ -11,6 +11,7 @@ author: ""
 - hardening your system
   - full-disk encryption with a long passphrase (FileVault / LUKS), + a firmware password or secure boot with your own keys
   - [FIDO2](https://www.yubico.com/authentication-standards/fido2/) hardware keys for login, sudo, and SSH instead of TOTP or SMS
+  <!--more-->
   - egress-aware firewalling per application
     - [Little Snitch](www.obdev.at/products/littlesnitch/index.html)/[LuLu](https://objective-see.org/products/lulu.html) on macOS,
     - [OpenSnitch](https://github.com/evilsocket/opensnitch) on Linux

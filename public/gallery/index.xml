@@ -10,6 +10,15 @@
 		
 		
 		
+			<lastBuildDate>Tue, 15 Sep 2026 18:15:37 +0800</lastBuildDate>
+		
 			<atom:link href="http://localhost:1313/gallery/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Pic of the day</title>
+				<link>http://localhost:1313/gallery/security/</link>
+				<pubDate>Tue, 15 Sep 2026 18:15:37 +0800</pubDate>
+				<guid>http://localhost:1313/gallery/security/</guid>
+				<description></description>
+			</item>
 	</channel>
 </rss>

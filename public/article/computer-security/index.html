@@ -26,7 +26,7 @@
     <meta property="og:url" content="http://localhost:1313/article/computer-security/">
 	<meta property="og:site_name" content="Brey Laude&#39;s website">
 	<meta property="og:title" content="Computer Security">
-	<meta property="og:description" content="hardening your system full-disk encryption with a long passphrase (FileVault / LUKS), &#43; a firmware password or secure boot with your own keys FIDO2 hardware keys for login, sudo, and SSH instead of TOTP or SMS egress-aware firewalling per application Little Snitch/LuLu on macOS, OpenSnitch on Linux kernel and userland hardening on Linux: sysctl (kernel.kptr_restrict, kernel.dmesg_restrict, unprivileged user namespaces off where unused), &#43; audit with lynis randomize MAC addresses on untrusted Wi-Fi, and disable Bluetooth and AirDrop discovery when idle compartmentalize high-risk work (Qubes OS, or dedicated VMs per trust level) verify package and release signatures, and prefer reproducible builds where available hardening network access SSH: Ed25519 keys only, PasswordAuthentication no, AllowUsers, and consider fwknop (port knocking) in front of it WireGuard -&gt; remote access rather than exposing services directly encrypted DNS (DoT/DoH) through a resolver you control, with DNSSEC validation why? mitm, cache poisoning monitor Certificate Transparency logs for your own domains (crt.sh, certspotter) disable IPv6 where unused so it can’t bypass your v4 firewall rules">
+	<meta property="og:description" content="hardening your system full-disk encryption with a long passphrase (FileVault / LUKS), &#43; a firmware password or secure boot with your own keys FIDO2 hardware keys for login, sudo, and SSH instead of TOTP or SMS">
 	<meta property="og:locale" content="en">
 	<meta property="og:type" content="article">
 		<meta property="article:section" content="article">
@@ -42,6 +42,12 @@
     
     <link rel="canonical" href="http://localhost:1313/article/computer-security/">
     
+
+    
+        
+
+    <script src="http://localhost:1313/js/check-theme-prefer.js"></script>
+
 
     
 
@@ -106,10 +112,10 @@
         <div class="logo">
             <a href="/" class="logo">
                 
-                    <img src="/avatar.jpeg" alt="">
+                    <img src="/avatar.jpg" alt="">
                 
 
-                <span class="overlay"><i class="fa fa-home"></i></span>
+                <span class="overlay"><i class="fa fa-rocket"></i></span>
             </a>
         </div>
         <div class="titles">
@@ -122,6 +128,10 @@
             
         </div>
         <div class="selectors">
+          
+          <div class="light-dark-mode">
+            <button id="light-dark-toggle" class="fa-solid fa-sun"></button>
+          </div>
           
           <div class="languages">
             
@@ -199,12 +209,14 @@
 <ul>
 <li>full-disk encryption with a long passphrase (FileVault / LUKS), + a firmware password or secure boot with your own keys</li>
 <li><a href="https://www.yubico.com/authentication-standards/fido2/">FIDO2</a> hardware keys for login, sudo, and SSH instead of TOTP or SMS</li>
+</ul>
+</li>
+</ul>
+<ul>
 <li>egress-aware firewalling per application
 <ul>
 <li><a href="www.obdev.at/products/littlesnitch/index.html">Little Snitch</a>/<a href="https://objective-see.org/products/lulu.html">LuLu</a> on macOS,</li>
 <li><a href="https://github.com/evilsocket/opensnitch">OpenSnitch</a> on Linux</li>
-</ul>
-</li>
 <li>kernel and userland hardening on Linux: <code>sysctl</code> (<code>kernel.kptr_restrict</code>, <code>kernel.dmesg_restrict</code>, unprivileged user namespaces off where unused), + audit with <a href="https://github.com/cisofy/lynis">lynis</a></li>
 <li>randomize MAC addresses on untrusted Wi-Fi, and disable Bluetooth and AirDrop discovery when idle</li>
 <li>compartmentalize high-risk work (Qubes OS, or dedicated VMs per trust level)</li>
@@ -225,7 +237,6 @@
 </ul>
 </li>
 </ul>
-
     
 </div>
 
@@ -288,14 +299,6 @@
                 
                 
                     <li>
-                        <a href="http://localhost:1313/article/support-discussions-renta/">Support Discussions - Renta Marketplace</a>
-                    </li>
-                
-                    <li>
-                        <a href="http://localhost:1313/article/building-renta-ph/">🚀 Renta Philippines  🚀</a>
-                    </li>
-                
-                    <li>
                         <a href="http://localhost:1313/article/computer-security/">Computer Security</a>
                     </li>
                 
@@ -304,11 +307,19 @@
                     </li>
                 
                     <li>
+                        <a href="http://localhost:1313/gallery/security/">Pic of the day</a>
+                    </li>
+                
+                    <li>
                         <a href="http://localhost:1313/article/chroot-namespace-isolation/">chroot with namespace isolation</a>
                     </li>
                 
                     <li>
                         <a href="http://localhost:1313/article/kali-linux-docker-containers/">Running Kali Linux Container on a Linux Server with Docker</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://localhost:1313/article/arduino-alarm-system/">Arduino anti-suffocation alarm prototype</a>
                     </li>
                 
                     <li>
@@ -342,9 +353,13 @@
             <div class="external-profiles">
                 <strong>Social media</strong>
                 
-                <a href="https://twitter.com/breylaude" target="_blank" rel="me"><em class="fab fa-twitter"></em></a>
+                <a href="https://twitter.com/breylaude" target="_blank" rel="me"><em class="fab fa-x-twitter"></em></a>
                 
                 <a href="https://github.com/bllaude" target="_blank" rel=""><em class="fab fa-github"></em></a>
+                
+                <a href="https://linkedin.com/in/blaude" target="_blank" rel=""><em class="fab fa-linkedin"></em></a>
+                
+                <a href="https://facebook.com/" target="_blank" rel=""><em class="fab fa-facebook"></em></a>
                 
             </div>
             
@@ -396,8 +411,8 @@
             
         </div>
         <div class="author">
-            <a href="https://github.com/Lednerb/bilberry-hugo-theme"
-                target="_blank">Bilberry Hugo</a>
+            <a href="https://github.com/Lednerb"
+                target="_blank">Credits to Lednerb!</a>
         </div>
     </div>
 </div>
