@@ -26,6 +26,8 @@ jobs:
         with:
           hugo-version: 'latest'
           extended: true
+      - name: Install Dart Sass
+        run: sudo snap install dart-sass
       - name: Build
         run: hugo --minify
       - uses: actions/upload-pages-artifact@v3
