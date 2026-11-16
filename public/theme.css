@@ -9757,7 +9757,7 @@ readers do not read off random characters that represent icons */
     text-decoration: none;
     transition: all 0.2s ease-in-out; }
     .bilberry-hugo-theme a:hover {
-      color: #5c8b59; }
+      color: #0077B6; }
     .bilberry-hugo-theme a:focus {
       outline: none; }
   .bilberry-hugo-theme .highlight {
@@ -9845,7 +9845,7 @@ readers do not read off random characters that represent icons */
     z-index: 1000; }
   .bilberry-hugo-theme #back-to-top-button:hover {
     cursor: pointer;
-    background-color: #5c8b59; }
+    background-color: #0077B6; }
   .bilberry-hugo-theme #back-to-top-button.show {
     opacity: 1;
     visibility: visible; }
@@ -9892,7 +9892,7 @@ readers do not read off random characters that represent icons */
           padding: 1em 1.4em;
           display: flex; }
           .bilberry-hugo-theme nav ul li a:hover {
-            color: #5c8b59; }
+            color: #0077B6; }
     .bilberry-hugo-theme nav .search {
       margin-left: auto;
       min-width: 300px;
@@ -9996,7 +9996,7 @@ readers do not read off random characters that represent icons */
         border-top: 1px solid rgba(228, 228, 228, 0.2);
         padding: 6px 12px; }
   .bilberry-hugo-theme header {
-    background-color: #1d1f38;
+    background-color: #0077B6;
     color: #f1f1f1;
     height: auto;
     display: flex;
@@ -10044,7 +10044,7 @@ readers do not read off random characters that represent icons */
         left: 0;
         bottom: 0;
         right: 0;
-        background-color: #5c8b59;
+        background-color: #0077B6;
         border-radius: 50%;
         display: flex;
         align-items: center;
@@ -10078,9 +10078,9 @@ readers do not read off random characters that represent icons */
           border: transparent;
           color: #f1f1f1; }
           .bilberry-hugo-theme header .selectors .light-dark-mode button:hover {
-            color: #5c8b59; }
+            color: #0077B6; }
       .bilberry-hugo-theme header .selectors .languages {
-        background-color: #2D3642;
+        background-color: #0077B6;
         padding: 0.5em 1em;
         display: flex;
         border-top-right-radius: 4px;
@@ -10096,12 +10096,12 @@ readers do not read off random characters that represent icons */
             content: " | ";
             color: inherit; }
           .bilberry-hugo-theme header .selectors .languages a:hover {
-            color: #5c8b59; }
+            color: #0077B6; }
     .bilberry-hugo-theme header .toggler {
       position: absolute;
       right: 0;
       top: 0;
-      background: #2D3642;
+      background: #0077B6;
       padding: 0.375em 0.75em;
       font-size: 1.125em;
       border-bottom-left-radius: 4px;
@@ -10110,7 +10110,7 @@ readers do not read off random characters that represent icons */
       .bilberry-hugo-theme header .toggler.permanentTopNav {
         display: none; }
       .bilberry-hugo-theme header .toggler:hover {
-        color: #5c8b59; }
+        color: #fff; }
   .bilberry-hugo-theme .main {
     margin-bottom: 5em;
     min-height: 50vh; }
@@ -10162,7 +10162,7 @@ readers do not read off random characters that represent icons */
         .bilberry-hugo-theme .main .article-wrapper .bubble .fa {
           font-size: 15pt; }
         .bilberry-hugo-theme .main .article-wrapper .bubble:hover {
-          background-color: #5c8b59; }
+          background-color: #0077B6; }
   .bilberry-hugo-theme article {
     border-radius: 4px;
     overflow: hidden;
@@ -10199,7 +10199,7 @@ readers do not read off random characters that represent icons */
           font-style: normal;
           color: inherit; }
           .bilberry-hugo-theme article .content h1 a:hover {
-            color: #5c8b59;
+            color: #2D3642;
             text-decoration: none; }
       .bilberry-hugo-theme article .content h2 {
         font-size: 1.6em; }
@@ -10226,7 +10226,7 @@ readers do not read off random characters that represent icons */
           color: inherit;
           font-style: normal; }
           .bilberry-hugo-theme article .content .meta a:hover {
-            color: #5c8b59;
+            color: #0077B6;
             text-decoration: underline; }
         .bilberry-hugo-theme article .content .meta span:before {
           content: " / ";
@@ -10238,13 +10238,13 @@ readers do not read off random characters that represent icons */
           content: ", "; }
       .bilberry-hugo-theme article .content a {
         font-style: normal;
-        color: #5c8b59; }
+        color: #0077B6; }
         .bilberry-hugo-theme article .content a:hover {
           text-decoration: underline; }
       .bilberry-hugo-theme article .content a.more {
         display: block;
         margin: 2.5rem 0 1rem;
-        color: #5c8b59;
+        color: #0077B6;
         font-size: 1.125em;
         text-decoration: none;
         font-style: normal; }
@@ -10268,7 +10268,7 @@ readers do not read off random characters that represent icons */
           left: 0;
           display: inline-block;
           transition: left 0.3s ease-in-out;
-          color: #5c8b59;
+          color: #0077B6;
           font-family: "Open Sans", sans-serif;
           font-style: normal; }
           .bilberry-hugo-theme article .content .archive-list ul a span {
@@ -10311,7 +10311,7 @@ readers do not read off random characters that represent icons */
             font-size: 95%; }
         .bilberry-hugo-theme article .content #TableOfContents li {
           display: inherit;
-          color: #5c8b59; }
+          color: #0077B6; }
           .bilberry-hugo-theme article .content #TableOfContents li a {
             color: inherit;
             text-align: left;
@@ -10441,10 +10441,10 @@ readers do not read off random characters that represent icons */
       .bilberry-hugo-theme article.link:after {
         border-right-color: #2D3642; }
       .bilberry-hugo-theme article.link:hover {
-        background-color: #5c8b59;
+        background-color: #0077B6;
         transition: all 0.3s ease-in-out; }
         .bilberry-hugo-theme article.link:hover:after {
-          border-right-color: #5c8b59;
+          border-right-color: #0077B6;
           transition: all 0.3s ease-in-out; }
       .bilberry-hugo-theme article.link .featured-image {
         position: absolute;
@@ -10495,7 +10495,8 @@ readers do not read off random characters that represent icons */
       background-color: #fff;
       color: #222; }
       .bilberry-hugo-theme .paginator a:hover {
-        background-color: #5c8b59;
+        background-color: #0077B6;
+        color: #fff;
         transition: all 0.3s ease-in-out; }
       .bilberry-hugo-theme .paginator a.older {
         margin-right: auto; }
@@ -10521,7 +10522,7 @@ readers do not read off random characters that represent icons */
         padding-bottom: 0.75em;
         display: block; }
       .bilberry-hugo-theme footer .container a strong:hover {
-        color: #5c8b59; }
+        color: #0077B6; }
       .bilberry-hugo-theme footer .container ul {
         list-style: none;
         margin-top: 1.25em; }
@@ -10533,7 +10534,7 @@ readers do not read off random characters that represent icons */
           left: 0;
           display: inline-block;
           transition: left 0.3s ease-in-out;
-          color: #5c8b59;
+          color: #0077B6;
           font-family: "Open Sans", sans-serif; }
           .bilberry-hugo-theme footer .container ul a:hover {
             left: 10px;
@@ -10546,7 +10547,7 @@ readers do not read off random characters that represent icons */
           margin: 0 0.5rem;
           color: #444; }
           .bilberry-hugo-theme footer .container .right .external-profiles a:hover {
-            color: #5c8b59; }
+            color: #0077B6; }
         .bilberry-hugo-theme footer .container .right .external-profiles .fa-facebook-adblock-proof:before {
           content: "\f09a"; }
         .bilberry-hugo-theme footer .container .right .external-profiles .fa-twitter-adblock-proof:before {
@@ -10561,7 +10562,7 @@ readers do not read off random characters that represent icons */
         margin-bottom: 2em; }
         .bilberry-hugo-theme footer .container .right .languages a {
           text-transform: uppercase;
-          color: #5c8b59;
+          color: #0077B6;
           letter-spacing: 0.1em; }
           .bilberry-hugo-theme footer .container .right .languages a.active {
             font-weight: bold; }
@@ -17954,7 +17955,7 @@ readers do not read off random characters that represent icons */
             .dark-mode .bilberry-hugo-theme header .selectors .light-dark-mode button:hover {
               color: #48a242; }
         .dark-mode .bilberry-hugo-theme header .selectors .languages {
-          background-color: #2D3642;
+          background-color: #0077B6;
           padding: 0.5em 1em;
           display: flex;
           border-top-right-radius: 4px;
@@ -18310,7 +18311,7 @@ readers do not read off random characters that represent icons */
         width: 100%;
         border: 0; }
       .dark-mode .bilberry-hugo-theme article.link {
-        background-color: #2D3642;
+        background-color: #0077B6;
         min-height: 7em; }
         .dark-mode .bilberry-hugo-theme article.link:after {
           border-right-color: #2D3642; }
